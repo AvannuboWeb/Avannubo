@@ -1,0 +1,320 @@
+---
+import { Icon } from "astro-icon/components";
+
+const socialItems = [
+  {
+    href: "https://www.instagram.com",
+    label: "Instagram",
+    icon: "tabler:brand-instagram"
+  },
+  {
+    href: "https://www.youtube.com",
+    label: "YouTube",
+    icon: "tabler:brand-youtube"
+  },
+  {
+    href: "https://www.linkedin.com",
+    label: "LinkedIn",
+    icon: "tabler:brand-linkedin"
+  },
+  {
+    href: "https://x.com",
+    label: "X",
+    icon: "tabler:brand-x"
+  },
+  {
+    href: "https://maps.google.com",
+    label: "Mapa",
+    icon: "tabler:map-pin"
+  },
+  {
+    href: "mailto:comercial@avannubo.com",
+    label: "Correo",
+    icon: "tabler:mail"
+  },
+  {
+    href: "tel:+34932432510",
+    label: "Telefono",
+    icon: "tabler:phone"
+  }
+];
+
+const columnOneItems = [
+  { tag: "h3", text: "ERP AVANNUBO" },
+  { tag: "h2", className: "titulo-menu", text: "AVANNET", href: "/" },
+  { tag: "h3", className: "mt-[2vh]", text: "HERRAMIENTAS" },
+  { tag: "h2", className: "titulo-menu2", text: "CONTRASEÑAS", href: "/contrasenas" },
+  { tag: "h2", className: "titulo-menu2", text: "ENLACES SEGUROS", href: "/generador-enlaces" },
+  { tag: "h3", className: "mt-[2vh]", text: "ACCESOS" },
+  { tag: "h2", className: "titulo-menu2", text: "ÁREA CLIENTES", href: "/contacto" },
+  { tag: "h2", className: "titulo-menu2", text: "AVANVOIP STATS", href: "/telefonia" },
+  { tag: "h3", className: "mt-[3vh]", text: "+34 93 243 25 10 🡥" },
+  { tag: "h3", text: "comercial@avannubo.com 🡥" },
+  { tag: "h3", text: "C/Almogàvers 80, Barcelona 🡥" }
+];
+
+const columnTwoItems = [
+  { tag: "h3", text: "TARIFAS Y PRODUCTOS" },
+  { tag: "h2", className: "titulo-menu2", text: "AVANMÓVIL", href: "/avanmovil" },
+  { tag: "h2", className: "titulo-menu2", text: "AVANFIBRA", href: "/avanfibra" },
+  { tag: "h2", className: "titulo-menu2", text: "CATÁLOGO", href: "/catalogo" },
+  { tag: "h3", className: "mt-[2vh]", text: "AVANNUBO" },
+  { tag: "h2", className: "titulo-menu2", text: "AVANBLOG", href: "/blog" },
+  { tag: "h2", className: "titulo-menu2", text: "CALIDAD", href: "/calidad" },
+  { tag: "h2", className: "titulo-menu2", text: "SOLIDARIDAD", href: "/solidaridad" }
+];
+
+const columnThreeItems = [
+  { text: "DATA-CENTER", href: "/data-center" },
+  { text: "SISTEMAS", href: "/sistemas" },
+  { text: "REDES", href: "/redes" },
+  { text: "TELEFONÍA IP", href: "/telefonia" },
+  { text: "INSTALACIONES", href: "/instalaciones" },
+  { text: "ODOO", href: "/odoo" },
+  { text: "APLICACIONES", href: "/aplicaciones" },
+  { text: "WEB", href: "/web" },
+  { text: "SEO & MARKETING", href: "/seo-marketing" }
+];
+
+const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 flex flex-col items-start justify-start";
+---
+<!-- LOGO -->
+<a href="/" aria-label="Home">
+<div class="bg-red-y fixed left-[10px] top-[10px] z-[999] h-[45px] rounded-md glass p-3 cursor-pointer">
+  <img
+    src="/Logo_Avannubo_header_bl.png"
+    alt="Avannubo"
+    class="h-auto w-[155px]"
+    loading="eager"
+    decoding="async"
+  />
+</div>
+</a>
+
+<!-- CONTACTO -->
+<a href="/contacto" aria-label="Contacto">
+  <div class="bg-[#B60000] bg-black-y fixed right-[273px] top-[10px] z-[999] h-[45px] rounded-md py-3 px-4 cursor-pointer">
+    <h3 class="font-[500]">CONTACTO</h3>
+  </div>
+</a>
+
+<!-- ASISTENCIA REMOTA -->
+<a href="/asistencia" aria-label="Asistencia Remota">
+  <div class="bg-[#B60000] bg-black-y fixed right-[70px] top-[10px] z-[999] h-[45px] rounded-md py-3 px-4 cursor-pointer">
+    <h3 class="font-[500]">ASISTENCIA REMOTA</h3>
+  </div>
+</a>
+
+<!-- OPEN MENU -->
+<div
+  id="menu-toggle"
+  class="bg-red-y fixed right-[10px] top-[10px] z-[999] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-md glass"
+  role="button"
+  tabindex="0"
+  aria-label="Abrir menu"
+  aria-expanded="false"
+>
+  <button
+    type="button"
+    class="pointer-events-none relative h-5 w-7"
+    aria-hidden="true"
+    tabindex="-1"
+  >
+    <span class="burger-line top-[1px]"></span>
+    <span class="burger-line top-1/2 -translate-y-1/2"></span>
+    <span class="burger-line bottom-[1px]"></span>
+  </button>
+</div>
+
+<!-- GO TOP BUTTON -->
+<div
+  id="go-top"
+  class="bg-red-y fixed right-[10px] bottom-[60px] z-[999] flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-md glass"
+  role="button"
+  tabindex="0"
+  aria-label="Go top"
+  aria-expanded="false"
+>
+  <h2 class="text-2xl">🡡</h2>
+</div>
+
+<!-- TEL BUTTON -->
+<a
+  href="tel:+000000000"
+  aria-label="Llamar"
+  class="bg-red-y fixed right-[10px] bottom-[10px] z-[999] flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-md glass"
+>
+  <Icon name="tabler:phone" class="social-icon !h-6 !w-6" />
+</a>
+
+<!-- MAIL BUTTON -->
+<a
+  href="mailto:correo@ejemplo.com"
+  aria-label="Enviar correo"
+  class="bg-red-y fixed right-[60px] bottom-[10px] z-[999] flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-md glass"
+>
+  <Icon name="tabler:mail" class="social-icon !h-6 !w-6" />
+</a>
+
+<!-- MENU -->
+<div class="fixed left-0 h-full w-full glassback flex flex-col p-[10px]" id="menu">
+  <div class="w-full grid grid-cols-[28fr_28fr_44fr] gap-[10px] pt-[55px]">
+    <div class={`${columnClass} gap-[2vh] color-[white]`}>
+      {columnOneItems.map((item) => (
+        item.tag === "h2" ? (
+          <h2 class={item.className}><a href={item.href}>{item.text}</a></h2>
+        ) : (
+          <h3 class={item.className}>{item.text}</h3>
+        )
+      ))}
+    </div>
+
+    <div class={`${columnClass} gap-[2vh]`}>
+      {columnTwoItems.map((item) => (
+        item.tag === "h2" ? (
+          <h2 class={item.className}><a href={item.href}>{item.text}</a></h2>
+        ) : (
+          <h3 class={item.className}>{item.text}</h3>
+        )
+      ))}
+    </div>
+
+    <div class={`${columnClass} gap-[1.2vh]`}>
+      <h3>SERVICIOS IT</h3>
+      {columnThreeItems.map((item) => (
+        <h2 class="titulo-menu"><a href={item.href}>{item.text}</a></h2>
+      ))}
+    </div>
+  </div>
+
+  <div class="w-full grid grid-cols-[51fr_7fr_7fr_7fr_7fr_7fr_7fr_7fr] gap-[10px]">
+    <a href="/contacto" aria-label="Contacto">
+      <div class="h-[9vh] mt-[10px] pl-[5%] rounded-md glass flex items-center justify-start bg-red-y">
+        <h2 class="titulo-contact">PONTE EN CONTACTO 🡢</h2>
+      </div>
+    </a>
+
+    {socialItems.map((item) => (
+      <a href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.label}>
+        <div class="h-[9vh] mt-[10px] rounded-md glass flex items-center justify-center bg-red-y">
+          <Icon name={item.icon} class="social-icon" />
+        </div>
+      </a>
+    ))}
+  </div>
+</div>
+
+<style>
+  .burger-line {
+    position: absolute;
+    left: 0;
+    display: block;
+    height: 2px;
+    width: 100%;
+    border-radius: 9999px;
+    background: #fff;
+    transition: transform 220ms ease, opacity 220ms ease;
+  }
+
+  .bg-red-y {
+    transition:
+      transform 220ms ease,
+      background-color 220ms ease;
+  }
+
+  .bg-red-y:hover {
+    transform: translateY(-2px);
+    background-color: #b60000;
+  }
+
+  .bg-black-y {
+    transition:
+      transform 220ms ease,
+      background-color 220ms ease;
+  }
+
+  .bg-black-y:hover {
+    transform: translateY(-2px);
+    background-color: black;
+  }
+
+  .titulo-menu,
+  .titulo-menu2 {
+    font-weight: 600;
+    padding: 4px 10px;
+    line-height: 1;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .titulo-menu {
+    font-size: 4.6vh;
+  }
+
+  .titulo-menu2 {
+    font-size: 3vh;
+  }
+
+  .titulo-menu:hover,
+  .titulo-menu2:hover {
+    background-color: #b60000;
+    transform: translateX(4px);
+  }
+
+  .titulo-contact {
+    font-size: 4.6vh;
+    font-weight: 600;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+  }
+
+  #menu-toggle.is-open .burger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #menu-toggle.is-open .burger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menu-toggle.is-open .burger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  #menu {
+    top: -100vh;
+    transition: top 300ms ease;
+  }
+
+  #menu.is-open {
+    top: 0;
+  }
+</style>
+
+<script>
+  const menuToggle = document.querySelector("#menu-toggle");
+  const menu = document.querySelector("#menu");
+
+  const toggleMenu = () => {
+    if (!menuToggle || !menu) return;
+
+    const isOpen = menuToggle.classList.toggle("is-open");
+    menu.classList.toggle("is-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menu" : "Abrir menu");
+  };
+
+  if (menuToggle && menu) {
+    menuToggle.addEventListener("click", toggleMenu);
+    menuToggle.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleMenu();
+      }
+    });
+  }
+</script>
+
