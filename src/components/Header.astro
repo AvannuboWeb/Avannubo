@@ -59,6 +59,7 @@ const columnTwoItems = [
   { tag: "h2", className: "titulo-menu2", text: "AVANFIBRA", href: "/avanfibra" },
   { tag: "h2", className: "titulo-menu2", text: "CATÁLOGO", href: "/catalogo" },
   { tag: "h3", className: "mt-[2vh]", text: "AVANNUBO" },
+  { tag: "h2", className: "titulo-menu2", text: "HOME", href: "/" },
   { tag: "h2", className: "titulo-menu2", text: "AVANBLOG", href: "/blog" },
   { tag: "h2", className: "titulo-menu2", text: "CALIDAD", href: "/calidad" },
   { tag: "h2", className: "titulo-menu2", text: "SOLIDARIDAD", href: "/solidaridad" }
@@ -129,7 +130,7 @@ const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 fl
 <!-- GO TOP BUTTON -->
 <div
   id="go-top"
-  class="bg-red-y fixed right-[10px] bottom-[60px] z-[999] flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-md glass"
+  class=" fixed right-[10px] bottom-[60px] z-[980] flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-md "
   role="button"
   tabindex="0"
   aria-label="Go top"
@@ -142,22 +143,22 @@ const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 fl
 <a
   href="tel:+000000000"
   aria-label="Llamar"
-  class="bg-red-y fixed right-[10px] bottom-[10px] z-[999] flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-md glass"
+  class="bg-red fixed right-[10px] bottom-[10px] z-[980] flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-md"
 >
-  <Icon name="tabler:phone" class="social-icon !h-6 !w-6" />
+  <Icon name="tabler:phone" class="social-icon !h-5 !w-5" />
 </a>
 
 <!-- MAIL BUTTON -->
 <a
   href="mailto:correo@ejemplo.com"
   aria-label="Enviar correo"
-  class="bg-red-y fixed right-[60px] bottom-[10px] z-[999] flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-md glass"
+  class="bg-red fixed right-[65px] bottom-[10px] z-[980] flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-md "
 >
-  <Icon name="tabler:mail" class="social-icon !h-6 !w-6" />
+  <Icon name="tabler:mail" class="social-icon !h-5 !w-5" />
 </a>
 
 <!-- MENU -->
-<div class="fixed left-0 h-full w-full glassback flex flex-col p-[10px]" id="menu">
+<div class="z-[990] fixed left-0 h-full w-full glassback flex flex-col p-[10px]" id="menu">
   <div class="w-full grid grid-cols-[28fr_28fr_44fr] gap-[10px] pt-[55px]">
     <div class={`${columnClass} gap-[2vh] color-[white]`}>
       {columnOneItems.map((item) => (
@@ -214,6 +215,17 @@ const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 fl
     border-radius: 9999px;
     background: #fff;
     transition: transform 220ms ease, opacity 220ms ease;
+  }
+
+  .bg-red{
+    background-color: #b60000;
+    transition: transform 220ms ease;
+      
+  }
+
+  .bg-red:hover {
+    transform: translateY(-2px);
+    
   }
 
   .bg-red-y {
