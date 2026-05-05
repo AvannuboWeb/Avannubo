@@ -1,27 +1,52 @@
 ---
 import { Icon } from "astro-icon/components";
+
+const links = [
+  { href: "/politica-privacidad", label: "PRIVACIDAD" },
+  { href: "/politica-cookies", label: "COOKIES" },
+  { href: "/aviso-legal", label: "AVISO LEGAL" },
+  { href: "/accesibilidad", label: "ACCESIBILIDAD" },
+  { href: "/politica-calidad", label: "CALIDAD" },
+];
+
+const socials = [
+  { name: "tabler:brand-instagram", href: "#" },
+  { name: "tabler:brand-youtube", href: "#" },
+  { name: "tabler:brand-x", href: "#" },
+  { name: "tabler:brand-linkedin", href: "#" },
+];
+
+const certs = ["/9001.png", "/27001.png", "/ENS.png"];
 ---
 
 <footer class="footer">
   <div class="footer_top glass"></div>
   <div class="footer_bottom">
-    <div class="footer_column footer_column--fill glass"></div>
-    <div class="footer_column footer_column--small">
-      <div class="footer_social glass bg-red-y">
-        <Icon name="tabler:brand-instagram" class="footer_social-icon" />
-      </div>
-      <div class="footer_social glass bg-red-y">
-        <Icon name="tabler:brand-youtube" class="footer_social-icon" />
-      </div>
-      <div class="footer_social glass bg-red-y">
-        <Icon name="tabler:brand-x" class="footer_social-icon" />
-      </div>
-      <div class="footer_social glass bg-red-y">
-        <Icon name="tabler:brand-linkedin" class="footer_social-icon" />
-      </div>
+    <div class="footer_column footer_column--fill flex items-center justify-center glass">
+      <a href="/">
+        <img src="/Logo-Avannubo-grande.png" alt="Avannubo" class="w-[500px]">
+      </a>
     </div>
-    <div class="footer_column footer_column--medium glass"></div>
-    <div class="footer_column footer_column--large glass"></div>
+    <div class="footer_column footer_column--small">
+      {socials.map((social) => (
+        <a href={social.href} class="footer_social glass bg-red-y">
+          <Icon name={social.name} class="footer_social-icon" />
+        </a>
+      ))}
+    </div>
+    <div class="footer_column footer_column--medium glass flex flex-col items-center justify-center gap-4">
+      {links.map((link) => (
+        <a href={link.href} class="text-lg titulo-footer">{link.label}</a>
+      ))}
+    </div>
+    <div class="footer_column footer_column--large glass flex flex-col items-center justify-center gap-4">
+      <div class="flex flex-row items-center justify-center gap-2.5">
+        {certs.map((cert) => (
+          <img src={cert} alt={cert.split("/")[1]} class="h-auto w-20">
+        ))}
+      </div>
+      <img src="/CNMC_logo.webp" alt="CNMC" class="h-auto w-62">
+    </div>
   </div>
 </footer>
 
@@ -47,7 +72,7 @@ import { Icon } from "astro-icon/components";
     flex-direction: row;
     gap: 10px;
     width: 100%;
-    height: 35vh;
+    height: 32vh;
   }
 
   .footer_column {
@@ -55,9 +80,7 @@ import { Icon } from "astro-icon/components";
     border-radius: 5px;
   }
 
-  .footer_column--fill {
-    flex: 1 1 auto;
-  }
+  .footer_column--fill { flex: 1 1 auto; }
 
   .footer_column--small {
     flex: 0 0 8vh;
@@ -66,13 +89,9 @@ import { Icon } from "astro-icon/components";
     gap: 10px;
   }
 
-  .footer_column--medium {
-    flex: 0 0 300px;
-  }
+  .footer_column--medium { flex: 0 0 300px; }
 
-  .footer_column--large {
-    flex: 0 0 550px;
-  }
+  .footer_column--large { flex: 0 0 550px; }
 
   .footer_social {
     flex: 1 1 0;
@@ -81,11 +100,26 @@ import { Icon } from "astro-icon/components";
     justify-content: center;
     min-height: 0;
     border-radius: 5px;
+    transition: transform 0.3s ease;
   }
+
+  .footer_social:hover { transform: translateY(-2px); }
 
   .footer_social-icon {
     width: 30px;
     height: 30px;
     color: #fff;
+  }
+
+  .titulo-footer {
+    padding: 4px 10px;
+    line-height: 1;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .titulo-footer:hover {
+    background-color: #b60000;
+    transform: translateY(-2px);
   }
 </style>
