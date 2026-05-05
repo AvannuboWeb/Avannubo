@@ -130,11 +130,11 @@ const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 fl
 <!-- GO TOP BUTTON -->
 <div
   id="go-top"
-  class=" fixed right-[10px] bottom-[60px] z-[980] flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-md "
+  class="fixed right-[10px] bottom-[60px] z-[980] flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-md"
   role="button"
   tabindex="0"
   aria-label="Go top"
-  aria-expanded="false"
+  aria-hidden="true"
 >
   <h2 class="text-2xl">🡡</h2>
 </div>
@@ -228,17 +228,6 @@ const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 fl
     
   }
 
-  .bg-red-y {
-    transition:
-      transform 220ms ease,
-      background-color 220ms ease;
-  }
-
-  .bg-red-y:hover {
-    transform: translateY(-2px);
-    background-color: #b60000;
-  }
-
   .bg-black-y {
     transition:
       transform 220ms ease,
@@ -304,11 +293,27 @@ const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 fl
   #menu.is-open {
     top: 0;
   }
+
+  #go-top {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(calc(100% + 10px));
+    transition:
+      opacity 300ms ease,
+      transform 300ms ease;
+  }
+
+  #go-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
 </style>
 
 <script>
   const menuToggle = document.querySelector("#menu-toggle");
   const menu = document.querySelector("#menu");
+  const goTop = document.querySelector("#go-top");
 
   const toggleMenu = () => {
     if (!menuToggle || !menu) return;
@@ -328,5 +333,32 @@ const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 fl
       }
     });
   }
-</script>
 
+  if (goTop) {
+    const toggleGoTop = () => {
+      const scrollTrigger = window.innerHeight * 0.006;
+      const isVisible = window.scrollY > scrollTrigger;
+
+      goTop.classList.toggle("is-visible", isVisible);
+      goTop.setAttribute("aria-hidden", isVisible ? "false" : "true");
+    };
+
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    };
+
+    goTop.addEventListener("click", scrollToTop);
+    goTop.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        scrollToTop();
+      }
+    });
+
+    toggleGoTop();
+    window.addEventListener("scroll", toggleGoTop, { passive: true });
+  }
+</script>

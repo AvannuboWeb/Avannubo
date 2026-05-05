@@ -1,14 +1,20 @@
 ﻿---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import { siteName } from "../data/pages";
 
 interface Props {
   title: string;
   description?: string;
+  mainClass?: string;
 }
 
-const { title, description = `Pagina de ${title}` } = Astro.props;
+const {
+  title,
+  description = `Pagina de ${title}`,
+  mainClass = "relative z-10 mx-auto max-w-[960px] px-4 pb-12 pt-28"
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -23,9 +29,47 @@ const { title, description = `Pagina de ${title}` } = Astro.props;
     <title>{title} | {siteName}</title>
   </head>
   <body class="m-0">
+    <div class="video-background" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="/Avannubo_video.mp4" type="video/mp4" />
+      </video>
+      <div class="video-background__filter"></div>
+    </div>
     <Header />
-    <main class="mx-auto max-w-[960px] px-4 pb-12 pt-28">
+    <main class={mainClass}>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
+
+<style>
+  .video-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .video-background video,
+  .video-background__filter {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-background video {
+    z-index: 0;
+    object-fit: cover;
+  }
+
+  .video-background__filter {
+    z-index: 1;
+    background: linear-gradient(60deg, #b60000 0%, #000 20%);
+    opacity: 0.85;
+  }
+</style>

@@ -1,5 +1,117 @@
-﻿---
-import PageView from "../components/PageView.astro";
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<PageView title="Home" />
+<BaseLayout
+  title="Home"
+  description="Inicio de AVNNUBO"
+  mainClass="relative z-10 w-full max-w-none p-0"
+>
+  <div class="home-sections">
+      <section class="home-section flex flex-col items-center justify-center" aria-label="Portada">
+        <h2 id="typing-text" class="text-[68px] flex items-center h-[120px]"><span id="typing-content"></span><div class="cursor"></div></h2>
+        <h1 class="text-[110px] font-bold">Soluciones y servicios IT</h1>
+        <h2 class="text-[68px] mb-7">que impulsan y transforman tu negocio</h2>
+        <h3 class="text-3xl mb-4">Avannubo, your technology partner</h3>
+        <a href="/calidad">
+          <div class="mt-8 flex flex-row items-center justify-center gap-[10px]">
+            <img src="/9001.png" alt="9001" class="h-auto w-[70px]">
+            <img src="/27001.png" alt="27001" class="h-auto w-[70px]">
+            <img src="/ENS.png" alt="ENS" class="h-auto w-[70px]">
+            <img src="/CNMC_logo.webp" alt="CNMC" class="h-auto w-[220px]">
+          </div>
+        </a>
+      </section>
+<section class="home-section" aria-label="Portada">
+        <div class="home-section__number">01</div>
+      </section>
+    
+  </div>
+</BaseLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const words = [
+      "DATA-CENTER",
+      "SISTEMAS",
+      "REDES",
+      "TELEFONÍA IP",
+      "INSTALACIONES",
+      "ODOO",
+      "APLICACIONES",
+      "DESARROLLO WEB",
+      "SEO & MARKETING"
+    ];
+    
+    const contentElement = document.getElementById("typing-content");
+    
+    if (!contentElement) return;
+    
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+      const currentWord = words[wordIndex];
+      contentElement.textContent = currentWord.slice(0, charIndex);
+
+      if (!isDeleting) {
+        if (charIndex < currentWord.length) {
+          charIndex++;
+          setTimeout(type, 100);
+        } else {
+          isDeleting = true;
+          setTimeout(type, 2000);
+        }
+      } else {
+        if (charIndex > 0) {
+          charIndex--;
+          setTimeout(type, 30);
+        } else {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(type, 100);
+        }
+      }
+    }
+
+    type();
+  });
+</script>
+
+<style>
+  .home-sections {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+  }
+
+  .home-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-section__number {
+    color: rgba(255, 255, 255, 0.16);
+    font-size: clamp(4rem, 18vw, 24rem);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 120px;
+    background-color: #ffffff;
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+    vertical-align: bottom;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    50.1%, 100% { opacity: 0; }  }
+</style>

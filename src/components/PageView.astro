@@ -9,6 +9,5 @@ const { title } = Astro.props;
 ---
 
 <BaseLayout title={title} description={`Contenido de ${title} en AVNNUBO`}>
-  <h1>{title}</h1>
-  <p>Seccion en construccion.</p>
+  <slot />
 </BaseLayout>

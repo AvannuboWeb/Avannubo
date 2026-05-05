@@ -1,0 +1,91 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="footer">
+  <div class="footer_top glass"></div>
+  <div class="footer_bottom">
+    <div class="footer_column footer_column--fill glass"></div>
+    <div class="footer_column footer_column--small">
+      <div class="footer_social glass bg-red-y">
+        <Icon name="tabler:brand-instagram" class="footer_social-icon" />
+      </div>
+      <div class="footer_social glass bg-red-y">
+        <Icon name="tabler:brand-youtube" class="footer_social-icon" />
+      </div>
+      <div class="footer_social glass bg-red-y">
+        <Icon name="tabler:brand-x" class="footer_social-icon" />
+      </div>
+      <div class="footer_social glass bg-red-y">
+        <Icon name="tabler:brand-linkedin" class="footer_social-icon" />
+      </div>
+    </div>
+    <div class="footer_column footer_column--medium glass"></div>
+    <div class="footer_column footer_column--large glass"></div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .footer_top {
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+  }
+
+  .footer_bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    height: 35vh;
+  }
+
+  .footer_column {
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .footer_column--fill {
+    flex: 1 1 auto;
+  }
+
+  .footer_column--small {
+    flex: 0 0 8vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer_column--medium {
+    flex: 0 0 300px;
+  }
+
+  .footer_column--large {
+    flex: 0 0 550px;
+  }
+
+  .footer_social {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    border-radius: 5px;
+  }
+
+  .footer_social-icon {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+  }
+</style>
