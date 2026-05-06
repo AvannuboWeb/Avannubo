@@ -94,14 +94,14 @@ const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 fl
 
 <!-- CONTACTO -->
 <a href="/contacto" aria-label="Contacto">
-  <div class="bg-[#B60000] bg-black-y fixed right-[273px] top-[10px] z-[999] h-[45px] rounded-md py-3 px-4 cursor-pointer">
+  <div class="bg-[#B60000] btnshadow bg-black-y fixed right-[273px] top-[10px] z-[999] h-[45px] rounded-md py-3 px-4 cursor-pointer">
     <h3 class="font-[500]">CONTACTO</h3>
   </div>
 </a>
 
 <!-- ASISTENCIA REMOTA -->
 <a href="/asistencia" aria-label="Asistencia Remota">
-  <div class="bg-[#B60000] bg-black-y fixed right-[70px] top-[10px] z-[999] h-[45px] rounded-md py-3 px-4 cursor-pointer">
+  <div class="bg-[#B60000] btnshadow bg-black-y fixed right-[70px] top-[10px] z-[999] h-[45px] rounded-md py-3 px-4 cursor-pointer">
     <h3 class="font-[500]">ASISTENCIA REMOTA</h3>
   </div>
 </a>
@@ -143,7 +143,7 @@ const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 fl
 <a
   href="tel:+000000000"
   aria-label="Llamar"
-  class="bg-red fixed right-[10px] bottom-[10px] z-[980] flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-md"
+  class="bg-red btnshadow fixed right-[10px] bottom-[10px] z-[980] flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-md"
 >
   <Icon name="tabler:phone" class="social-icon !h-5 !w-5" />
 </a>
@@ -152,7 +152,7 @@ const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 fl
 <a
   href="mailto:correo@ejemplo.com"
   aria-label="Enviar correo"
-  class="bg-red fixed right-[65px] bottom-[10px] z-[980] flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-md "
+  class="bg-red btnshadow fixed right-[65px] bottom-[10px] z-[980] flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-md "
 >
   <Icon name="tabler:mail" class="social-icon !h-5 !w-5" />
 </a>
@@ -206,6 +206,24 @@ const columnClass = "h-[81vh] rounded-md glass pt-[70px] pb-10 pl-[10%] pr-10 fl
 </div>
 
 <style>
+  .btnshadow{
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+  }
+
+  .glass {
+    background: rgba(120, 120, 120, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+  }
+
+  .glassback {
+    background: rgba(10, 10, 10, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+  }
+
   .burger-line {
     position: absolute;
     left: 0;

@@ -8,6 +8,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   mainClass="relative z-10 w-full max-w-none p-0"
 >
   <div class="home-sections">
+      <!-- PORTADA -->
       <section class="home-section flex flex-col items-center justify-center" aria-label="Portada">
         <h2 id="typing-text" class="text-[68px] flex items-center h-30"><span id="typing-content"></span><div class="cursor"></div></h2>
         <h1 class="text-[110px] font-bold">Soluciones y servicios IT</h1>
@@ -22,8 +23,254 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </div>
         </a>
       </section>
-<section class="home-section" aria-label="Portada">
-        <div class="home-section__number">01</div>
+      <!-- TRANSICIÓN -->
+      <section class="py-40 flex flex-col items-center justify-center" aria-label="Portada">
+        <h3 class="text-4xl text-center max-w-300">En <b>Avannubo</b>, queremos ser más que un proveedor de Soluciones y Servicios IT, queremos ser <b>Tu Partner Tecnológico</b></h3>
+        <img src="/avannubo_icon.png" alt="CNMC" class=" absolute h-auto w-110 opacity-15">
+      </section>
+      <!-- SERVICIOS -->
+      <section class="px-10 py-30 flex flex-col items-center justify-start" aria-label="Portada">
+        <h2 class="text-[68px] font-bold mb-20">Servicios Avannubo</h2>
+        <div class="flex flex-col items-center justify-start w-full mb-30">
+          <h3 class="sticky top-5 text-3xl mb-10">Infraestructura y Conectividad</h3>
+          <!-- DATA CENTER -->
+          <div class="p-5 flex flex-col items-start justify-between sticky top-[7vh] w-full h-[55vh] rounded-[5px] glassbox ">
+           <div class="flex flex-row items-start justify-between w-full">
+            <a href="/data-center">
+              <h3 class="textred font-bold text-[8vh]/[4rem]">DATA-CENTER</h3>
+            </a>
+              <a href="/data-center">
+                <div class="flex items-center justify-center h-[6vh] w-[6vh] btnarrow rounded text-4xl">🡥</div>
+              </a>
+            </div>
+            <div class="flex flex-row imtems-start justify-start w-full gap-10">
+              <img src="/homeimg/data-center.webp" alt="Data Center" class="h-[43vh] w-1/2 rounded-[5px] object-cover">
+              <div class="flex flex-col items-start justify-start w-1/2 gap-6">
+                <p class="text-2xl">Soluciones de cloud empresarial, virtualización, almacenamiento seguro y continuidad de negocio, todo ello con máxima seguridad y alto rendimiento.</p>
+                <p class="text-3xl font-bold">CloudAVAN y AVANvault</p>
+                <p class="text-3xl font-bold">Suministros Hardware y Software</p>
+                <p class="text-3xl font-bold">Migraciones y Planes Backup y DRS</p>
+                <p class="text-3xl font-bold">Citrix (Entorno de Virtualización)</p>
+                <p class="text-3xl font-bold">Infraestructura y Housing</p>
+                <p class="text-3xl font-bold">AVANréplica (replicación en tiempo real)</p>
+                <img src="/avannubo_icon.png" alt="CNMC" class="absolute bottom-0 -right-[50px] h-auto w-100 opacity-10">
+              </div>
+            </div>
+          </div>
+          <!-- SISTEMAS -->
+          <div class="p-5 flex flex-col items-start justify-between sticky top-[16vh] mt-30 w-full h-[55vh] rounded-[5px] glassbox ">
+            <div class="flex flex-row items-start justify-between w-full">
+              <a href="/sistemas">
+                  <h3 class="textred font-bold text-[8vh]/[4rem]">SISTEMAS</h3>
+              </a>
+                <div class="flex items-center justify-center h-[6vh] w-[6vh] btnarrow rounded text-4xl">🡥</div>
+              </a>  
+            </div>
+            <div class="flex flex-row imtems-start justify-start w-full gap-10">
+              <img src="/homeimg/sistemas.webp" alt="Sistemas" class="h-[43vh] w-1/2 rounded-[5px] object-cover">
+              <div class="flex flex-col items-start justify-start w-1/2 gap-6">
+                <p class="text-2xl">Somos expertos en sistemas y administración IT, por lo que garantizamos continuidad, productividad y protección con las mejores herramientas.</p>
+                <p class="text-3xl font-bold">Mantenimiento y Monitorización</p>
+                <p class="text-3xl font-bold">Helpdesk y soporte</p>
+                <p class="text-3xl font-bold">Ciberseguridad</p>
+                <p class="text-3xl font-bold">Gestión de proyectos IT</p>
+                <p class="text-3xl font-bold">Microsoft 365</p>
+                <p class="text-3xl font-bold">AVANdns (Dominios y DNS)</p>
+                <img src="/avannubo_icon.png" alt="CNMC" class="absolute bottom-0 -right-[50px] h-auto w-100 opacity-10">
+              </div>
+            </div>
+          </div>
+          <!-- REDES -->
+          <div class="p-5 flex flex-col items-start justify-between sticky top-[25vh] mt-30 w-full h-[55vh] rounded-[5px] glassbox ">
+            <div class="flex flex-row items-start justify-between w-full">
+              <a href="/redes">
+                <h3 class="textred font-bold text-[8vh]/[4rem]">REDES</h3>
+              </a>
+              <a href="/redes">
+                <div class="flex items-center justify-center h-[6vh] w-[6vh] btnarrow rounded text-4xl">🡥</div>
+              </a> 
+            </div>
+            <div class="flex flex-row imtems-start justify-start w-full gap-10">
+              <img src="/homeimg/redes.webp" alt="REDES" class="h-[43vh] w-1/2 rounded-[5px] object-cover">
+              <div class="flex flex-col items-start justify-start w-1/2 gap-6">
+                <p class="text-2xl">Potenciamos tu infraestructura: analizamos, optimizamos e implementamos redes desde cero, asegurando así la máxima seguridad y rendimiento.</p>
+                <p class="text-3xl font-bold">Soporte y Asistencia Técnica</p>
+                <p class="text-3xl font-bold">Diseño y Planificación de Redes</p>
+                <p class="text-3xl font-bold">Seguridad y Protección de Redes</p>
+                <p class="text-3xl font-bold">Optimización y Rendimiento</p>
+                <p class="text-3xl font-bold">Mantenimiento y Monitorización</p>
+                <img src="/avannubo_icon.png" alt="CNMC" class="absolute bottom-0 -right-[50px] h-auto w-100 opacity-10">
+              </div>
+            </div>
+          </div>
+          <!-- TELEFONÍA IP -->
+          <div class="p-5 flex flex-col items-start justify-between sticky top-[34vh] mt-30 w-full h-[55vh] rounded-[5px] glassbox ">
+            <div class="flex flex-row items-start justify-between w-full">
+              <a href="/telefonia-ip">
+                <h3 class="textred font-bold text-[8vh]/[4rem]">TELEFONÍA IP</h3>
+              </a>
+              <a href="/telefonia-ip">
+                <div class="flex items-center justify-center h-[6vh] w-[6vh] btnarrow rounded text-4xl">🡥</div>
+              </a> 
+            </div>
+            <div class="flex flex-row imtems-start justify-start w-full gap-10">
+              <img src="/homeimg/telefonia.webp" alt="Telefonía IP" class="h-[43vh] w-1/2 rounded-[5px] object-cover">
+              <div class="flex flex-col items-start justify-start w-1/2 gap-6">
+                <p class="text-2xl">Sistema de telefonía IP profesional para empresas que buscan control, escalabilidad y, además, eficiencia en sus comunicaciones.</p>
+                <p class="text-3xl font-bold">Servicios de Telefonía IP - AVANvoip</p>
+                <p class="text-3xl font-bold">Telefonía IP integrada - AVANmóvil</p>
+                <p class="text-3xl font-bold">Softphone y Extensiones - IPAVANsip</p>
+                <p class="text-3xl font-bold">AVANwave + CRM</p>
+                <img src="/avannubo_icon.png" alt="CNMC" class="absolute bottom-0 -right-[50px] h-auto w-100 opacity-10">
+              </div>
+            </div>
+          </div>
+          <!-- INSTALACIONES -->
+          <div class="p-5 flex flex-col items-start justify-between sticky top-[43vh] mt-30 w-full h-[55vh] rounded-[5px] glassbox ">
+            <div class="flex flex-row items-start justify-between w-full">
+              <a href="/instalaciones">
+                <h3 class="textred font-bold text-[8vh]/[4rem]">INSTALACIONES</h3>
+              </a>
+              <a href="/instalaciones">
+                <div class="flex items-center justify-center h-[6vh] w-[6vh] btnarrow rounded text-4xl">🡥</div>
+              </a> 
+            </div>
+            <div class="flex flex-row imtems-start justify-start w-full gap-10">
+              <img src="/homeimg/instalaciones.webp" alt="Instalaciones" class="h-[43vh] w-1/2 rounded-[5px] object-cover">
+              <div class="flex flex-col items-start justify-start w-1/2 gap-6">
+                <p class="text-2xl">
+                  Tu infraestructura en buenas manos gracias a instalaciones IT, seguridad y mantenimiento integral, garantizando así un funcionamiento continuo.
+                <p class="text-3xl font-bold">Consultoría y Asesoramiento Preventa</p>
+                <p class="text-3xl font-bold">Instalaciones y Cableados IT</p>
+                <p class="text-3xl font-bold">Sistemas de Red Wifi</p>
+                <p class="text-3xl font-bold">Saneado de Armarios Rack</p>
+                <p class="text-3xl font-bold">Controles de Accesos y CCTV</p>
+                <p class="text-3xl font-bold">Mantenimiento y Servicios postventa</p>
+                <img src="/avannubo_icon.png" alt="CNMC" class="absolute bottom-0 -right-[50px] h-auto w-100 opacity-10">
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full h-[55vh]">
+
+          </div>
+        </div>
+        <div class="flex flex-col items-center justify-start w-full">
+          <h3 class="sticky top-5 text-3xl mb-10">Desarrollo, Optimización y Estrategia</h3>
+          <!-- ODOO -->
+          <div class="p-5 flex flex-col items-start justify-between sticky top-[7vh] w-full h-[55vh] rounded-[5px] glassbox">
+            <div class="flex flex-row items-start justify-between w-full">
+              <a href="/odoo">
+                <h3 class="textred font-bold text-[8vh]/[4rem]">ODOO</h3>
+              </a>
+              <a href="/odoo">
+                <div class="flex items-center justify-center h-[6vh] w-[6vh] btnarrow rounded text-4xl">🡥</div>
+              </a> 
+            </div>
+            <div class="flex flex-row imtems-start justify-start w-full gap-10">
+              <img src="/homeimg/odoo.webp" alt="ODOO" class="h-[43vh] w-1/2 rounded-[5px] object-cover">
+              <div class="flex flex-col items-start justify-start w-1/2 gap-6">
+                <p class="text-2xl">Adaptamos las herramientas de Odoo a las necesidades específicas de tu empresa. Optimiza procesos y mejorar tu eficiencia.</p>
+                <p class="text-3xl font-bold">Facturación electrónica - Verifactu y SII</p>
+                <p class="text-3xl font-bold">Automatización de Procesos</p>
+                <p class="text-3xl font-bold">Unificación de programas</p>
+                <p class="text-3xl font-bold">Reducción de costes</p>
+                <p class="text-3xl font-bold">Rendimiento y productividad</p>
+                <img src="/avannubo_icon.png" alt="CNMC" class="absolute bottom-0 -right-[50px] h-auto w-100 opacity-10">
+              </div>
+            </div>
+          </div>
+          <!-- APLICACIONES -->
+          <div class="p-5 flex flex-col items-start justify-between sticky top-[16vh] mt-30 w-full h-[55vh] rounded-[5px] glassbox ">
+            <div class="flex flex-row items-start justify-between w-full">
+              <a href="/aplicaciones">
+                <h3 class="textred font-bold text-[8vh]/[4rem]">APLICACIONES</h3>
+              </a>
+              <a href="/aplicaciones">
+                <div class="flex items-center justify-center h-[6vh] w-[6vh] btnarrow rounded text-4xl">🡥</div>
+              </a> 
+            </div>
+            <div class="flex flex-row imtems-start justify-start w-full gap-10">
+              <img src="/homeimg/apps.webp" alt="Aplicaciones" class="h-[43vh] w-1/2 rounded-[5px] object-cover">
+              <div class="flex flex-col items-start justify-start w-1/2 gap-6">
+                <p class="text-2xl">Impulsa tu negocio con aplicaciones web a medida, seguras y escalables. De la idea a producción, con calidad, rendimiento y soporte continuo.</p>
+                <p class="text-3xl font-bold">Consultoría Técnica de Desarrollo</p>
+                <p class="text-3xl font-bold">Análisis funcional de procesos</p>
+                <p class="text-3xl font-bold">Arquitectura y diseño de software</p>
+                <p class="text-3xl font-bold">Desarrollo a medida y Despliegue</p>
+                <p class="text-3xl font-bold">Evolución y mantenimiento del software</p>
+                <img src="/avannubo_icon.png" alt="CNMC" class="absolute bottom-0 -right-[50px] h-auto w-100 opacity-10">
+              </div>
+            </div>
+          </div>
+          <!-- WEB -->
+          <div class="p-5 flex flex-col items-start justify-between sticky top-[25vh] mt-30 w-full h-[55vh] rounded-[5px] glassbox ">
+            <div class="flex flex-row items-start justify-between w-full">
+              <a href="/web">
+                <h3 class="textred font-bold text-[8vh]/[4rem]">WEB</h3>
+              </a>
+              <a href="/web">
+                <div class="flex items-center justify-center h-[6vh] w-[6vh] btnarrow rounded text-4xl">🡥</div>
+              </a> 
+            </div>
+            <div class="flex flex-row imtems-start justify-start w-full gap-10">
+              <img src="/homeimg/web.webp" alt="Web" class="h-[43vh] w-1/2 rounded-[5px] object-cover">
+              <div class="flex flex-col items-start justify-start w-1/2 gap-6">
+                <p class="text-2xl">Webs y comercios electrónicos rápidos, seguros y adaptados a tus necesidades y objetivos, combinando diseño, desarrollo y rendimiento.</p>
+                <p class="text-3xl font-bold">Desarrollo de Web a medida</p>
+                <p class="text-3xl font-bold">E-commerce a Medida</p>
+                <p class="text-3xl font-bold">Wordpress y Woocommerce</p>
+                <p class="text-3xl font-bold">Diseño Web y Apps (UX/UI)</p>
+                <p class="text-3xl font-bold">Hosting propio y Certificados SSL</p>
+                <img src="/avannubo_icon.png" alt="CNMC" class="absolute bottom-0 -right-[50px] h-auto w-100 opacity-10">
+              </div>
+            </div>
+          </div>
+          <!-- SEO & MARKETING -->
+          <div class="p-5 flex flex-col items-start justify-between sticky top-[34vh] mt-30 w-full h-[55vh] rounded-[5px] glassbox ">
+            <div class="flex flex-row items-start justify-between w-full">
+              <a href="/seo-marketing">
+                <h3 class="textred font-bold text-[8vh]/[4rem]">SEO & MARKETING</h3>
+              </a>
+              <a href="/seo-marketing">
+                <div class="flex items-center justify-center h-[6vh] w-[6vh] btnarrow rounded text-4xl">🡥</div>
+              </a> 
+
+            </div>
+            <div class="flex flex-row imtems-start justify-start w-full gap-10">
+              <img src="/homeimg/seo-marketing.webp" alt="SEO & Marketing" class="h-[43vh] w-1/2 rounded-[5px] object-cover">
+              <div class="flex flex-col items-start justify-start w-1/2 gap-6">
+                <p class="text-2xl">Mejoramos tu presencia online con estrategias de SEO y Marketing efectivas, orientadas a optimizar resultados y aumentar la visibilidad.</p>
+                <p class="text-3xl font-bold">Posicionamento SEO y GEO</p>
+                <p class="text-3xl font-bold">Analítica Web avanzada</p>
+                <p class="text-3xl font-bold">Estrategias SEM (Google Ads)</p>
+                <p class="text-3xl font-bold">Email Marketing</p>
+                <p class="text-3xl font-bold">Gestión de Redes Sociales</p>
+                <p class="text-3xl font-bold">Branding y Diseño Grafico</p>
+                <img src="/avannubo_icon.png" alt="CNMC" class="absolute bottom-0 -right-[50px] h-auto w-100 opacity-10">
+              </div>
+            </div>
+          </div>
+          <div class="w-full h-[55vh]">
+
+          </div>
+        </div>
+      </section>
+      <!-- TRANSICIÓN -->
+      <section class="py-40 flex flex-col items-center justify-center" aria-label="Portada">
+        <h3 class="text-4xl text-center max-w-300">En <b>Avannubo</b>, queremos ser más que un proveedor de Soluciones y Servicios IT, queremos ser <b>Tu Partner Tecnológico</b></h3>
+        <a href="/contacto" aria-label="Contacto" class="z-9">
+          <div class="bg-[#B60000] bg-black-y h-[45px] rounded-md py-3 px-4 cursor-pointer mt-8">
+          <h3>PONTE EN CONTACTO 🡢</h3>
+          </div>
+        </a>
+        <img src="/avannubo_icon.png" alt="CNMC" class=" absolute h-auto w-110 opacity-15 z-0">
+      </section>
+      <!-- AVANNET -->
+      <section class="px-10 py-30 flex flex-col items-center justify-start" aria-label="Portada">
+        <h2 class="text-[68px] font-bold mb-10">AVANNET (ERP)</h2>
+        <h3 class="text-4xl text-center max-w-300 mb-15">Descubre <b>AVANnet</b>, nuestro propio Software de Gestión de empresas (ERP). Todas las funciones importantes de tu empresa en <b>una única aplicación.</b></h3>
+          
       </section>
     
   </div>
@@ -80,6 +327,39 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </script>
 
 <style>
+  .bg-black-y {
+    transition:
+      transform 220ms ease,
+      background-color 220ms ease;
+  }
+
+  .bg-black-y:hover {
+    transform: translateY(-2px);
+    background-color: black;
+  }
+  .glassbox {
+    background: rgba(120, 120, 120, 0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    overflow:hidden;
+  }
+.textred {
+    transition: transform 0.2s ease;
+  }
+  .textred:hover {
+    color: #B60000;
+    transform: translateX(2px);
+  }
+  .btnarrow{
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    background-color: #B60000;
+    transition: transform 0.2s ease;
+  }
+  .btnarrow:hover{
+    background-color: black;
+    transform: translate(2px, -2px);
+  }
   .home-sections {
     position: relative;
     z-index: 10;

@@ -1,20 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+}
+
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-poppins);
   background-color: #000;
   color: #fff;
 }
 
-.glass {
+@utility glass {
   background: rgba(120, 120, 120, 0.5);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
 }
 
-.glassback {
+@utility glassback {
   background: rgba(10, 10, 10, 0.4);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(30px);
