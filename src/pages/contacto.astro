@@ -1,5 +1,187 @@
 ﻿---
-import PageView from "../components/PageView.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const glassbox =
+  'overflow-hidden rounded-[5px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
+
+const inputStyle =
+  'w-full bg-white text-black placeholder-gray-600 rounded-[5px] p-3 outline-none';
+
+const contactButton =
+  'relative z-[1] mt-2 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black';
 ---
 
-<PageView title="Contacto" />
+<BaseLayout
+  title="Contacto"
+  mainClass="relative z-10 w-full p-0"
+>
+  <div class="h-screen w-full flex flex-col items-center justify-center gap-4">
+    <h1 class="text-7xl font-bold text-center mb-4">
+      ¿Quieres impulsar tu negocio?
+    </h1>
+    <h2 class="mb-2 text-3xl font-normal leading-[1.2]">
+      En <b>Avannnubo</b> queremos ser <b>Tu Partner Tecnológico</b>
+    </h2>
+    <h2 class="mb-4 text-3xl font-normal leading-[1.2]">
+      ¡Ponte en contacto con nosotros!
+    </h2>
+    <div class="flex flex-row items-center justify-center w-[1000px] gap-8">
+      <div
+        class=`p-8 flex flex-col items-center justify-center gap-4 w-1/2 h-110 ${glassbox}`
+      >
+        <form class="flex w-full flex-col gap-4">
+          <select
+            class="w-full bg-white text-black placeholder-gray-600 rounded-[5px] p-2 outline-none h-11"
+            required
+          >
+            <option
+              value=""
+              disabled
+              selected
+              >Selecciona un departamento</option
+            >
+            <option value="comercial">Comercial</option>
+            <option value="data-center">Data-Center</option>
+            <option value="sistemas">Sistemas</option>
+            <option value="redes">Redes</option>
+            <option value="telefonia-ip">Telefonía IP</option>
+            <option value="instalaciones">Instalaciones</option>
+            <option value="odoo">Odoo</option>
+            <option value="aplicaciones">Aplicaciones</option>
+            <option value="desarrollo-web">Desarrollo Web</option>
+            <option value="seo-marketing">Seo & Marketing</option>
+          </select>
+
+          <input
+            type="text"
+            class="w-full bg-white text-black placeholder-gray-600 rounded-[5px] p-2 outline-none h-11"
+            placeholder="Nombre Completo"
+            required
+          />
+
+          <div class="flex gap-4">
+            <input
+              type="email"
+              class="w-full bg-white text-black placeholder-gray-600 rounded-[5px] p-2 outline-none h-11"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="tel"
+              class="w-full bg-white text-black placeholder-gray-600 rounded-[5px] p-2 outline-none h-11"
+              placeholder="Teléfono"
+            />
+          </div>
+
+          <textarea
+            class="w-full bg-white text-black placeholder-gray-600 rounded-[5px] p-2 outline-none h-[90px] resize-none"
+            placeholder="Escribe tu consulta..."
+            required
+          ></textarea>
+
+          <label class="flex items-center gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              class="w-5 h-5 ml-2 accent-[#b60000]"
+              required
+            />
+            <span class="text-sm">
+              He leído y acepto la <a
+                href="/politica-privacidad"
+                class="font-bold hover:text-[#b60000]"
+                >Política de Privacidad</a
+              >
+            </span>
+          </label>
+
+          <button
+            type="submit"
+            class="mt-2 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black text-white"
+            >ENVIAR 🡢</button
+          >
+        </form>
+      </div>
+      <div
+        class=`p-8 flex flex-col items-start justify-between w-1/2 h-110 ${glassbox}`
+      >
+        <div class="flex flex-col items-start justify-start gap-3">
+          <a
+            href="https://www.google.com/maps/place/Avannubo/@41.3954143,2.185411,851m/data=!3m2!1e3!4b1!4m6!3m5!1s0x12a4a393d5d57323:0xc3e6ea8466d2ecd6!8m2!3d41.3954103!4d2.1879859!16s%2Fg%2F11ykhqxgb4?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 py-1 px-3 rounded-[5px] transition-all duration-300 ease-in-out hover:translate-x-[2px] hover:bg-[#b60000]"
+          >
+            <Icon
+              name="tabler:map-pin"
+              class="text-2xl"
+            />
+            <h3 class="text-xl">C/ Almogávers 80, Barcelona, 0818</h3>
+          </a>
+          <a
+            href="mailto:comercial@avannubo.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 py-1 px-3 rounded-[5px] transition-all duration-300 ease-in-out hover:translate-x-[2px] hover:bg-[#b60000]"
+          >
+            <Icon
+              name="tabler:mail"
+              class="text-2xl"
+            />
+            <h3 class="text-xl">comercial@avannubo.com</h3>
+          </a>
+          <a
+            href="tel:0034915981444"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 py-1 px-3 rounded-[5px] transition-all duration-300 ease-in-out hover:translate-x-[2px] hover:bg-[#b60000]"
+          >
+            <Icon
+              name="tabler:headset"
+              class="text-2xl"
+            />
+            <h3 class="text-xl">+34 915 98 14 44</h3>
+          </a>
+          <a
+            href="tel:0034932432510"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 py-1 px-3 rounded-[5px] transition-all duration-300 ease-in-out hover:translate-x-[2px] hover:bg-[#b60000]"
+          >
+            <Icon
+              name="tabler:headset"
+              class="text-2xl"
+            />
+            <h3 class="text-xl">+34 932 43 25 10</h3>
+          </a>
+        </div>
+        <div class="flex flex-row w-full items-center justify-end gap-3">
+          <a
+            href="https://www.linkedin.com/company/avannubo/"
+            target="_blank"
+            class="text-4xl p-2 rounded-[5px] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[#b60000]"
+            ><Icon name="tabler:brand-linkedin" /></a
+          >
+          <a
+            href="https://www.facebook.com/avannubo"
+            target="_blank"
+            class="text-4xl p-2 rounded-[5px] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[#b60000]"
+            ><Icon name="tabler:brand-x" /></a
+          >
+          <a
+            href="https://www.instagram.com/avannubo/"
+            target="_blank"
+            class="text-4xl p-2 rounded-[5px] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[#b60000]"
+            ><Icon name="tabler:brand-instagram" /></a
+          >
+          <a
+            href="https://www.youtube.com/avannubo/"
+            target="_blank"
+            class="text-4xl p-2 rounded-[5px] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[#b60000]"
+            ><Icon name="tabler:brand-youtube" /></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>;
+</BaseLayout>

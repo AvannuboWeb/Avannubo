@@ -1,132 +1,56 @@
 ---
 import { Icon } from "astro-icon/components";
 
+const glass = "bg-[rgba(120,120,120,0.5)] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[30px]";
+
 const links = [
   { href: "/politica-privacidad", label: "PRIVACIDAD" },
   { href: "/politica-cookies", label: "COOKIES" },
   { href: "/aviso-legal", label: "AVISO LEGAL" },
   { href: "/accesibilidad", label: "ACCESIBILIDAD" },
-  { href: "/politica-calidad", label: "CALIDAD" },
+  { href: "/politica-calidad", label: "CALIDAD" }
 ];
 
 const socials = [
   { name: "tabler:brand-instagram", href: "#" },
   { name: "tabler:brand-youtube", href: "#" },
   { name: "tabler:brand-x", href: "#" },
-  { name: "tabler:brand-linkedin", href: "#" },
+  { name: "tabler:brand-linkedin", href: "#" }
 ];
 
 const certs = ["/9001.png", "/27001.png", "/ENS.png"];
 ---
 
-<footer class="footer">
-  <div class="footer_top glass"></div>
-  <div class="footer_bottom">
-    <div class="footer_column footer_column--fill flex items-center justify-center glass">
-      <a href="/">
-        <img src="/Logo-Avannubo-grande.png" alt="Avannubo" class="w-[500px]">
+<footer class="relative z-10 flex w-full flex-col gap-2.5 p-2.5">
+  <div class={`h-[100px] w-full rounded-[5px] ${glass}`}></div>
+  <div class="flex h-[32vh] w-full flex-row gap-2.5">
+    <div class={`flex h-full flex-[1_1_auto] items-center justify-center rounded-[5px] ${glass}`}>
+      <a href="/" aria-label="Avannubo">
+        <img src="/Logo-Avannubo-grande.png" alt="Avannubo" class="h-auto w-[500px]" />
       </a>
     </div>
-    <div class="footer_column footer_column--small">
+
+    <div class="flex h-full basis-[8vh] flex-col gap-2.5 rounded-[5px]">
       {socials.map((social) => (
-        <a href={social.href} class="footer_social glass bg-red-y">
-          <Icon name={social.name} class="footer_social-icon" />
+        <a href={social.href} class={`flex min-h-0 flex-[1_1_0] items-center justify-center rounded-[5px] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[#b60000] ${glass}`} aria-label={social.name}>
+          <Icon name={social.name} class="h-[30px] w-[30px] text-white" />
         </a>
       ))}
     </div>
-    <div class="footer_column footer_column--medium glass flex flex-col items-center justify-center gap-4">
+
+    <nav class={`flex h-full basis-[300px] flex-col items-center justify-center gap-4 rounded-[5px] ${glass}`} aria-label="Legal">
       {links.map((link) => (
-        <a href={link.href} class="text-lg titulo-footer">{link.label}</a>
+        <a href={link.href} class="rounded-[5px] px-2.5 py-1 text-lg leading-none transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[#b60000]">{link.label}</a>
       ))}
-    </div>
-    <div class="footer_column footer_column--large glass flex flex-col items-center justify-center gap-4">
+    </nav>
+
+    <div class={`flex h-full basis-[420px] flex-col items-center justify-center gap-4 rounded-[5px] ${glass}`}>
       <div class="flex flex-row items-center justify-center gap-2.5">
         {certs.map((cert) => (
-          <img src={cert} alt={cert.split("/")[1]} class="h-auto w-20">
+          <img src={cert} alt={cert.split("/")[1]} class="h-auto w-20" />
         ))}
       </div>
-      <img src="/CNMC_logo.webp" alt="CNMC" class="h-auto w-62">
+      <img src="/CNMC_logo.webp" alt="CNMC" class="h-auto w-[248px]" />
     </div>
   </div>
 </footer>
-
-<style>
-  .glass {
-    background: rgba(120, 120, 120, 0.5);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-  }
-
-  .footer {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    padding: 10px;
-  }
-
-  .footer_top {
-    width: 100%;
-    height: 100px;
-    border-radius: 5px;
-  }
-
-  .footer_bottom {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    width: 100%;
-    height: 32vh;
-  }
-
-  .footer_column {
-    height: 100%;
-    border-radius: 5px;
-  }
-
-  .footer_column--fill { flex: 1 1 auto; }
-
-  .footer_column--small {
-    flex: 0 0 8vh;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer_column--medium { flex: 0 0 300px; }
-
-  .footer_column--large { flex: 0 0 420px; }
-
-  .footer_social {
-    flex: 1 1 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 0;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-  }
-
-  .footer_social:hover { transform: translateY(-2px); }
-
-  .footer_social-icon {
-    width: 30px;
-    height: 30px;
-    color: #fff;
-  }
-
-  .titulo-footer {
-    padding: 4px 10px;
-    line-height: 1;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-  }
-
-  .titulo-footer:hover {
-    background-color: #b60000;
-    transform: translateY(-2px);
-  }
-</style>
