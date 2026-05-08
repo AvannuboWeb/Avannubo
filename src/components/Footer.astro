@@ -19,10 +19,61 @@ const socials = [
 ];
 
 const certs = ["/9001.png", "/27001.png", "/ENS.png"];
+
+const footerLogos = [
+  "Ads.webp",
+  "Analytics.webp",
+  "Cisco.webp",
+  "Citrix.webp",
+  "css-scaled.webp",
+  "docker.webp",
+  "ESET.webp",
+  "figma.webp",
+  "Fortinet.webp",
+  "html-scaled.webp",
+  "js.webp",
+  "laravel.webp",
+  "livewire.webp",
+  "m365.webp",
+  "microsoft-silver.webp",
+  "miro.webp",
+  "Netgear.webp",
+  "netspot.webp",
+  "next.webp",
+  "nmap.webp",
+  "Node.webp",
+  "odoo.png",
+  "php.webp",
+  "Plesk.webp",
+  "python.webp",
+  "React-1.webp",
+  "semrush-scaled.webp",
+  "Sophos.webp",
+  "Ubiquiti.webp",
+  "unifi.webp",
+  "Veeam-scaled.webp",
+  "Visio.webp",
+  "Vmware.webp",
+  "wireshark.webp",
+  "Zabbix.webp",
+];
 ---
 
 <footer class="relative z-10 flex w-full flex-col gap-2.5 p-2.5">
-  <div class={`h-[100px] w-full rounded-[5px] ${glass}`}></div>
+  <div class={`overflow-hidden rounded-[5px] ${glass}`}>
+    <div
+      class="js-footer-marquee flex h-[120px] w-max flex-row items-center gap-12 px-6"
+      aria-label="Tecnologías y partners"
+    >
+      {[...footerLogos, ...footerLogos].map((logo) => (
+        <img
+          src={`/footer/${logo}`}
+          alt={logo.replace(/\.[^/.]+$/, "").replaceAll("-", " ")}
+          class="h-[80px] w-[120px] shrink-0 object-contain"
+        />
+      ))}
+    </div>
+  </div>
   <div class="flex h-[32vh] w-full flex-row gap-2.5">
     <div class={`flex h-full flex-[1_1_auto] items-center justify-center rounded-[5px] ${glass}`}>
       <a href="/" aria-label="Avannubo">
@@ -54,3 +105,24 @@ const certs = ["/9001.png", "/27001.png", "/ENS.png"];
     </div>
   </div>
 </footer>
+
+<script>
+  import gsap from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const marquee = document.querySelector<HTMLElement>(".js-footer-marquee");
+
+    if (!marquee) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion) return;
+
+    gsap.to(marquee, {
+      xPercent: -50,
+      duration: 38,
+      ease: "none",
+      repeat: -1,
+    });
+  });
+</script>
