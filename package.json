@@ -14,6 +14,7 @@
   "dependencies": {
     "@iconify-json/lucide": "^1.2.104",
     "@iconify-json/tabler": "^1.2.33",
+    "@lottiefiles/dotlottie-wc": "^0.9.14",
     "@tailwindcss/vite": "^4.2.4",
     "astro": "^5.18.1",
     "astro-icon": "^1.1.5",

@@ -1,5 +1,172 @@
 ﻿---
-import PageView from "../components/PageView.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const glassbox =
+  'overflow-hidden rounded-[5px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
 ---
 
-<PageView title="Asistencia Remota" />
+<BaseLayout
+  title="Asistencia Remota"
+  mainClass="relative z-10 w-full p-0"
+>
+  <div
+    class="w-full flex flex-col items-center justify-start gap-4 pt-30 pb-20"
+  >
+    <h1 class="text-7xl font-bold text-center mb-4">Asistencia Remota</h1>
+    <h2 class="mb-2 text-3xl font-normal leading-[1.2]">
+      ¡Te ayudamos a distancia!
+    </h2>
+    <h2 class="mb-4 text-3xl text-center font-normal leading-[1.2] w-325">
+      Contacta con nosotros y nos conectaremos a tu dispositivo para ayudarte a
+      solucionar cualquier urgencia de la forma más rápida posible.
+    </h2>
+    <div class="flex flex-row items-center justify-center w-350 gap-8 p-10">
+      <div class="p-8 flex flex-col items-center justify-center gap-4 w-100">
+        <dotlottie-wc
+          src="https://lottie.host/533d7856-ce7e-4f9e-b24e-cde6a99a4305/OBrKeVCZtl.json"
+          autoplay
+          loop
+          class="w-170 h-170 -mt-40 -mb-40 -ml-50"
+        >
+        </dotlottie-wc>
+      </div>
+      <div
+        class=`pt-2 px-8 pb-8 flex flex-col items-center justify-center w-100 h-60 -mt-20 ${glassbox}`
+      >
+        <div id="isl-connectbox"></div>
+      </div>
+    </div>
+  </div>;
+</BaseLayout>
+
+<style is:global>
+  #isl-connectbox .m-t-100 {
+    margin-top: 0px !important;
+    color: white !important;
+  }
+
+  #isl-connectbox .m-b-10 {
+    margin-bottom: 0px !important;
+    color: white !important;
+  }
+
+  #isl-connectbox #desktopTemplate {
+    color: white !important;
+  }
+
+  #isl-connectbox #thank-you-page {
+    text-align: center !important;
+  }
+
+  #isl-connectbox .input-join {
+    text-align: center !important;
+    border-radius: 5px !important;
+  }
+
+  #isl-connectbox .session-title {
+    margin-top: 0 !important;
+    text-align: center !important;
+    color: white !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 22px !important;
+  }
+
+  #isl-connectbox #btn-isl-join {
+    font-family: 'Poppins', sans-serif !important;
+    color: white !important;
+    text-transform: uppercase !important;
+    border: none !important;
+    background-color: #b60000 !important;
+    border-radius: 5px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    padding: 10px 82px !important;
+    margin-top: -10px !important;
+  }
+
+  #isl-connectbox #btn-isl-join:hover {
+    background-color: black !important;
+  }
+
+  #isl-connectbox #islonline-download-pointer {
+    display: none !important;
+  }
+
+  #isl-connectbox #thank-you-page h2 {
+    color: white !important;
+  }
+
+  #isl-connectbox #session-info-box p {
+    color: white !important;
+  }
+
+  #isl-connectbox #session-info-box a {
+    color: #b60000 !important;
+  }
+
+  #isl-connectbox #session-info-box .join-warning {
+    color: white !important;
+  }
+
+  #isl-connectbox #session-info-box .jjoin-another-session a {
+    color: #b60000 !important;
+  }
+
+  #isl-connectbox input,
+  #isl-connectbox select,
+  #isl-connectbox textarea {
+    background: white !important;
+    color: black !important;
+    border-radius: 5px !important;
+    padding: 8px !important;
+    outline: none !important;
+    border: 1px solid #ccc !important;
+  }
+
+  #isl-connectbox input::placeholder {
+    color: #666 !important;
+  }
+
+  #isl-connectbox label {
+    color: white !important;
+  }
+
+  @media (max-width: 767px) {
+    #isl-connectbox .session-title {
+      font-family: 'Poppins', sans-serif !important;
+      font-size: 20px !important;
+      margin-top: 10px !important;
+      margin-bottom: -10px !important;
+    }
+    #isl-connectbox #btn-isl-join {
+      margin-top: -10px !important;
+    }
+  }
+</style>
+
+<script>
+  import('@lottiefiles/dotlottie-wc');
+</script>
+
+<script
+  is:inline
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"
+></script>
+<script
+  is:inline
+  src="https://www.islonline.com/static/v7/scripts/islonline-join.jquery.min.js"
+></script>
+
+<script is:inline>
+  $(document).ready(function () {
+    $('#isl-connectbox').ISLOnlineJoin({
+      serverUrl: 'https://remoto.avancemgrup.com/',
+      languageCode: 'es',
+      minimal: true,
+    });
+  });
+</script>
