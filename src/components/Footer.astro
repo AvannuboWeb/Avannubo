@@ -1,61 +1,62 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 
-const glass = "bg-[rgba(120,120,120,0.5)] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[30px]";
+const glass =
+  'bg-[rgba(120,120,120,0.5)] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[30px]';
 
 const links = [
-  { href: "/politica-privacidad", label: "PRIVACIDAD" },
-  { href: "/politica-cookies", label: "COOKIES" },
-  { href: "/aviso-legal", label: "AVISO LEGAL" },
-  { href: "/accesibilidad", label: "ACCESIBILIDAD" },
-  { href: "/politica-calidad", label: "CALIDAD" }
+  { href: '/politica-privacidad', label: 'PRIVACIDAD' },
+  { href: '/politica-cookies', label: 'COOKIES' },
+  { href: '/aviso-legal', label: 'AVISO LEGAL' },
+  { href: '/accesibilidad', label: 'ACCESIBILIDAD' },
+  { href: '/politica-calidad', label: 'CALIDAD' },
 ];
 
 const socials = [
-  { name: "tabler:brand-instagram", href: "#" },
-  { name: "tabler:brand-youtube", href: "#" },
-  { name: "tabler:brand-x", href: "#" },
-  { name: "tabler:brand-linkedin", href: "#" }
+  { name: 'tabler:brand-instagram', href: '#' },
+  { name: 'tabler:brand-youtube', href: '#' },
+  { name: 'tabler:brand-x', href: '#' },
+  { name: 'tabler:brand-linkedin', href: '#' },
 ];
 
-const certs = ["/9001.png", "/27001.png", "/ENS.png"];
+const certs = ['/9001.png', '/27001.png', '/ENS.png'];
 
 const footerLogos = [
-  "Ads.webp",
-  "Analytics.webp",
-  "Cisco.webp",
-  "Citrix.webp",
-  "css-scaled.webp",
-  "docker.webp",
-  "ESET.webp",
-  "figma.webp",
-  "Fortinet.webp",
-  "html-scaled.webp",
-  "js.webp",
-  "laravel.webp",
-  "livewire.webp",
-  "m365.webp",
-  "microsoft-silver.webp",
-  "miro.webp",
-  "Netgear.webp",
-  "netspot.webp",
-  "next.webp",
-  "nmap.webp",
-  "Node.webp",
-  "odoo.png",
-  "php.webp",
-  "Plesk.webp",
-  "python.webp",
-  "React-1.webp",
-  "semrush-scaled.webp",
-  "Sophos.webp",
-  "Ubiquiti.webp",
-  "unifi.webp",
-  "Veeam-scaled.webp",
-  "Visio.webp",
-  "Vmware.webp",
-  "wireshark.webp",
-  "Zabbix.webp",
+  'Ads.webp',
+  'Analytics.webp',
+  'Cisco.webp',
+  'Citrix.webp',
+  'css-scaled.webp',
+  'docker.webp',
+  'ESET.webp',
+  'figma.webp',
+  'Fortinet.webp',
+  'html-scaled.webp',
+  'js.webp',
+  'laravel.webp',
+  'livewire.webp',
+  'm365.webp',
+  'microsoft-silver.webp',
+  'miro.webp',
+  'Netgear.webp',
+  'netspot.webp',
+  'next.webp',
+  'nmap.webp',
+  'Node.webp',
+  'odoo.png',
+  'php.webp',
+  'Plesk.webp',
+  'python.webp',
+  'React-1.webp',
+  'semrush-scaled.webp',
+  'Sophos.webp',
+  'Ubiquiti.webp',
+  'unifi.webp',
+  'Veeam-scaled.webp',
+  'Visio.webp',
+  'Vmware.webp',
+  'wireshark.webp',
+  'Zabbix.webp',
 ];
 ---
 
@@ -65,63 +66,107 @@ const footerLogos = [
       class="js-footer-marquee flex h-[120px] w-max flex-row items-center gap-12 px-6"
       aria-label="Tecnologías y partners"
     >
-      {[...footerLogos, ...footerLogos].map((logo) => (
-        <img
-          src={`/footer/${logo}`}
-          alt={logo.replace(/\.[^/.]+$/, "").replaceAll("-", " ")}
-          class="h-[80px] w-[120px] shrink-0 object-contain"
-        />
-      ))}
+      {
+        [...footerLogos, ...footerLogos].map((logo) => (
+          <img
+            src={`/footer/${logo}`}
+            alt={logo.replace(/\.[^/.]+$/, '').replaceAll('-', ' ')}
+            class="h-[35px] w-[120px] shrink-0 object-contain"
+          />
+        ))
+      }
     </div>
   </div>
   <div class="flex h-[32vh] w-full flex-row gap-2.5">
-    <div class={`flex h-full flex-[1_1_auto] items-center justify-center rounded-[5px] ${glass}`}>
-      <a href="/" aria-label="Avannubo">
-        <img src="/Logo-Avannubo-grande.png" alt="Avannubo" class="h-auto w-[500px]" />
+    <div
+      class={`flex h-full flex-[1_1_auto] items-center justify-center rounded-[5px] ${glass}`}
+    >
+      <a
+        href="/"
+        aria-label="Avannubo"
+      >
+        <img
+          src="/Logo-Avannubo-grande.png"
+          alt="Avannubo"
+          class="h-auto w-[500px]"
+        />
       </a>
     </div>
 
     <div class="flex h-full basis-[8vh] flex-col gap-2.5 rounded-[5px]">
-      {socials.map((social) => (
-        <a href={social.href} class={`flex min-h-0 flex-[1_1_0] items-center justify-center rounded-[5px] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[#b60000] ${glass}`} aria-label={social.name}>
-          <Icon name={social.name} class="h-[30px] w-[30px] text-white" />
-        </a>
-      ))}
+      {
+        socials.map((social) => (
+          <a
+            href={social.href}
+            class={`flex min-h-0 flex-[1_1_0] items-center justify-center rounded-[5px] transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[#b60000] ${glass}`}
+            aria-label={social.name}
+          >
+            <Icon
+              name={social.name}
+              class="h-[30px] w-[30px] text-white"
+            />
+          </a>
+        ))
+      }
     </div>
 
-    <nav class={`flex h-full basis-[300px] flex-col items-center justify-center gap-4 rounded-[5px] ${glass}`} aria-label="Legal">
-      {links.map((link) => (
-        <a href={link.href} class="rounded-[5px] px-2.5 py-1 text-lg leading-none transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[#b60000]">{link.label}</a>
-      ))}
+    <nav
+      class={`flex h-full basis-[300px] flex-col items-center justify-center gap-4 rounded-[5px] ${glass}`}
+      aria-label="Legal"
+    >
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-[5px] px-2.5 py-1 text-lg leading-none transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[#b60000]"
+          >
+            {link.label}
+          </a>
+        ))
+      }
     </nav>
 
-    <div class={`flex h-full basis-[420px] flex-col items-center justify-center gap-4 rounded-[5px] ${glass}`}>
+    <div
+      class={`flex h-full basis-[420px] flex-col items-center justify-center gap-4 rounded-[5px] ${glass}`}
+    >
       <div class="flex flex-row items-center justify-center gap-2.5">
-        {certs.map((cert) => (
-          <img src={cert} alt={cert.split("/")[1]} class="h-auto w-20" />
-        ))}
+        {
+          certs.map((cert) => (
+            <img
+              src={cert}
+              alt={cert.split('/')[1]}
+              class="h-auto w-20"
+            />
+          ))
+        }
       </div>
-      <img src="/CNMC_logo.webp" alt="CNMC" class="h-auto w-[248px]" />
+      <img
+        src="/CNMC_logo.webp"
+        alt="CNMC"
+        class="h-auto w-[248px]"
+      />
     </div>
   </div>
 </footer>
 
 <script>
-  import gsap from "gsap";
+  import gsap from 'gsap';
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const marquee = document.querySelector<HTMLElement>(".js-footer-marquee");
+  document.addEventListener('DOMContentLoaded', () => {
+    const marquee = document.querySelector<HTMLElement>('.js-footer-marquee');
 
     if (!marquee) return;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
 
     if (reduceMotion) return;
 
     gsap.to(marquee, {
       xPercent: -50,
       duration: 38,
-      ease: "none",
+      ease: 'none',
       repeat: -1,
     });
   });
