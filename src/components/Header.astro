@@ -219,24 +219,135 @@ const columnThreeItems = [
 <a
   href="tel:+000000000"
   aria-label="Llamar"
-  class="fixed bottom-2.5 right-2.5 z-[980] flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
+  class="fixed bottom-2.5 right-2.5 z-[980] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
 >
   <Icon
     name="tabler:phone"
-    class="h-5 w-5 text-white"
+    class="h-6 w-6 text-white"
   />
 </a>
 
-<a
-  href="mailto:correo@ejemplo.com"
+<button
+  type="button"
+  id="contact-popup-toggle"
   aria-label="Enviar correo"
-  class="fixed bottom-2.5 right-[65px] z-[980] flex h-[45px] w-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
+  aria-haspopup="dialog"
+  aria-expanded="false"
+  class="fixed bottom-2.5 right-[70px] z-[980] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-md border-0 bg-[#b60000] p-0 shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
 >
   <Icon
     name="tabler:mail"
-    class="h-5 w-5 text-white"
+    class="h-6 w-6 text-white"
+  />
+</button>
+<a
+  href="mailto:correo@ejemplo.com"
+  aria-label="Enviar correo"
+  class="fixed bottom-2.5 right-[130px] z-[980] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
+>
+  <Icon
+    name="tabler:brand-line"
+    class="h-6 w-6 text-white"
   />
 </a>
+
+<div
+  id="contact-popup"
+  class="pointer-events-none fixed bottom-[65px] right-[70px] z-[1000] w-[min(420px,calc(100vw-20px))] translate-y-3 opacity-0 transition-all duration-300 ease-in-out"
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="contact-popup-title"
+  aria-hidden="true"
+>
+  <div
+    id="contact-popup-panel"
+    class={`relative flex flex-col items-center justify-center gap-4 rounded-[5px] p-6 ${glass}`}
+  >
+    <button
+      type="button"
+      id="contact-popup-close"
+      aria-label="Cerrar formulario"
+      class="absolute right-2 top-2 flex h-9 w-9 cursor-pointer items-center justify-center rounded-[5px] border-0 bg-[#b60000] p-0 text-white transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black"
+    >
+      <Icon
+        name="tabler:x"
+        class="h-5 w-5"
+      />
+    </button>
+
+    <form class="mt-8 flex w-full flex-col gap-4">
+      <select
+        class="h-11 w-full rounded-[5px] bg-white p-2 text-black placeholder-gray-600 outline-none"
+        required
+      >
+        <option
+          value=""
+          disabled
+          selected
+          >Selecciona un departamento</option
+        >
+        <option value="comercial">Comercial</option>
+        <option value="data-center">Data-Center</option>
+        <option value="sistemas">Sistemas</option>
+        <option value="redes">Redes</option>
+        <option value="telefonia-ip">Telefonía IP</option>
+        <option value="instalaciones">Instalaciones</option>
+        <option value="odoo">Odoo</option>
+        <option value="aplicaciones">Aplicaciones</option>
+        <option value="desarrollo-web">Desarrollo Web</option>
+        <option value="seo-marketing">Seo & Marketing</option>
+      </select>
+
+      <input
+        type="text"
+        class="h-11 w-full rounded-[5px] bg-white p-2 text-black placeholder-gray-600 outline-none"
+        placeholder="Nombre Completo"
+        required
+      />
+
+      <div class="flex gap-4">
+        <input
+          type="email"
+          class="h-11 w-full rounded-[5px] bg-white p-2 text-black placeholder-gray-600 outline-none"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="tel"
+          class="h-11 w-full rounded-[5px] bg-white p-2 text-black placeholder-gray-600 outline-none"
+          placeholder="Teléfono"
+        />
+      </div>
+
+      <textarea
+        class="h-[90px] w-full resize-none rounded-[5px] bg-white p-2 text-black placeholder-gray-600 outline-none"
+        placeholder="Escribe tu consulta..."
+        required
+      ></textarea>
+
+      <label class="flex cursor-pointer items-center gap-3">
+        <input
+          type="checkbox"
+          class="ml-2 h-5 w-5 accent-[#b60000]"
+          required
+        />
+        <span class="text-sm">
+          He leído y acepto la <a
+            href="/politica-privacidad"
+            class="font-bold hover:text-[#b60000]"
+            >Política de Privacidad</a
+          >
+        </span>
+      </label>
+
+      <button
+        type="submit"
+        class="mt-2 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] px-4 py-3 leading-none text-white transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black"
+        >ENVIAR 🡢</button
+      >
+    </form>
+  </div>
+</div>
 
 <div
   class={`fixed -top-[100vh] left-0 z-[990] flex h-full w-full flex-col p-2.5 transition-[top] duration-300 ease-in-out ${glassback}`}
@@ -326,6 +437,10 @@ const columnThreeItems = [
   const burgerTop = document.querySelector('[data-burger-line="top"]');
   const burgerMiddle = document.querySelector('[data-burger-line="middle"]');
   const burgerBottom = document.querySelector('[data-burger-line="bottom"]');
+  const contactPopupToggle = document.querySelector('#contact-popup-toggle');
+  const contactPopup = document.querySelector('#contact-popup');
+  const contactPopupPanel = document.querySelector('#contact-popup-panel');
+  const contactPopupClose = document.querySelector('#contact-popup-close');
 
   const setMenuState = (isOpen) => {
     menu?.classList.toggle('top-0', isOpen);
@@ -355,6 +470,57 @@ const columnThreeItems = [
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
         toggleMenu();
+      }
+    });
+  }
+
+  const setContactPopupState = (isOpen) => {
+    if (!contactPopup || !contactPopupToggle || !contactPopupPanel) return;
+
+    contactPopup.classList.toggle('translate-y-0', isOpen);
+    contactPopup.classList.toggle('translate-y-3', !isOpen);
+    contactPopup.classList.toggle('opacity-100', isOpen);
+    contactPopup.classList.toggle('opacity-0', !isOpen);
+    contactPopup.classList.toggle('pointer-events-auto', isOpen);
+    contactPopup.classList.toggle('pointer-events-none', !isOpen);
+    contactPopup.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    contactPopupToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+    if (isOpen) {
+      contactPopupClose?.focus();
+    }
+  };
+
+  if (contactPopupToggle && contactPopup && contactPopupClose) {
+    contactPopupToggle.addEventListener('click', () => {
+      const isOpen = contactPopup.getAttribute('aria-hidden') === 'false';
+      setContactPopupState(!isOpen);
+    });
+
+    contactPopupClose.addEventListener('click', () => {
+      setContactPopupState(false);
+    });
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+
+      if (!(target instanceof Node)) return;
+
+      const isOpen = contactPopup.getAttribute('aria-hidden') === 'false';
+      const isOutsidePopup = !contactPopup.contains(target);
+      const isOutsideToggle = !contactPopupToggle.contains(target);
+
+      if (isOpen && isOutsidePopup && isOutsideToggle) {
+        setContactPopupState(false);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (
+        event.key === 'Escape' &&
+        contactPopup.getAttribute('aria-hidden') === 'false'
+      ) {
+        setContactPopupState(false);
       }
     });
   }
