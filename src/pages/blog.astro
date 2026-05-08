@@ -1,5 +1,89 @@
 ﻿---
-import PageView from "../components/PageView.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const glassbox =
+  'overflow-hidden rounded-[5px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
 ---
 
-<PageView title="Avanblog" />
+<BaseLayout
+  title="Blog"
+  mainClass="relative z-10 w-full p-0"
+>
+  <div class="h-screen w-full flex flex-col items-center justify-center gap-4">
+    <h1 class="text-7xl font-bold text-center mb-4">AVANblog</h1>
+    <h2 class="mb-2 text-3xl font-normal leading-[1.2]">
+      Te informamos de las últimas Novedades, Tendencias y Tips del mundo IT
+    </h2>
+    <h2 class="mb-4 text-3xl font-normal leading-[1.2]">
+      ¡Mantente al día con Avannubo!
+    </h2>
+    <div class="flex w-full flex-row items-center justify-center gap-10">
+      <!-- POST 1-->
+      <div
+        class=`h-[60vh] w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
+      >
+        <div class="flex flex-col items-start justify-start gap-3">
+          <p class="py-1 px-3 rounded-full border text-[1.5vh]">Avannubo</p>
+          <img
+            src="/blogimg/Certificacio-ENS-Blog-1024x996.png"
+            alt="AVANNET"
+            class="h-[37vh] w-full rounded-[5px] object-cover"
+          />
+          <h3 class="text-[2.3vh] leading-[1.15]">
+            Avannubo alcanza la Certificación en el Esquema Nacional de
+            Seguridad (ENS)
+          </h3>
+        </div>
+        <a
+          href="/contacto"
+          class="px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out hover:bg-[#b60000] hover:translate-x-[2px]"
+          >LEER MÁS 🡢</a
+        >
+      </div>
+      <!-- POST 2 -->
+      <div
+        class=`h-[60vh] w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
+      >
+        <div class="flex flex-col items-start justify-start gap-3">
+          <p class="py-1 px-3 rounded-full border text-[1.5vh]">Web</p>
+          <img
+            src="/blogimg/El-Ciber-Riesgo-de-su-Web-se-dispara-con-la-IA-1024x760.png"
+            alt="AVANNET"
+            class="h-[37vh] w-full rounded-[5px] object-cover"
+          />
+          <h3 class="text-[2.3vh] leading-[1.15]">
+            El Ciber-Riesgo de su Web se dispara con la llegadad de la IA
+            Generativa
+          </h3>
+        </div>
+        <a
+          href="/contacto"
+          class="px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out hover:bg-[#b60000] hover:translate-x-[2px]"
+          >LEER MÁS 🡢</a
+        >
+      </div>
+      <!-- POST 3 -->
+      <div
+        class=`h-[60vh] w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
+      >
+        <div class="flex flex-col items-start justify-start gap-3">
+          <p class="py-1 px-3 rounded-full border text-[1.5vh]">Avannubo</p>
+          <img
+            src="/blogimg/CESA-blanes.jpeg"
+            alt="AVANNET"
+            class="h-[37vh] w-full rounded-[5px] object-cover"
+          />
+          <h3 class="text-[2.3vh] leading-[1.15]">
+            Avannubo, partner tecnológico del CESA 2026 en Blanes
+          </h3>
+        </div>
+        <a
+          href="/contacto"
+          class="px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out hover:bg-[#b60000] hover:translate-x-[2px]"
+          >LEER MÁS 🡢</a
+        >
+      </div>
+    </div>
+  </div>;
+</BaseLayout>
