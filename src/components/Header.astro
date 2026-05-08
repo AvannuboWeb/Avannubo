@@ -240,16 +240,19 @@ const columnThreeItems = [
     class="h-6 w-6 text-white"
   />
 </button>
-<a
-  href="mailto:correo@ejemplo.com"
-  aria-label="Enviar correo"
-  class="fixed bottom-2.5 right-[130px] z-[980] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
+<button
+  type="button"
+  id="chat-popup-toggle"
+  aria-label="Abrir chat"
+  aria-haspopup="dialog"
+  aria-expanded="false"
+  class="fixed bottom-2.5 right-[130px] z-[980] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-md border-0 bg-[#b60000] p-0 shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
 >
   <Icon
     name="tabler:brand-line"
     class="h-6 w-6 text-white"
   />
-</a>
+</button>
 
 <div
   id="contact-popup"
@@ -350,6 +353,71 @@ const columnThreeItems = [
 </div>
 
 <div
+  id="chat-popup"
+  class="pointer-events-none fixed bottom-[65px] right-[130px] z-[1000] w-[min(420px,calc(100vw-20px))] translate-y-3 opacity-0 transition-all duration-300 ease-in-out"
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="chat-popup-title"
+  aria-hidden="true"
+>
+  <div
+    id="chat-popup-panel"
+    class={`relative flex min-h-[360px] flex-col justify-between gap-5 rounded-[5px] p-6 ${glass}`}
+  >
+    <button
+      type="button"
+      id="chat-popup-close"
+      aria-label="Cerrar chat"
+      class="absolute right-2 top-2 flex h-9 w-9 cursor-pointer items-center justify-center rounded-[5px] border-0 bg-[#b60000] p-0 text-white transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black"
+    >
+      <Icon
+        name="tabler:x"
+        class="h-5 w-5"
+      />
+    </button>
+
+    <div class="mt-8 flex flex-col gap-3">
+      <div class="flex flex-col items-center justify-center gap-3">
+        <h2
+          id="chat-popup-title"
+          class="m-0 text-2xl font-bold leading-[1.15]"
+        >
+          AVANasistant
+        </h2>
+      </div>
+
+      <div
+        class="flex min-h-[180px] items-center justify-center rounded-[5px] border border-white/20 bg-black/20 p-5 text-center"
+      >
+        <p class="m-0 text-base leading-[1.4] text-white/80">
+          Asistente inteligente de Avannubo.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3 rounded-[5px]">
+      <input
+        type="text"
+        class="h-11 min-w-0 flex-1 rounded-[5px] bg-white p-2 text-black placeholder-gray-600 outline-none"
+        placeholder="Escribe tu mensaje..."
+        disabled
+      />
+      <button
+        type="button"
+        class="flex h-11 w-11 cursor-not-allowed items-center justify-center rounded-[5px] border-0 bg-[#b60000] p-0 text-white opacity-70"
+        aria-label="Enviar mensaje"
+        disabled
+      >
+        <Icon
+          name="tabler:send"
+          class="h-5 w-5"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+
+<div
   class={`fixed -top-[100vh] left-0 z-[990] flex h-full w-full flex-col p-2.5 transition-[top] duration-300 ease-in-out ${glassback}`}
   id="menu"
 >
@@ -441,6 +509,10 @@ const columnThreeItems = [
   const contactPopup = document.querySelector('#contact-popup');
   const contactPopupPanel = document.querySelector('#contact-popup-panel');
   const contactPopupClose = document.querySelector('#contact-popup-close');
+  const chatPopupToggle = document.querySelector('#chat-popup-toggle');
+  const chatPopup = document.querySelector('#chat-popup');
+  const chatPopupPanel = document.querySelector('#chat-popup-panel');
+  const chatPopupClose = document.querySelector('#chat-popup-close');
 
   const setMenuState = (isOpen) => {
     menu?.classList.toggle('top-0', isOpen);
@@ -491,9 +563,28 @@ const columnThreeItems = [
     }
   };
 
+  const setChatPopupState = (isOpen) => {
+    if (!chatPopup || !chatPopupToggle || !chatPopupPanel) return;
+
+    chatPopup.classList.toggle('translate-y-0', isOpen);
+    chatPopup.classList.toggle('translate-y-3', !isOpen);
+    chatPopup.classList.toggle('opacity-100', isOpen);
+    chatPopup.classList.toggle('opacity-0', !isOpen);
+    chatPopup.classList.toggle('pointer-events-auto', isOpen);
+    chatPopup.classList.toggle('pointer-events-none', !isOpen);
+    chatPopup.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    chatPopupToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+    if (isOpen) {
+      chatPopupClose?.focus();
+      setContactPopupState(false);
+    }
+  };
+
   if (contactPopupToggle && contactPopup && contactPopupClose) {
     contactPopupToggle.addEventListener('click', () => {
       const isOpen = contactPopup.getAttribute('aria-hidden') === 'false';
+      if (!isOpen) setChatPopupState(false);
       setContactPopupState(!isOpen);
     });
 
@@ -521,6 +612,40 @@ const columnThreeItems = [
         contactPopup.getAttribute('aria-hidden') === 'false'
       ) {
         setContactPopupState(false);
+      }
+    });
+  }
+
+  if (chatPopupToggle && chatPopup && chatPopupClose) {
+    chatPopupToggle.addEventListener('click', () => {
+      const isOpen = chatPopup.getAttribute('aria-hidden') === 'false';
+      setChatPopupState(!isOpen);
+    });
+
+    chatPopupClose.addEventListener('click', () => {
+      setChatPopupState(false);
+    });
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+
+      if (!(target instanceof Node)) return;
+
+      const isOpen = chatPopup.getAttribute('aria-hidden') === 'false';
+      const isOutsidePopup = !chatPopup.contains(target);
+      const isOutsideToggle = !chatPopupToggle.contains(target);
+
+      if (isOpen && isOutsidePopup && isOutsideToggle) {
+        setChatPopupState(false);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (
+        event.key === 'Escape' &&
+        chatPopup.getAttribute('aria-hidden') === 'false'
+      ) {
+        setChatPopupState(false);
       }
     });
   }
