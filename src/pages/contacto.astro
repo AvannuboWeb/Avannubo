@@ -1,4 +1,4 @@
-﻿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Icon } from 'astro-icon/components';
 
@@ -91,8 +91,11 @@ const glassbox =
 
           <button
             type="submit"
-            class="mt-2 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black text-white"
-            >ENVIAR 🡢</button
+            class="mt-2 inline-flex min-h-[45px] cursor-pointer items-center justify-center gap-2 rounded-md bg-[#b60000] px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black text-white"
+            >ENVIAR <Icon
+              name="tabler:arrow-right"
+              class="h-5 w-5"
+            /></button
           >
         </form>
       </div>
