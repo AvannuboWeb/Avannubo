@@ -24,16 +24,10 @@ const socialItems = [
     icon: 'tabler:brand-instagram',
   },
   {
-    href: 'https://www.youtube.com',
-    label: 'YouTube',
-    icon: 'tabler:brand-youtube',
-  },
-  {
     href: 'https://www.linkedin.com',
     label: 'LinkedIn',
     icon: 'tabler:brand-linkedin',
   },
-  { href: 'https://x.com', label: 'X', icon: 'tabler:brand-x' },
   { href: 'https://maps.google.com', label: 'Mapa', icon: 'tabler:map-pin' },
   {
     href: 'mailto:comercial@avannubo.com',
@@ -58,7 +52,7 @@ const columnOneItems = [
   {
     tag: 'h2',
     className: menuTitleSmall,
-    text: 'CONTRASEÃ‘AS',
+    text: 'CONTRASEÑAS',
     href: '/contrasenas',
   },
   {
@@ -75,7 +69,7 @@ const columnOneItems = [
   {
     tag: 'h2',
     className: menuTitleSmall,
-    text: 'ÃREA CLIENTES',
+    text: 'ÁREA CLIENTES',
     href: '/contacto',
   },
   {
@@ -113,7 +107,7 @@ const columnTwoItems = [
   {
     tag: 'h2',
     className: menuTitleSmall,
-    text: 'AVANMÃ“VIL',
+    text: 'AVANMÓVIL',
     href: '/avanmovil',
   },
   {
@@ -122,7 +116,7 @@ const columnTwoItems = [
     text: 'AVANFIBRA',
     href: '/avanfibra',
   },
-  { tag: 'h2', className: menuTitleSmall, text: 'CATÃLOGO', href: '/catalogo' },
+  { tag: 'h2', className: menuTitleSmall, text: 'CATÁLOGO', href: '/catalogo' },
   {
     tag: 'h3',
     className: 'm-0 mt-[2vh] text-base font-normal leading-[1.2]',
@@ -143,7 +137,7 @@ const columnThreeItems = [
   { text: 'DATA-CENTER', href: '/data-center' },
   { text: 'SISTEMAS', href: '/sistemas' },
   { text: 'REDES', href: '/redes' },
-  { text: 'TELEFONÃA IP', href: '/telefonia' },
+  { text: 'TELEFONÍA IP', href: '/telefonia' },
   { text: 'INSTALACIONES', href: '/instalaciones' },
   { text: 'ODOO', href: '/odoo' },
   { text: 'APLICACIONES', href: '/aplicaciones' },
@@ -302,7 +296,7 @@ const columnThreeItems = [
         <option value="data-center">Data-Center</option>
         <option value="sistemas">Sistemas</option>
         <option value="redes">Redes</option>
-        <option value="telefonia-ip">TelefonÃ­a IP</option>
+        <option value="telefonia-ip">Telefonía IP</option>
         <option value="instalaciones">Instalaciones</option>
         <option value="odoo">Odoo</option>
         <option value="aplicaciones">Aplicaciones</option>
@@ -313,7 +307,7 @@ const columnThreeItems = [
       <input
         type="text"
         class="h-11 w-full rounded-[5px] bg-white p-2 text-black placeholder-gray-600 outline-none"
-        placeholder="Nombre Completo"
+        placeholder="Nombre completo"
         required
       />
 
@@ -327,7 +321,7 @@ const columnThreeItems = [
         <input
           type="tel"
           class="h-11 w-full rounded-[5px] bg-white p-2 text-black placeholder-gray-600 outline-none"
-          placeholder="TelÃ©fono"
+          placeholder="Teléfono"
         />
       </div>
 
@@ -344,10 +338,10 @@ const columnThreeItems = [
           required
         />
         <span class="text-sm">
-          He leÃ­do y acepto la <a
+          He leí­do y acepto la <a
             href="/politica-privacidad"
             class="font-bold hover:text-[#b60000]"
-            >PolÃ­tica de Privacidad</a
+            >Polí­tica de Privacidad</a
           >
         </span>
       </label>
@@ -366,7 +360,7 @@ const columnThreeItems = [
 
 <div
   id="chat-popup"
-  class="pointer-events-none fixed bottom-[65px] right-[130px] z-[1000] w-[min(420px,calc(100vw-20px))] translate-y-3 opacity-0 transition-all duration-300 ease-in-out"
+  class="pointer-events-none fixed bottom-[65px] right-[130px] z-[1000] w-[min(420px,calc(100vw-20px))] translate-y-3 opacity-0 transition-all duration-300 ease-in-out max-sm:right-2.5"
   role="dialog"
   aria-modal="false"
   aria-labelledby="chat-popup-title"
@@ -374,7 +368,7 @@ const columnThreeItems = [
 >
   <div
     id="chat-popup-panel"
-    class={`relative flex min-h-[360px] flex-col justify-between gap-5 rounded-[5px] p-6 ${glassocial}`}
+    class={`relative flex h-[min(600px,calc(100vh-85px))] min-h-[430px] flex-col overflow-hidden rounded-[5px] ${glassocial}`}
   >
     <button
       type="button"
@@ -388,46 +382,77 @@ const columnThreeItems = [
       />
     </button>
 
-    <div class="mt-8 flex flex-col gap-3">
-      <div class="flex flex-col items-center justify-center gap-3]">
+    <div
+      class="flex items-center gap-3 border-b border-white/15 px-5 py-4 pr-14"
+    >
+      <div
+        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-[5px] bg-[#b60000] text-lg font-bold text-white shadow-[0_0_10px_rgba(0,0,0,0.25)]"
+        aria-hidden="true"
+      >
+        A
+      </div>
+      <div class="min-w-0">
         <h2
           id="chat-popup-title"
-          class="m-0 text-2xl font-bold leading-[1.15]"
+          class="m-0 text-base font-bold leading-tight"
         >
-          AVANassistant
+          Asistente Avannubo
         </h2>
-      </div>
-
-      <div
-        class="flex min-h-[270px] items-center justify-center rounded-[5px] border border-white/20 bg-black/20 p-5 text-center"
-      >
-        <p class="m-0 text-base leading-[1.4] text-white/80">
-          Asistente inteligente de Avannubo.
+        <p
+          class="m-0 flex items-center gap-2 text-xs leading-none text-white/75"
+        >
+          <span class="h-2 w-2 rounded-full bg-[#39d353]"></span>
+          En linea
         </p>
       </div>
     </div>
 
-    <div class="flex items-center gap-3 rounded-[5px]">
-      <input
-        type="text"
-        class="h-11 min-w-0 flex-1 rounded-[5px] bg-white p-2 text-black placeholder-gray-600 outline-none"
-        placeholder="Escribe tu mensaje..."
-        disabled
-      />
-      <button
-        type="button"
-        class="flex h-11 w-11 cursor-not-allowed items-center justify-center rounded-[5px] border-0 bg-[#b60000] p-0 text-white opacity-70"
-        aria-label="Enviar mensaje"
-        disabled
-      >
-        <Icon
-          name="tabler:send"
-          class="h-5 w-5"
-        />
-      </button>
+    <div
+      id="chat-popup-messages"
+      class="chat-scrollbar-hidden flex min-h-0 flex-1 basis-0 flex-col gap-3 overflow-y-auto px-5 py-5"
+      aria-live="polite"
+    >
+    </div>
+
+    <div
+      id="chat-popup-input-area"
+      class="shrink-0 border-t border-white/15 px-4 py-4"
+    >
+      <div class="flex items-end gap-3 rounded-[5px]">
+        <textarea
+          id="chat-popup-input"
+          rows="1"
+          class="max-h-28 min-h-11 min-w-0 flex-1 resize-none rounded-[5px] bg-white p-3 text-sm text-black placeholder-gray-600 outline-none disabled:cursor-not-allowed disabled:bg-white/70 disabled:text-black/50"
+          placeholder="Escribe tu consulta..."
+          disabled
+        ></textarea>
+        <button
+          type="button"
+          id="chat-popup-send"
+          class="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-[5px] border-0 bg-[#b60000] p-0 text-white transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black disabled:cursor-not-allowed disabled:opacity-55 disabled:hover:translate-y-0 disabled:hover:bg-[#b60000]"
+          aria-label="Enviar mensaje"
+          disabled
+        >
+          <Icon
+            name="tabler:send"
+            class="h-5 w-5"
+          />
+        </button>
+      </div>
     </div>
   </div>
 </div>
+
+<style>
+  .chat-scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .chat-scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+</style>
 
 <div
   class={`fixed -top-[100vh] left-0 z-[990] flex h-full w-full flex-col p-2.5 transition-[top] duration-300 ease-in-out ${glassback}`}
@@ -488,7 +513,7 @@ const columnThreeItems = [
     </div>
   </div>
 
-  <div class="grid w-full grid-cols-[51fr_repeat(7,7fr)] gap-2.5">
+  <div class="grid w-full grid-cols-[51fr_repeat(5,5fr)] gap-2.5">
     <a
       href="/contacto"
       aria-label="Contacto"
@@ -537,6 +562,390 @@ const columnThreeItems = [
   const chatPopup = document.querySelector('#chat-popup');
   const chatPopupPanel = document.querySelector('#chat-popup-panel');
   const chatPopupClose = document.querySelector('#chat-popup-close');
+  const chatMessages = document.querySelector('#chat-popup-messages');
+  const chatInput = document.querySelector('#chat-popup-input');
+  const chatSend = document.querySelector('#chat-popup-send');
+
+  const chatSteps = [
+    {
+      id: 'intent',
+      type: 'options',
+      bot: 'Hola. Soy el asistente virtual de Avannubo. En que puedo ayudarte?',
+      opts: [
+        'Tengo una incidencia',
+        'Quiero solicitar un presupuesto',
+        'Necesito informacion',
+        'Quiero hablar con un tecnico',
+      ],
+      delay: 1000,
+    },
+    {
+      id: 'area',
+      type: 'options',
+      bot: 'En que area necesitas ayuda?',
+      opts: [
+        'Data Center',
+        'Sistemas',
+        'Redes',
+        'Telefonia IP',
+        'Instalaciones',
+        'Odoo',
+        'Aplicaciones',
+        'Soluciones Web',
+        'SEO & Marketing',
+        'Otro',
+      ],
+      otherOption: true,
+    },
+    {
+      id: 'description',
+      type: 'textarea',
+      bot: 'Cuentanos brevemente que necesitas',
+      placeholder: 'Escribe tu consulta aqui...',
+      optional: true,
+      delay: 1000,
+    },
+    {
+      id: 'name',
+      type: 'contact_field',
+      field: 'name',
+      inputType: 'text',
+      bot: 'Perfecto. Ahora necesito un par de datos para ponernos en contacto contigo. Como te llamas?',
+      placeholder: 'Tu nombre completo...',
+      validate: (value) => value.length > 0,
+      errorMsg: 'Por favor, dinos tu nombre para continuar.',
+      delay: 2000,
+    },
+    {
+      id: 'company',
+      type: 'contact_field',
+      field: 'company',
+      inputType: 'text',
+      bot: 'Encantado/a, <NAME>. De que empresa nos contactas?',
+      placeholder: 'Nombre de la empresa...',
+      optional: true,
+      delay: 1900,
+    },
+    {
+      id: 'email',
+      type: 'contact_field',
+      field: 'email',
+      inputType: 'email',
+      bot: 'Cual es tu direccion de email?',
+      placeholder: 'correo@empresa.com...',
+      validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+      errorMsg: 'Por favor, introduce un email valido.',
+      delay: 1400,
+    },
+    {
+      id: 'phone',
+      type: 'contact_field',
+      field: 'phone',
+      inputType: 'tel',
+      bot: 'Por ultimo, tienes un telefono de contacto? Si prefieres que te contactemos solo por email, puedes saltarte este paso.',
+      placeholder: '+34 600 000 000...',
+      optional: true,
+      validate: (value) => value === '' || /^\+?[\d\s\-().]{6,20}$/.test(value),
+      errorMsg: 'Por favor, introduce un telefono valido.',
+      sanitize: (value) => value.replace(/[^\d\s+\-().]/g, ''),
+      delay: 1200,
+    },
+  ];
+
+  let chatStep = 0;
+  let chatStarted = false;
+  let activeComposerStep = null;
+  const leadData = {};
+
+  const escapeHtml = (value) => {
+    const div = document.createElement('div');
+    div.appendChild(document.createTextNode(String(value)));
+    return div.innerHTML;
+  };
+
+  const scrollChatBottom = () => {
+    if (!chatMessages) return;
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  };
+
+  const setChatComposerState = ({ enabled, placeholder }) => {
+    if (!(chatInput instanceof HTMLTextAreaElement)) return;
+    if (!(chatSend instanceof HTMLButtonElement)) return;
+
+    chatInput.disabled = !enabled;
+    chatSend.disabled = !enabled;
+    chatInput.placeholder = placeholder;
+
+    if (!enabled) {
+      chatInput.value = '';
+      activeComposerStep = null;
+    }
+  };
+
+  const markComposerError = (message) => {
+    if (!(chatInput instanceof HTMLTextAreaElement)) return;
+
+    chatInput.classList.add('ring-2', 'ring-[#b60000]');
+    chatInput.placeholder = message;
+    chatInput.focus();
+  };
+
+  const addUserBubble = (text) => {
+    if (!chatMessages) return;
+    const row = document.createElement('div');
+    row.className = 'flex justify-end';
+    row.innerHTML =
+      '<div class="max-w-[82%] rounded-[5px] bg-[#b60000] px-3 py-2 text-sm leading-[1.35] text-white shadow-[0_0_10px_rgba(0,0,0,0.18)]">' +
+      escapeHtml(text) +
+      '</div>';
+    chatMessages.appendChild(row);
+    scrollChatBottom();
+  };
+
+  const addBotBubble = (html, delay = 800) =>
+    new Promise((resolve) => {
+      if (!chatMessages) {
+        resolve();
+        return;
+      }
+
+      const typing = document.createElement('div');
+      typing.className = 'flex items-start gap-2';
+      typing.innerHTML =
+        '<div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-[5px] bg-[#b60000] text-xs font-bold text-white">A</div>' +
+        '<div class="flex items-center gap-1 rounded-[5px] bg-white/95 px-3 py-3 text-black shadow-[0_0_10px_rgba(0,0,0,0.18)]">' +
+        '<span class="h-1.5 w-1.5 animate-pulse rounded-full bg-black/45"></span>' +
+        '<span class="h-1.5 w-1.5 animate-pulse rounded-full bg-black/45 [animation-delay:120ms]"></span>' +
+        '<span class="h-1.5 w-1.5 animate-pulse rounded-full bg-black/45 [animation-delay:240ms]"></span>' +
+        '</div>';
+      chatMessages.appendChild(typing);
+      scrollChatBottom();
+
+      window.setTimeout(() => {
+        typing.remove();
+        const row = document.createElement('div');
+        row.className = 'flex items-start gap-2';
+        row.innerHTML =
+          '<div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-[5px] bg-[#b60000] text-xs font-bold text-white">A</div>' +
+          '<div class="max-w-[82%] rounded-[5px] bg-white/95 px-3 py-2 text-sm leading-[1.35] text-black shadow-[0_0_10px_rgba(0,0,0,0.18)]">' +
+          html +
+          '</div>';
+        chatMessages.appendChild(row);
+        scrollChatBottom();
+        resolve();
+      }, delay);
+    });
+
+  const showFinalMessage = () => {
+    setChatComposerState({
+      enabled: false,
+      placeholder: 'Consulta enviada',
+    });
+    addBotBubble(
+      'Muchas gracias, ' +
+        escapeHtml(leadData.name || '') +
+        '. En breve nos pondremos en contacto contigo.',
+      1700
+    ).then(() => {
+      console.log('[Avannubo Chat] Nuevo lead:', leadData);
+    });
+  };
+
+  const advanceChat = () => {
+    if (chatStep >= chatSteps.length) return;
+    const currentStep = chatSteps[chatStep];
+    chatStep += 1;
+    const botMessage = currentStep.bot.replace(
+      '<NAME>',
+      leadData.name ? escapeHtml(leadData.name) : ''
+    );
+
+    addBotBubble(botMessage, currentStep.delay).then(() => {
+      if (currentStep.type === 'options') renderChatOptions(currentStep);
+      if (currentStep.type === 'textarea') renderChatTextarea(currentStep);
+      if (currentStep.type === 'contact_field')
+        renderChatContactField(currentStep);
+    });
+  };
+
+  const renderChatOptions = (currentStep) => {
+    if (!chatMessages) return;
+    setChatComposerState({
+      enabled: false,
+      placeholder: 'Selecciona una opcion para continuar...',
+    });
+    const container = document.createElement('div');
+    container.className = 'flex flex-wrap gap-2 pl-9';
+
+    currentStep.opts.forEach((option, index) => {
+      const isOther =
+        currentStep.otherOption && index === currentStep.opts.length - 1;
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className =
+        'cursor-pointer rounded-[5px] border border-white/20 bg-black/25 px-3 py-2 text-left text-sm text-white transition-all duration-[220ms] hover:-translate-y-0.5 hover:bg-[#b60000] disabled:cursor-default disabled:opacity-60';
+      button.textContent = option;
+
+      button.addEventListener('click', () => {
+        container.querySelectorAll('button').forEach((item) => {
+          item.disabled = true;
+        });
+
+        if (isOther) {
+          showOtherInput(container, currentStep.id);
+          return;
+        }
+
+        container.remove();
+        addUserBubble(option);
+        leadData[currentStep.id] = option;
+        advanceChat();
+      });
+
+      container.appendChild(button);
+    });
+
+    chatMessages.appendChild(container);
+    scrollChatBottom();
+  };
+
+  const showOtherInput = (container, key) => {
+    activeComposerStep = {
+      type: 'other',
+      key,
+      placeholder: 'Indica tu area...',
+      validate: (value) => value.length > 0,
+      errorMsg: 'Indica tu area para continuar.',
+      onSubmit: (value) => {
+        container.remove();
+        addUserBubble(value);
+        leadData[key] = value;
+        advanceChat();
+      },
+    };
+
+    setChatComposerState({
+      enabled: true,
+      placeholder: activeComposerStep.placeholder,
+    });
+    scrollChatBottom();
+    window.setTimeout(() => chatInput?.focus(), 50);
+  };
+
+  const renderChatTextarea = (currentStep) => {
+    if (!(chatInput instanceof HTMLTextAreaElement)) return;
+    activeComposerStep = {
+      type: 'textarea',
+      placeholder: currentStep.placeholder || 'Escribe aqui...',
+    };
+    setChatComposerState({
+      enabled: true,
+      placeholder: activeComposerStep.placeholder,
+    });
+    chatInput.value = '';
+    window.setTimeout(() => chatInput.focus(), 100);
+  };
+
+  const submitChatTextarea = () => {
+    submitActiveComposer();
+  };
+
+  const submitActiveComposer = () => {
+    if (!(chatInput instanceof HTMLTextAreaElement)) return;
+    if (chatInput.disabled || !activeComposerStep) return;
+
+    let value = chatInput.value.trim();
+
+    if (activeComposerStep.sanitize) {
+      value = activeComposerStep.sanitize(value).trim();
+      chatInput.value = value;
+    }
+
+    if (activeComposerStep.validate && !activeComposerStep.validate(value)) {
+      markComposerError(activeComposerStep.errorMsg || 'Campo requerido.');
+      return;
+    }
+
+    const stepToSubmit = activeComposerStep;
+    setChatComposerState({
+      enabled: false,
+      placeholder: 'Selecciona una opcion para continuar...',
+    });
+
+    if (stepToSubmit.type === 'textarea') {
+      if (value) {
+        addUserBubble(value);
+        leadData.description = value;
+      } else {
+        leadData.description = '';
+      }
+      advanceChat();
+      return;
+    }
+
+    if (stepToSubmit.type === 'contact_field') {
+      if (value && stepToSubmit.field === 'name') {
+        value = value.replace(/\b\w/g, (character) => character.toUpperCase());
+      }
+
+      leadData[stepToSubmit.field] = value;
+      if (value) addUserBubble(value);
+
+      if (chatStep >= chatSteps.length) showFinalMessage();
+      else advanceChat();
+      return;
+    }
+
+    if (stepToSubmit.type === 'other') {
+      stepToSubmit.onSubmit(value);
+    }
+  };
+
+  const handleComposerInput = () => {
+    if (!(chatInput instanceof HTMLTextAreaElement)) return;
+    if (!activeComposerStep) return;
+
+    if (activeComposerStep.sanitize) {
+      const position = chatInput.selectionStart || 0;
+      const cleanValue = activeComposerStep.sanitize(chatInput.value);
+      if (cleanValue !== chatInput.value) {
+        chatInput.value = cleanValue;
+        chatInput.setSelectionRange(
+          Math.max(position - 1, 0),
+          Math.max(position - 1, 0)
+        );
+      }
+    }
+
+    chatInput.classList.remove('ring-2', 'ring-[#b60000]');
+    if (activeComposerStep.placeholder) {
+      chatInput.placeholder = activeComposerStep.placeholder;
+    }
+  };
+
+  const renderChatContactField = (currentStep) => {
+    if (!(chatInput instanceof HTMLTextAreaElement)) return;
+    activeComposerStep = {
+      type: 'contact_field',
+      field: currentStep.field,
+      placeholder: currentStep.placeholder || '',
+      validate: currentStep.validate,
+      errorMsg: currentStep.errorMsg,
+      sanitize: currentStep.sanitize,
+    };
+    setChatComposerState({
+      enabled: true,
+      placeholder: activeComposerStep.placeholder,
+    });
+    chatInput.value = '';
+    window.setTimeout(() => chatInput.focus(), 100);
+  };
+
+  const startChat = () => {
+    if (chatStarted) return;
+    chatStarted = true;
+    window.setTimeout(advanceChat, 400);
+  };
 
   const setMenuState = (isOpen) => {
     menu?.classList.toggle('top-0', isOpen);
@@ -600,7 +1009,12 @@ const columnThreeItems = [
     chatPopupToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 
     if (isOpen) {
-      chatPopupClose?.focus();
+      startChat();
+      const focusTarget =
+        chatInput instanceof HTMLTextAreaElement && !chatInput.disabled
+          ? chatInput
+          : chatPopupClose;
+      focusTarget?.focus();
       setContactPopupState(false);
     }
   };
@@ -646,9 +1060,22 @@ const columnThreeItems = [
       setChatPopupState(!isOpen);
     });
 
+    chatPopupPanel?.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
     chatPopupClose.addEventListener('click', () => {
       setChatPopupState(false);
     });
+
+    chatSend?.addEventListener('click', submitChatTextarea);
+    chatInput?.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        submitChatTextarea();
+      }
+    });
+    chatInput?.addEventListener('input', handleComposerInput);
 
     document.addEventListener('click', (event) => {
       const target = event.target;

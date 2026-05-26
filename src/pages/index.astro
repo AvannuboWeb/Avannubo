@@ -281,7 +281,7 @@ const clientReviews = [
 
       <div class="mb-[120px] flex w-full flex-col items-center justify-start">
         <h3
-          class="scroll-title-reverse sticky top-5 z-0 mb-10 mt-0 text-3xl font-normal leading-[1.2]"
+          class="sticky top-5 z-0 mb-10 mt-0 text-3xl font-normal leading-[1.2]"
         >
           Infraestructura y Conectividad
         </h3>
@@ -336,7 +336,7 @@ const clientReviews = [
 
       <div class="mb-[120px] flex w-full flex-col items-center justify-start">
         <h3
-          class="scroll-title-reverse sticky top-5 z-0 mb-10 mt-0 text-3xl font-normal leading-[1.2]"
+          class="sticky top-5 z-0 mb-10 mt-0 text-3xl font-normal leading-[1.2]"
         >
           Desarrollo, Optimización y Estrategia
         </h3>
@@ -395,24 +395,73 @@ const clientReviews = [
       aria-label="Contacto"
     >
       <h3
-        class="scroll-title- relative z-[1] m-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
+        class="scroll-title relative m-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
       >
-        En <b>Avannubo</b>, queremos ser más que un proveedor de Soluciones y
-        Servicios IT, queremos ser <b>Tu Partner Tecnológico</b>
+        <b>Avannubo, Tu Partner Tecnológico</b>
       </h3>
+      <div class="w-full flex flex-row gap-10 mt-16 mb-10 z-1">
+        <div
+          class=`w-[30%] ${glassbox} flex flex-col p-6 items-center justify-start gap-2`
+        >
+          <Icon
+            name="tabler:users-group"
+            class="h-18 w-18"
+          />
+          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
+            EQUIPO PROFESIONAL
+          </h3>
+          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
+            Nuestro equipo de expertos en IT está dedicado a ofrecer soluciones
+            personalizadas, eficientes y de alta calidad para impulsar tu
+            negocio.
+          </p>
+        </div>
+        <div
+          class=`w-[40%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
+        >
+          <Icon
+            name="tabler:heart-handshake"
+            class="h-18 w-18"
+          />
+          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-2 text-center">
+            TRATO PERSONAL Y DIRECTO
+          </h3>
+          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
+            En Avannubo, cada cliente es único. Nos comprometemos a entender tus
+            necesidades específicas y ofrecerte un servicio personalizado que se
+            adapte perfectamente a tu negocio.
+          </p>
+        </div>
+        <div
+          class=`w-[30%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
+        >
+          <Icon
+            name="tabler:medal"
+            class="h-18 w-18"
+          />
+          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
+            EXPERIENCIA Y CALIDAD
+          </h3>
+          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
+            Contamos con años de experiencia en el sector IT y nos enorgullece
+            ofrecer soluciones de alta calidad que superan las expectativas de
+            nuestros clientes.
+          </p>
+        </div>
+      </div>
       <a
         href="/contacto"
         aria-label="Contacto"
         class={contactButton}
         >PONTE EN CONTACTO <Icon
           name="tabler:arrow-right"
-          class="h-5 w-5"
+          class="h-5 w-5 ml-1.25"
         /></a
       >
       <img
         src="/avannubo_icon.png"
         alt=""
-        class="absolute z-0 h-auto w-[440px] opacity-15"
+        class="absolute z-0 h-auto w-[800px] opacity-15"
         aria-hidden="true"
       />
     </section>
@@ -463,11 +512,11 @@ const clientReviews = [
       <a
         href="/contacto"
         class={`${contactButton} mt-12`}
-        >CONTACTA PRA + INFO</a
+        >CONTACTA PARA + INFO</a
       >
     </section>
     <section
-      class="relative mb-20 flex min-h-screen w-full flex-col items-center justify-start p-8"
+      class="relative mb-20 flex min-h-screen w-full flex-col items-center justify-start"
       aria-label="AVANBLOG"
     >
       <h2
@@ -484,77 +533,83 @@ const clientReviews = [
       <div class="flex w-full flex-row items-center justify-center gap-10">
         <!-- POST 1-->
         <div
-          class=`h-[60vh] w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
+          class=` w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
         >
           <div class="flex flex-col items-start justify-start gap-3">
-            <p class="py-1 px-3 rounded-full border text-[1.5vh]">Avannubo</p>
             <img
               src="/blogimg/Certificacio-ENS-Blog-1024x996.png"
               alt="AVANNET"
               class="h-[37vh] w-full rounded-[5px] object-cover"
             />
-            <h3 class="text-[2.3vh] leading-[1.15]">
+            <h3 class="text-2xl leading-[1.15]">
               Avannubo alcanza la Certificación en el Esquema Nacional de
               Seguridad (ENS)
             </h3>
           </div>
-          <a
-            href="/contacto"
-            class="inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out hover:bg-[#b60000] hover:translate-x-[2px]"
-            >LEER MÁS <Icon
-              name="tabler:arrow-right"
-              class="h-5 w-5"
-            /></a
-          >
+          <div class="flex w-full items-center justify-between mt-4">
+            <p class="py-1 px-3 rounded-full border text-lg">Avannubo</p>
+            <a
+              href="/contacto"
+              class="inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px]"
+              >LEER MÁS <Icon
+                name="tabler:arrow-right"
+                class="h-5 w-5"
+              /></a
+            >
+          </div>
         </div>
         <!-- POST 2 -->
         <div
-          class=`h-[60vh] w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
+          class=` w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
         >
           <div class="flex flex-col items-start justify-start gap-3">
-            <p class="py-1 px-3 rounded-full border text-[1.5vh]">Web</p>
             <img
               src="/blogimg/El-Ciber-Riesgo-de-su-Web-se-dispara-con-la-IA-1024x760.png"
               alt="AVANNET"
               class="h-[37vh] w-full rounded-[5px] object-cover"
             />
-            <h3 class="text-[2.3vh] leading-[1.15]">
+            <h3 class="text-2xl leading-[1.15]">
               El Ciber-Riesgo de su Web se dispara con la llegadad de la IA
               Generativa
             </h3>
           </div>
-          <a
-            href="/contacto"
-            class="inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out hover:bg-[#b60000] hover:translate-x-[2px]"
-            >LEER MÁS <Icon
-              name="tabler:arrow-right"
-              class="h-5 w-5"
-            /></a
-          >
+          <div class="flex w-full items-center justify-between mt-4">
+            <p class="py-1 px-3 rounded-full border text-lg">Web</p>
+            <a
+              href="/contacto"
+              class="inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px]"
+              >LEER MÁS <Icon
+                name="tabler:arrow-right"
+                class="h-5 w-5"
+              /></a
+            >
+          </div>
         </div>
         <!-- POST 3 -->
         <div
-          class=`h-[60vh] w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
+          class=` w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
         >
           <div class="flex flex-col items-start justify-start gap-3">
-            <p class="py-1 px-3 rounded-full border text-[1.5vh]">Avannubo</p>
             <img
               src="/blogimg/CESA-blanes.jpeg"
               alt="AVANNET"
               class="h-[37vh] w-full rounded-[5px] object-cover"
             />
-            <h3 class="text-[2.3vh] leading-[1.15]">
+            <h3 class="text-2xl leading-[1.15]">
               Avannubo, partner tecnológico del CESA 2026 en Blanes
             </h3>
           </div>
-          <a
-            href="/contacto"
-            class="inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out hover:bg-[#b60000] hover:translate-x-[2px]"
-            >LEER MÁS <Icon
-              name="tabler:arrow-right"
-              class="h-5 w-5"
-            /></a
-          >
+          <div class="flex w-full items-center justify-between mt-4">
+            <p class="py-1 px-3 rounded-full border text-lg">Avannubo</p>
+            <a
+              href="/contacto"
+              class="inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px]"
+              >LEER MÁS <Icon
+                name="tabler:arrow-right"
+                class="h-5 w-5"
+              /></a
+            >
+          </div>
         </div>
       </div>
       <a
@@ -586,7 +641,7 @@ const clientReviews = [
                   class={`client-review-slide shrink-0 rounded-[5px] p-8 ${glassbox} flex flex-col items-start justify-start gap-4 max-md:p-6`}
                 >
                   <h3 class="text-[2.8vh] leading-[1.15]">{review.company}</h3>
-                  <p class="text-[1.8vh] leading-[1.45] max-md:text-[16px]">
+                  <p class="text-lg leading-[1.45] max-md:text-[16px]">
                     {review.text}
                   </p>
                 </article>
@@ -637,7 +692,7 @@ const clientReviews = [
         class={contactButton}
         >PONTE EN CONTACTO <Icon
           name="tabler:arrow-right"
-          class="h-5 w-5"
+          class="h-5 w-5 ml-1.25"
         /></a
       >
       <img
