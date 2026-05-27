@@ -1,5 +1,373 @@
 ﻿---
-import PageView from "../components/PageView.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const glassbox =
+  'overflow-hidden rounded-[5px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
+
+const buttons =
+  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black';
 ---
 
-<PageView title="Web" />
+<BaseLayout
+  title="Soluciones Web"
+  mainClass="relative z-10 w-full p-0"
+>
+  <div class="relative z-10 w-full">
+    <section
+      class="flex min-h-screen w-full flex-col items-center justify-center"
+      aria-label="Portada"
+    >
+      <h1 class="scroll-title m-0 text-[130px] font-bold leading-[1.05]">
+        Soluciones Web
+      </h1>
+      <h2 class="mb-4 mt-6 text-4xl font-normal leading-[1.2]">
+        Impulsa tu imagen online: diseño, desarrollo y rendimiento
+      </h2>
+      <h3
+        class="text-center w-[1200px] mb-4 mt-6 text-2xl font-normal leading-[1.2]"
+      >
+        Programación y diseño web a medida en Barcelona. Combinamos diseño,
+        usabilidad, rendimiento y escalabilidad para crear soluciones web
+        totalmente personalizadas, desde el diseño inicial hasta cualquier tipo
+        de programación a medida.
+      </h3>
+      <div class="flex flex-row items-center justify-center gap-6">
+        <a
+          href="#servicios"
+          class={buttons}
+          >SERVICIOS WEB
+        </a>
+        <a
+          href="#porque"
+          class={buttons}
+          >¿PORQUÉ AVANNUBO?
+        </a>
+        <a
+          href="/contacto"
+          class={buttons}
+          >CASOS DE ÉXITO
+        </a>
+        <a
+          href="/contacto"
+          class={buttons}
+          >PONTE EN CONTACTO
+        </a>
+      </div>
+    </section>
+
+    <!-- SERVICIOS-->
+    <section
+      id="servicios"
+      class="relative flex w-full flex-col items-center justify-center px-10 py-20 mb-20"
+      aria-label="Contacto"
+    >
+      <h3
+        class="scroll-title relative m-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2] sticky top-5"
+      >
+        <b>Servicios Web Avannubo</b>
+      </h3>
+      <!-- PROGRAMACIÓN A MEDIDA -->
+      <div
+        class=`w-full h-[75vh] flex flex-row gap-10 mt-30 p-10 z-1 ${glassbox} sticky top-41 overflow-visible`
+      >
+        <div
+          class=`w-[25%] absolute -top-17 left-0 h-20 flex flex-col items-center justify-start gap-10 px-2`
+        >
+          <div
+            class="bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.5vw] text-center"
+          >
+            PROGRAMACIÓN A MEDIDA
+          </div>
+        </div>
+        <div class=`w-[50%] flex flex-col items-center justify-start gap-10`>
+        </div>
+        <div class=`w-[50%] flex flex-col items-center justify-start gap-2`>
+          <img
+            src="/web/desarrollo.png"
+            alt="AVANNET"
+            class="h-full w-full rounded-[5px] object-cover"
+          />
+        </div>
+      </div>
+      <!-- E-COMMERCE A MEDIDA -->
+      <div
+        class=`w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible`
+      >
+        <div class=`w-[50%] flex flex-col items-center justify-start gap-10`>
+        </div>
+        <div
+          class=`w-[25%] absolute -top-17 left-[25%] h-20 flex flex-col items-center justify-start gap-10 px-2`
+        >
+          <div
+            class="bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.5vw] text-center"
+          >
+            E-COMMERCE A MEDIDA
+          </div>
+        </div>
+        <div class=`w-[50%] flex flex-col items-center justify-start gap-2`>
+          <img
+            src="/web/ecommerce.png"
+            alt="AVANNET"
+            class="h-full w-full rounded-[5px] object-cover"
+          />
+        </div>
+      </div>
+      <!-- WORDPRESS WEBSITES -->
+      <div
+        class=`w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible`
+      >
+        <div
+          class=`w-[25%] absolute -top-17 left-[50%] h-20 flex flex-col items-center justify-start gap-10 px-2`
+        >
+          <div
+            class="bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.5vw] text-center"
+          >
+            WORDPRESS WEBSITES
+          </div>
+        </div>
+        <div class=`w-[50%] flex flex-col items-center justify-start gap-2`>
+          <img
+            src="/web/wordpress.jpg"
+            alt="AVANNET"
+            class="h-full w-full rounded-[5px] object-cover"
+          />
+        </div>
+        <div class=`w-[50%] flex flex-col items-center justify-start gap-10`>
+        </div>
+      </div>
+      <!-- DISEÑO WEB (UX/UI) -->
+      <div
+        class=`w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible`
+      >
+        <div
+          class=`w-[25%] absolute -top-17 right-0 h-20 flex flex-col items-center justify-start gap-10 px-2`
+        >
+          <div
+            class="bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.5vw] text-center"
+          >
+            DISEÑO WEB (UX/UI)
+          </div>
+        </div>
+        <div class=`w-[50%] flex flex-col items-center justify-start gap-2`>
+          <img
+            src="/web/uxui.png"
+            alt="AVANNET"
+            class="h-full w-full rounded-[5px] object-cover"
+          />
+        </div>
+        <div class=`w-[50%] flex flex-col items-center justify-start gap-10`>
+        </div>
+      </div>
+      <!-- SEPARDOR -->
+      <div
+        class=`w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1  sticky top-41 overflow-visible`
+      >
+      </div>
+    </section>
+    <!-- SOLUCIONES WEB -->
+    <section
+      id="porque"
+      class="relative flex w-full flex-col items-center justify-center px-10 py-20 mb-20"
+      aria-label="Contacto"
+    >
+      <h3
+        class="scroll-title relative m-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
+      >
+        <b>¿Porqué elegir AVANNBO Web?</b>
+      </h3>
+      <div class="w-full flex flex-row gap-10 mt-16 mb-10 z-1">
+        <div
+          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-2`
+        >
+          <Icon
+            name="tabler:edit"
+            class="h-18 w-18"
+          />
+          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
+            DISEÑO Y PERSONALIZACIÓN
+          </h3>
+          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
+            Realizamos un diseño web personalizado que refleje la identidad de
+            tu marca y se adapte a las necesidades de tu negocio.
+          </p>
+        </div>
+        <div
+          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
+        >
+          <Icon
+            name="tabler:arrow-guide"
+            class="h-18 w-18"
+          />
+          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-2 text-center">
+            USABILIDAD Y FUNCIONALIDAD
+          </h3>
+          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
+            Nos enfocamos en crear sitios web intuitivos y fáciles de navegar,
+            garantizando una experiencia de usuario excepcional.
+          </p>
+        </div>
+        <div
+          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
+        >
+          <Icon
+            name="tabler:brand-speedtest"
+            class="h-18 w-18"
+          />
+          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
+            RENDIMIENTO Y SEGURIDAD
+          </h3>
+          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
+            Optimizamos el rendimiento y la velocidad de tus sitios web para
+            garantizar una experiencia de usuario rápida, eficiente y totalmente
+            segura.
+          </p>
+        </div>
+        <div
+          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
+        >
+          <Icon
+            name="tabler:chart-dots-2"
+            class="h-18 w-18"
+          />
+          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
+            CALIDAD Y ESCALABILIDAD
+          </h3>
+          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
+            Desarrollamos soluciones web de alta calidad, escalables y fáciles
+            de mantener, adaptándonos a la evolución de tu negocio.
+          </p>
+        </div>
+      </div>
+      <a
+        href="/contacto"
+        aria-label="Contacto"
+        class={buttons}
+        >PONTE EN CONTACTO <Icon
+          name="tabler:arrow-right"
+          class="h-5 w-5 ml-1.25"
+        /></a
+      >
+      <img
+        src="/avannubo_icon.png"
+        alt=""
+        class="absolute z-0 h-auto w-[800px] opacity-15"
+        aria-hidden="true"
+      />
+    </section>
+    <!-- METODOLOGÍA -->
+    <section
+      class="relative flex w-full flex-col items-center justify-center px-10 py-20 mb-20"
+      aria-label="Contacto"
+    >
+      <h3
+        class="scroll-title relative m-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
+      >
+        <b>Metodología Web Avannubo</b>
+      </h3>
+      <div class="w-full flex flex-row gap-10 mt-16 mb-10 z-1">
+        <div
+          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-2`
+        >
+          <Icon
+            name="tabler:edit"
+            class="h-18 w-18"
+          />
+          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
+            DISEÑO Y PERSONALIZACIÓN
+          </h3>
+          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
+            Realizamos un diseño web personalizado que refleje la identidad de
+            tu marca y se adapte a las necesidades de tu negocio.
+          </p>
+        </div>
+        <div
+          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
+        >
+          <Icon
+            name="tabler:arrow-guide"
+            class="h-18 w-18"
+          />
+          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-2 text-center">
+            USABILIDAD Y FUNCIONALIDAD
+          </h3>
+          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
+            Nos enfocamos en crear sitios web intuitivos y fáciles de navegar,
+            garantizando una experiencia de usuario excepcional.
+          </p>
+        </div>
+        <div
+          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
+        >
+          <Icon
+            name="tabler:brand-speedtest"
+            class="h-18 w-18"
+          />
+          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
+            RENDIMIENTO Y SEGURIDAD
+          </h3>
+          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
+            Optimizamos el rendimiento y la velocidad de tus sitios web para
+            garantizar una experiencia de usuario rápida, eficiente y totalmente
+            segura.
+          </p>
+        </div>
+        <div
+          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
+        >
+          <Icon
+            name="tabler:chart-dots-2"
+            class="h-18 w-18"
+          />
+          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
+            CALIDAD Y ESCALABILIDAD
+          </h3>
+          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
+            Desarrollamos soluciones web de alta calidad, escalables y fáciles
+            de mantener, adaptándonos a la evolución de tu negocio.
+          </p>
+        </div>
+      </div>
+      <a
+        href="/contacto"
+        aria-label="Contacto"
+        class={buttons}
+        >PONTE EN CONTACTO <Icon
+          name="tabler:arrow-right"
+          class="h-5 w-5 ml-1.25"
+        /></a
+      >
+    </section>
+    <!-- CONTACTO -->
+    <section
+      class="relative flex w-full flex-col items-center justify-center px-10 h-180"
+      aria-label="Contacto"
+    >
+      <h3
+        class="scroll-title scroll-title relative z-[1] mb-10 w-[min(1200px,100%)] text-center text-[58px] font-normal leading-[1.2]"
+      >
+        ¿Estás preparado para impulsar tu negocio con <b>Avannubo</b>?
+      </h3>
+      <h2
+        class="scroll-title-reverse relative z-[1] mb-6 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
+      >
+        ¡Queremos ser <b> Tu Partner Tecnológico</b>!
+      </h2>
+      <a
+        href="/contacto"
+        aria-label="Contacto"
+        class={buttons}
+        >PONTE EN CONTACTO <Icon
+          name="tabler:arrow-right"
+          class="h-5 w-5 ml-1.25"
+        /></a
+      >
+      <img
+        src="/avannubo_icon.png"
+        alt=""
+        class="absolute z-0 h-150 w-auto opacity-15"
+        aria-hidden="true"
+      />
+    </section>
+  </div>
+</BaseLayout>
