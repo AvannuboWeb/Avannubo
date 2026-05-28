@@ -6,7 +6,9 @@ const glassbox =
   'overflow-hidden rounded-[5px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
 
 const buttons =
-  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black';
+  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] font-medium px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-[#3d3d3c]';
+const buttons2 =
+  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-md bg-transparent font-medium px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out border-2 border-white hover:-translate-y-0.5 hover:bg-[#3d3d3c] hover:border-transparent';
 ---
 
 <BaseLayout
@@ -35,17 +37,22 @@ const buttons =
       <div class="flex flex-row items-center justify-center gap-6">
         <a
           href="#servicios"
-          class={buttons}
+          class={buttons2}
           >SERVICIOS WEB
         </a>
         <a
           href="#porque"
-          class={buttons}
+          class={buttons2}
           >¿PORQUÉ AVANNUBO?
         </a>
         <a
-          href="/contacto"
-          class={buttons}
+          href="#como"
+          class={buttons2}
+          >¿CÓMO LO HACEMOS?
+        </a>
+        <a
+          href="#exito"
+          class={buttons2}
           >CASOS DE ÉXITO
         </a>
         <a
@@ -69,16 +76,18 @@ const buttons =
       </h3>
       <!-- PROGRAMACIÓN A MEDIDA -->
       <div
-        class=`w-full h-[75vh] flex flex-row gap-10 mt-30 p-10 z-1 ${glassbox} sticky top-41 overflow-visible`
+        data-base-z="10"
+        class=`js-web-service-card w-full h-[75vh] flex flex-row gap-10 mt-30 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-10`
       >
         <div
           class=`w-[25%] absolute -top-17 left-0 h-20 flex flex-col items-center justify-start gap-10 px-2`
         >
-          <div
-            class="bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.5vw] text-center"
+          <button
+            type="button"
+            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
           >
             PROGRAMACIÓN A MEDIDA
-          </div>
+          </button>
         </div>
         <div class=`w-[50%] flex flex-col items-center justify-start gap-10`>
         </div>
@@ -92,18 +101,20 @@ const buttons =
       </div>
       <!-- E-COMMERCE A MEDIDA -->
       <div
-        class=`w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible`
+        data-base-z="11"
+        class=`js-web-service-card w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-11`
       >
         <div class=`w-[50%] flex flex-col items-center justify-start gap-10`>
         </div>
         <div
           class=`w-[25%] absolute -top-17 left-[25%] h-20 flex flex-col items-center justify-start gap-10 px-2`
         >
-          <div
-            class="bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.5vw] text-center"
+          <button
+            type="button"
+            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
           >
             E-COMMERCE A MEDIDA
-          </div>
+          </button>
         </div>
         <div class=`w-[50%] flex flex-col items-center justify-start gap-2`>
           <img
@@ -115,16 +126,18 @@ const buttons =
       </div>
       <!-- WORDPRESS WEBSITES -->
       <div
-        class=`w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible`
+        data-base-z="12"
+        class=`js-web-service-card w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-12`
       >
         <div
           class=`w-[25%] absolute -top-17 left-[50%] h-20 flex flex-col items-center justify-start gap-10 px-2`
         >
-          <div
-            class="bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.5vw] text-center"
+          <button
+            type="button"
+            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
           >
             WORDPRESS WEBSITES
-          </div>
+          </button>
         </div>
         <div class=`w-[50%] flex flex-col items-center justify-start gap-2`>
           <img
@@ -138,16 +151,19 @@ const buttons =
       </div>
       <!-- DISEÑO WEB (UX/UI) -->
       <div
-        class=`w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible`
+        data-base-z="13"
+        data-web-service-last
+        class=`js-web-service-card w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-13`
       >
         <div
           class=`w-[25%] absolute -top-17 right-0 h-20 flex flex-col items-center justify-start gap-10 px-2`
         >
-          <div
-            class="bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.5vw] text-center"
+          <button
+            type="button"
+            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
           >
             DISEÑO WEB (UX/UI)
-          </div>
+          </button>
         </div>
         <div class=`w-[50%] flex flex-col items-center justify-start gap-2`>
           <img
@@ -255,77 +271,134 @@ const buttons =
         aria-hidden="true"
       />
     </section>
-    <!-- METODOLOGÍA -->
+    <!-- COMO LO HACEMOS -->
     <section
+      id="como"
       class="relative flex w-full flex-col items-center justify-center px-10 py-20 mb-20"
       aria-label="Contacto"
     >
-      <h3
-        class="scroll-title relative m-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
-      >
-        <b>Metodología Web Avannubo</b>
-      </h3>
-      <div class="w-full flex flex-row gap-10 mt-16 mb-10 z-1">
-        <div
-          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-2`
+      <div class="flex flex-col items-center justify-center w-full">
+        <h3
+          class="scroll-title m-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2] sticky top-5"
         >
-          <Icon
-            name="tabler:edit"
-            class="h-18 w-18"
-          />
-          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
-            DISEÑO Y PERSONALIZACIÓN
-          </h3>
-          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
-            Realizamos un diseño web personalizado que refleje la identidad de
-            tu marca y se adapte a las necesidades de tu negocio.
-          </p>
-        </div>
-        <div
-          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
-        >
-          <Icon
-            name="tabler:arrow-guide"
-            class="h-18 w-18"
-          />
-          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-2 text-center">
-            USABILIDAD Y FUNCIONALIDAD
-          </h3>
-          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
-            Nos enfocamos en crear sitios web intuitivos y fáciles de navegar,
-            garantizando una experiencia de usuario excepcional.
-          </p>
-        </div>
-        <div
-          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
-        >
-          <Icon
-            name="tabler:brand-speedtest"
-            class="h-18 w-18"
-          />
-          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
-            RENDIMIENTO Y SEGURIDAD
-          </h3>
-          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
-            Optimizamos el rendimiento y la velocidad de tus sitios web para
-            garantizar una experiencia de usuario rápida, eficiente y totalmente
-            segura.
-          </p>
-        </div>
-        <div
-          class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
-        >
-          <Icon
-            name="tabler:chart-dots-2"
-            class="h-18 w-18"
-          />
-          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
-            CALIDAD Y ESCALABILIDAD
-          </h3>
-          <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
-            Desarrollamos soluciones web de alta calidad, escalables y fáciles
-            de mantener, adaptándonos a la evolución de tu negocio.
-          </p>
+          <b>¿Cómo lo hacemos?</b>
+        </h3>
+        <div class="w-full flex flex-col gap-10 mt-16 mb-10 z-1">
+          <div
+            class=`w-[40%] h-[50vh] ${glassbox} overflow-visible flex flex-col pt-5 pb-10 px-10 items-center justify-start gap-7 sticky top-[8.5vh]`
+          >
+            <h3 class="m-0 text-[30px] font-bold leading-[1.2] text-center">
+              ESTUDIO INICIAL Y OBJETIVOS
+            </h3>
+            <img
+              src="/web/desarrollo.png"
+              alt=""
+              class="h-[20vh] w-full rounded-[5px] object-cover"
+              aria-hidden="true"
+            />
+            <p class="mb-4 text-[2.5vh] leading-[1.25]">
+              Realizamos un diseño web personalizado que refleje la identidad de
+              tu marca y se adapte a las necesidades de tu negocio.
+            </p>
+            <div
+              class="w-[7vh] h-[7vh] rounded-[5px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
+            >
+              1
+            </div>
+          </div>
+          <div
+            class=`w-[40%] h-[50vh] ${glassbox} overflow-visible flex flex-col pt-5 pb-10 px-10 items-center justify-start gap-7 sticky top-[16.5vh] ml-[15%]`
+          >
+            <h3 class="m-0 text-[30px] font-bold leading-[1.2] text-center">
+              DISEÑO Y PERSONALIZACIÓN
+            </h3>
+            <img
+              src="/web/desarrollo.png"
+              alt=""
+              class="h-[20vh] w-full rounded-[5px] object-cover"
+              aria-hidden="true"
+            />
+            <p class="mb-4 text-[2.5vh] leading-[1.25]">
+              Nos enfocamos en crear sitios web intuitivos y fáciles de navegar,
+              garantizando una experiencia de usuario excepcional.
+            </p>
+            <div
+              class="w-[7vh] h-[7vh] rounded-[5px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
+            >
+              2
+            </div>
+          </div>
+          <div
+            class=`w-[40%] h-[50vh] ${glassbox} overflow-visible flex flex-col pt-5 pb-10 px-10 items-center justify-start gap-7 sticky top-[24.5vh] ml-[30%]`
+          >
+            <h3 class="m-0 text-[30px] font-bold leading-[1.2] text-center">
+              DESARROLLO Y OPTIMIZACIÓN
+            </h3>
+            <img
+              src="/web/desarrollo.png"
+              alt=""
+              class="h-[20vh] w-full rounded-[5px] object-cover"
+              aria-hidden="true"
+            />
+            <p class="mb-4 text-[2.5vh] leading-[1.25]">
+              Optimizamos el rendimiento y la velocidad de tus sitios web para
+              garantizar una experiencia de usuario rápida, eficiente y
+              totalmente segura.
+            </p>
+            <div
+              class="w-[7vh] h-[7vh] rounded-[5px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
+            >
+              3
+            </div>
+          </div>
+          <div
+            class=`w-[40%] h-[50vh] ${glassbox} overflow-visible flex flex-col pt-5 pb-10 px-10 items-center justify-start gap-7 sticky top-[32.5vh] ml-[45%]`
+          >
+            <h3 class="m-0 text-[30px] font-bold leading-[1.2] text-center">
+              PUESTA EN PRODUCCIÓN
+            </h3>
+            <img
+              src="/web/desarrollo.png"
+              alt=""
+              class="h-[20vh] w-full rounded-[5px] object-cover"
+              aria-hidden="true"
+            />
+            <p class="mb-4 text-[2.5vh] leading-[1.25]">
+              Desarrollamos soluciones web de alta calidad, escalables y fáciles
+              de mantener, adaptándonos a la evolución de tu negocio.
+            </p>
+            <div
+              class="w-[7vh] h-[7vh] rounded-[5px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
+            >
+              4
+            </div>
+          </div>
+          <div
+            class=`w-[40%] h-[50vh] ${glassbox} overflow-visible flex flex-col pt-5 pb-10 px-10 items-center justify-start gap-7 sticky top-[40.5vh] ml-[60%]`
+          >
+            <h3 class="m-0 text-[30px] font-bold leading-[1.2] text-center">
+              MANTENIMIENTO Y EVOLUCIÓN
+            </h3>
+            <img
+              src="/web/desarrollo.png"
+              alt=""
+              class="h-[20vh] w-full rounded-[5px] object-cover"
+              aria-hidden="true"
+            />
+            <p class="mb-4 text-[2.5vh] leading-[1.25]">
+              Desarrollamos soluciones web de alta calidad, escalables y fáciles
+              de mantener, adaptándonos a la evolución de tu negocio.
+            </p>
+            <div
+              class="w-[7vh] h-[7vh] rounded-[5px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
+            >
+              5
+            </div>
+          </div>
+          <div
+            class=`w-[40%] h-[50vh] flex flex-col  items-center justify-start gap-4 sticky top-[40.5vh] ml-[60%] z-0`
+          >
+          </div>
         </div>
       </div>
       <a
@@ -337,6 +410,165 @@ const buttons =
           class="h-5 w-5 ml-1.25"
         /></a
       >
+    </section>
+    <!-- CASOS DE ÉXITO -->
+    <section
+      id="exito"
+      class="js-success-horizontal-section relative h-[320vh] w-full px-20"
+      aria-label="Contacto"
+    >
+      <div
+        class="sticky top-0 flex h-screen w-full flex-col items-center justify-center overflow-hidden py-10"
+      >
+        <h3
+          class="scroll-title mb-5 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
+        >
+          <b>Casos de Éxito en AVANNUBO</b>
+        </h3>
+        <div
+          class="js-success-horizontal-viewport h-[80vh] w-full overflow-hidden"
+        >
+          <div
+            class="js-success-horizontal-track flex h-full w-max flex-row gap-10"
+          >
+            <div
+              class=`flex h-full w-[calc(100vw-160px)] shrink-0 flex-col items-center justify-start ${glassbox} p-10 gap-6`
+            >
+              <div class="w-full flex flex-row items-end justify-between">
+                <h3 class="text-[7vh] font-bold leading-[0.95]">QUANTRUE</h3>
+                <div class="flex flex-row gap-4">
+                  <p class="py-1 px-3 rounded-full border text-lg">
+                    Programación a medias
+                  </p>
+                  <p class="py-1 px-3 rounded-full border text-lg">
+                    Diseño Web (UX/UI)
+                  </p>
+                </div>
+              </div>
+              <div class="h-[63vh] flex w-full flex-row gap-6">
+                <img
+                  src="/web/quantrue1.png"
+                  alt=""
+                  class="min-w-0 w-[70%] h-full rounded-[5px] object-cover"
+                />
+                <img
+                  src="/web/quantrue2.png"
+                  alt=""
+                  class="min-w-0 w-[30%] h-full rounded-[5px] object-cover"
+                />
+              </div>
+            </div>
+            <div
+              class=`flex h-full w-[calc(100vw-160px)] shrink-0 flex-col items-center justify-start ${glassbox} p-10 gap-6`
+            >
+              <div class="w-full flex flex-row items-end justify-between">
+                <h3 class="text-[7vh] font-bold leading-[0.95]">QUANTRUE</h3>
+                <div class="flex flex-row gap-4">
+                  <p class="py-1 px-3 rounded-full border text-lg">
+                    Programación a medias
+                  </p>
+                  <p class="py-1 px-3 rounded-full border text-lg">
+                    Diseño Web (UX/UI)
+                  </p>
+                </div>
+              </div>
+              <div class="h-[63vh] flex w-full flex-row gap-6">
+                <img
+                  src="/web/quantrue1.png"
+                  alt=""
+                  class="min-w-0 w-[70%] h-full rounded-[5px] object-cover"
+                />
+                <img
+                  src="/web/quantrue2.png"
+                  alt=""
+                  class="min-w-0 w-[30%] h-full rounded-[5px] object-cover"
+                />
+              </div>
+            </div>
+            <div
+              class=`flex h-full w-[calc(100vw-160px)] shrink-0 flex-col items-center justify-start ${glassbox} p-10 gap-6`
+            >
+              <div class="w-full flex flex-row items-end justify-between">
+                <h3 class="text-[7vh] font-bold leading-[0.95]">QUANTRUE</h3>
+                <div class="flex flex-row gap-4">
+                  <p class="py-1 px-3 rounded-full border text-lg">
+                    Programación a medias
+                  </p>
+                  <p class="py-1 px-3 rounded-full border text-lg">
+                    Diseño Web (UX/UI)
+                  </p>
+                </div>
+              </div>
+              <div class="h-[63vh] flex w-full flex-row gap-6">
+                <img
+                  src="/web/quantrue1.png"
+                  alt=""
+                  class="min-w-0 w-[70%] h-full rounded-[5px] object-cover"
+                />
+                <img
+                  src="/web/quantrue2.png"
+                  alt=""
+                  class="min-w-0 w-[30%] h-full rounded-[5px] object-cover"
+                />
+              </div>
+            </div>
+            <div
+              class=`flex h-full w-[calc(100vw-160px)] shrink-0 flex-col items-center justify-start ${glassbox} p-10 gap-6`
+            >
+              <div class="w-full flex flex-row items-end justify-between">
+                <h3 class="text-[7vh] font-bold leading-[0.95]">QUANTRUE</h3>
+                <div class="flex flex-row gap-4">
+                  <p class="py-1 px-3 rounded-full border text-lg">
+                    Programación a medias
+                  </p>
+                  <p class="py-1 px-3 rounded-full border text-lg">
+                    Diseño Web (UX/UI)
+                  </p>
+                </div>
+              </div>
+              <div class="h-[63vh] flex w-full flex-row gap-6">
+                <img
+                  src="/web/quantrue1.png"
+                  alt=""
+                  class="min-w-0 w-[70%] h-full rounded-[5px] object-cover"
+                />
+                <img
+                  src="/web/quantrue2.png"
+                  alt=""
+                  class="min-w-0 w-[30%] h-full rounded-[5px] object-cover"
+                />
+              </div>
+            </div>
+            <div
+              class=`flex h-full w-[calc(100vw-160px)] shrink-0 flex-col items-center justify-start ${glassbox} p-10 gap-6`
+            >
+              <div class="w-full flex flex-row items-end justify-between">
+                <h3 class="text-[7vh] font-bold leading-[0.95]">QUANTRUE</h3>
+                <div class="flex flex-row gap-4">
+                  <p class="py-1 px-3 rounded-full border text-lg">
+                    Programación a medias
+                  </p>
+                  <p class="py-1 px-3 rounded-full border text-lg">
+                    Diseño Web (UX/UI)
+                  </p>
+                </div>
+              </div>
+              <div class="h-[63vh] flex w-full flex-row gap-6">
+                <img
+                  src="/web/quantrue1.png"
+                  alt=""
+                  class="min-w-0 w-[70%] h-full rounded-[5px] object-cover"
+                />
+                <img
+                  src="/web/quantrue2.png"
+                  alt=""
+                  class="min-w-0 w-[30%] h-full rounded-[5px] object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- CONTACTO -->
     <section
@@ -371,3 +603,104 @@ const buttons =
     </section>
   </div>
 </BaseLayout>
+
+<script>
+  const webServiceCards = document.querySelectorAll<HTMLElement>(
+    '.js-web-service-card'
+  );
+  const lastWebServiceCard = document.querySelector<HTMLElement>(
+    '[data-web-service-last]'
+  );
+  const webServiceTabs = document.querySelectorAll<HTMLButtonElement>(
+    '.js-web-service-tab'
+  );
+
+  let webServiceTabsActive = false;
+
+  const resetWebServiceZIndexes = () => {
+    webServiceCards.forEach((item) => {
+      item.style.zIndex = item.dataset.baseZ ?? '';
+    });
+  };
+
+  const updateWebServiceTabsState = () => {
+    if (!lastWebServiceCard) return;
+
+    const stickyTop =
+      Number.parseFloat(window.getComputedStyle(lastWebServiceCard).top) || 0;
+    const isLastCardAtStickyTop =
+      lastWebServiceCard.getBoundingClientRect().top <= stickyTop + 1;
+
+    if (!isLastCardAtStickyTop && webServiceTabsActive) {
+      resetWebServiceZIndexes();
+    }
+
+    webServiceTabsActive = isLastCardAtStickyTop;
+
+    webServiceTabs.forEach((tab) => {
+      tab.classList.toggle('cursor-pointer', webServiceTabsActive);
+      tab.classList.toggle('cursor-default', !webServiceTabsActive);
+    });
+  };
+
+  webServiceCards.forEach((card) => {
+    const tab = card.querySelector<HTMLButtonElement>('.js-web-service-tab');
+
+    tab?.addEventListener('click', () => {
+      updateWebServiceTabsState();
+
+      if (!webServiceTabsActive) return;
+
+      resetWebServiceZIndexes();
+      card.style.zIndex = '100';
+    });
+  });
+
+  window.addEventListener('scroll', updateWebServiceTabsState, {
+    passive: true,
+  });
+  window.addEventListener('resize', updateWebServiceTabsState);
+  updateWebServiceTabsState();
+
+  const successHorizontalSection = document.querySelector<HTMLElement>(
+    '.js-success-horizontal-section'
+  );
+  const successHorizontalViewport = document.querySelector<HTMLElement>(
+    '.js-success-horizontal-viewport'
+  );
+  const successHorizontalTrack = document.querySelector<HTMLElement>(
+    '.js-success-horizontal-track'
+  );
+
+  const updateSuccessHorizontalScroll = () => {
+    if (
+      !successHorizontalSection ||
+      !successHorizontalViewport ||
+      !successHorizontalTrack
+    ) {
+      return;
+    }
+
+    const sectionTop = successHorizontalSection.offsetTop;
+    const verticalScrollDistance =
+      successHorizontalSection.offsetHeight - window.innerHeight;
+    const horizontalScrollDistance =
+      successHorizontalTrack.scrollWidth -
+      successHorizontalViewport.clientWidth;
+
+    if (verticalScrollDistance <= 0 || horizontalScrollDistance <= 0) return;
+
+    const progress = Math.min(
+      Math.max((window.scrollY - sectionTop) / verticalScrollDistance, 0),
+      1
+    );
+
+    successHorizontalTrack.style.transform = `translate3d(${-progress * horizontalScrollDistance}px, 0, 0)`;
+  };
+
+  window.addEventListener('scroll', updateSuccessHorizontalScroll, {
+    passive: true,
+  });
+  window.addEventListener('resize', updateSuccessHorizontalScroll);
+  updateSuccessHorizontalScroll();
+</script>
