@@ -3,14 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { Icon } from 'astro-icon/components';
 
 const glassbox =
-  'overflow-hidden rounded-[5px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
+  'overflow-hidden rounded-[20px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
 const serviceCard = `sticky flex h-[55vh] w-full flex-col items-start justify-between p-5 ${glassbox}`;
 const serviceTitle =
   'm-0 text-[7vh] font-bold leading-[0.95] text-white transition-all duration-200 ease-in-out hover:translate-x-0.5 hover:text-[#b60000]';
 const serviceArrow =
-  'flex h-[6vh] w-[6vh] items-center justify-center rounded bg-[#b60000] text-[5vh] leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-all duration-200 ease-in-out hover:translate-x-0.5 hover:-translate-y-0.5 hover:bg-black';
+  'flex h-[6vh] w-[6vh] items-center justify-center rounded-[10px] bg-[#b60000] text-[5vh] leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-all duration-200 ease-in-out hover:translate-x-0.5 hover:-translate-y-0.5 hover:bg-black';
 const contactButton =
-  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-[#3d3d3c]';
+  'relative z-[1] mt-8 inline-flex min-h-[45px] font-medium cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-[#3d3d3c]';
 
 const certifications = [
   { src: '/9001.png', alt: '9001', className: 'h-auto w-[70px]' },
@@ -61,7 +61,7 @@ const infrastructureServices = [
     alt: 'REDES',
     topClass: 'top-[25vh]',
     description:
-      'Potenciamos tu infraestructura: analizamos, optimizamos e implementamos redes desde cero, asegurando así la máxima seguridad y rendimiento.',
+      'Potenciamos tu infraestructura: analizamos, optimizamos e implementamos redes desde cero, garantizando la máxima seguridad y rendimiento.',
     items: [
       'Soporte y Asistencia Técnica',
       'Diseño y Planificación de Redes',
@@ -173,14 +173,14 @@ const developmentServices = [
 ];
 
 const avannetFeatures = [
-  { icon: 'tabler:headset', text: 'Ticketing y Soporte' },
-  { icon: 'tabler:key', text: 'Contraseñas y Seguridad' },
-  { icon: 'tabler:file-text', text: 'Gestor de Documentos' },
-  { icon: 'tabler:users', text: 'Gestior de Empleados' },
-  { icon: 'tabler:calendar-check', text: 'Calendarios y Ausencias' },
-  { icon: 'tabler:fingerprint', text: 'Fichajes y Asistencias' },
-  { icon: 'tabler:chart-pie', text: 'CRM Comercial y Ventas' },
-  { icon: 'tabler:credit-card', text: 'Gestor de Clientes' },
+  { icon: 'ph:headset-light', text: 'Ticketing y Asistencia' },
+  { icon: 'ph:key-light', text: 'Contraseñas y Seguridad' },
+  { icon: 'ph:file-text-light', text: 'Gestor de Documentos' },
+  { icon: 'ph:users-light', text: 'Gestor de Empleados' },
+  { icon: 'ph:calendar-check-light', text: 'Calendarios y Ausencias' },
+  { icon: 'ph:fingerprint-light', text: 'Fichajes y Asistencias' },
+  { icon: 'ph:chart-pie-light', text: 'CRM Comercial y Ventas' },
+  { icon: 'ph:credit-card-light', text: 'Gestor de Clientes y usuarios' },
 ];
 
 const clientReviews = [
@@ -222,7 +222,7 @@ const clientReviews = [
           class="ml-0.5 inline-block h-[120px] w-[3px] animate-pulse bg-white align-bottom"
         ></span>
       </h2>
-      <h1 class="scroll-title m-0 text-[130px] font-bold leading-[1.05]">
+      <h1 class="scroll-title m-0 text-[110px] font-bold leading-[1.05]">
         Soluciones y servicios IT
       </h1>
       <h2
@@ -270,7 +270,7 @@ const clientReviews = [
     </section>
 
     <section
-      class="relative flex w-full flex-col items-center justify-start px-10 py-[120px]"
+      class="relative flex w-full flex-col items-center justify-start px-20 py-[120px]"
       aria-label="Servicios"
     >
       <h2
@@ -281,7 +281,7 @@ const clientReviews = [
 
       <div class="mb-[120px] flex w-full flex-col items-center justify-start">
         <h3
-          class="sticky top-5 z-0 mb-10 mt-0 text-3xl font-normal leading-[1.2]"
+          class="sticky top-5 z-0 mb-10 mt-0 text-3xl font-bold leading-[1.2]"
         >
           Infraestructura y Conectividad
         </h3>
@@ -300,7 +300,7 @@ const clientReviews = [
                   aria-label={service.title}
                 >
                   <Icon
-                    name="tabler:arrow-up-right"
+                    name="ph:arrow-up-right-light"
                     class="h-[4.2vh] w-[4.2vh]"
                   />
                 </a>
@@ -309,7 +309,7 @@ const clientReviews = [
                 <img
                   src={service.image}
                   alt={service.alt}
-                  class="h-[43vh] w-1/2 rounded-[5px] object-cover"
+                  class="h-[43vh] w-1/2 rounded-[20px] object-cover"
                 />
                 <div class="relative flex min-h-0 w-1/2 flex-col items-start justify-start gap-[1.6vh]">
                   <p class="mb-2 text-[2.5vh] leading-[1.25]">
@@ -336,7 +336,7 @@ const clientReviews = [
 
       <div class="mb-[120px] flex w-full flex-col items-center justify-start">
         <h3
-          class="sticky top-5 z-0 mb-10 mt-0 text-3xl font-normal leading-[1.2]"
+          class="sticky top-5 z-0 mb-10 mt-0 text-3xl font-bold leading-[1.2]"
         >
           Desarrollo, Optimización y Estrategia
         </h3>
@@ -355,7 +355,7 @@ const clientReviews = [
                   aria-label={service.title}
                 >
                   <Icon
-                    name="tabler:arrow-up-right"
+                    name="ph:arrow-up-right-light"
                     class="h-[4.2vh] w-[4.2vh]"
                   />
                 </a>
@@ -364,7 +364,7 @@ const clientReviews = [
                 <img
                   src={service.image}
                   alt={service.alt}
-                  class="h-[43vh] w-1/2 rounded-[5px] object-cover"
+                  class="h-[43vh] w-1/2 rounded-[20px] object-cover"
                 />
                 <div class="relative flex min-h-0 w-1/2 flex-col items-start justify-start gap-[1.6vh]">
                   <p class="mb-2 text-[2.5vh] leading-[1.25]">
@@ -391,7 +391,7 @@ const clientReviews = [
     </section>
 
     <section
-      class="relative flex w-full flex-col items-center justify-center px-10 py-20 mb-40"
+      class="relative flex w-full flex-col items-center justify-center p-20 mb-40"
       aria-label="Contacto"
     >
       <h3
@@ -404,7 +404,7 @@ const clientReviews = [
           class=`w-[30%] ${glassbox} flex flex-col p-6 items-center justify-start gap-2`
         >
           <Icon
-            name="tabler:users-group"
+            name="ph:users-three-light"
             class="h-18 w-18"
           />
           <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
@@ -420,7 +420,7 @@ const clientReviews = [
           class=`w-[40%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
         >
           <Icon
-            name="tabler:heart-handshake"
+            name="ph:seal-check-light"
             class="h-18 w-18"
           />
           <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-2 text-center">
@@ -436,7 +436,7 @@ const clientReviews = [
           class=`w-[30%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
         >
           <Icon
-            name="tabler:medal"
+            name="ph:trophy-light"
             class="h-18 w-18"
           />
           <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
@@ -454,7 +454,7 @@ const clientReviews = [
         aria-label="Contacto"
         class={contactButton}
         >PONTE EN CONTACTO <Icon
-          name="tabler:arrow-right"
+          name="ph:arrow-right-light"
           class="h-5 w-5 ml-1.25"
         /></a
       >
@@ -478,30 +478,24 @@ const clientReviews = [
       <h3
         class="relative z-[1] mb-10 mt-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
       >
-        Descubre <b>AVANnet</b>, nuestro propio Software personalizablede
-        Gestión de empresas. Todas las funciones importantes de tu empresa en <b
-          >una única aplicación.</b
-        >
+        Descubre <b>AVANnet</b>, nuestro propio Software personalizable de
+        Gestión de empresas. Todas las funciones que necesites para tu empresa
+        en <b>una única aplicación.</b>
       </h3>
       <div class="flex w-[85%] flex-row items-start justify-start gap-10">
-        <img
-          src="/homeimg/avannet.webp"
-          alt="AVANNET"
-          class="h-[60vh] w-5/12 rounded-[5px] object-cover"
-        />
         <div
-          class="flex h-[60vh] w-7/12 flex-row flex-wrap items-start justify-start gap-6"
+          class="flex w-full flex-row flex-wrap items-start justify-start gap-6"
         >
           {
             avannetFeatures.map((feature) => (
               <div
-                class={`flex h-[calc(30vh-12px)] w-[calc(25%-18px)] flex-col items-center justify-center gap-4 p-3 ${glassbox}`}
+                class={`flex h-[25vh] w-[calc(25%-18px)] flex-col items-center justify-start gap-4 p-8 ${glassbox}`}
               >
                 <Icon
                   name={feature.icon}
-                  class="h-11 w-11"
+                  class="h-15 w-15"
                 />
-                <p class="m-0 text-center text-[20px] font-bold leading-[1.2]">
+                <p class="m-0 text-center text-[30px] font-bold leading-[1.2]">
                   {feature.text}
                 </p>
               </div>
@@ -516,114 +510,11 @@ const clientReviews = [
       >
     </section>
     <section
-      class="relative mb-20 flex min-h-screen w-full flex-col items-center justify-start"
-      aria-label="AVANBLOG"
-    >
-      <h2
-        class="scroll-title mb-10 mt-0 text-center text-[68px] font-bold leading-[1.1]"
-      >
-        AVANBLOG
-      </h2>
-      <h3
-        class="relative z-[1] mb-10 mt-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
-      >
-        Mantente al día con lasNovedades, tendencias y tips IT que te ofrecemos
-        desde nuestro <b>blog de Avannubo</b>
-      </h3>
-      <div class="flex w-full flex-row items-center justify-center gap-10">
-        <!-- POST 1-->
-        <div
-          class=` w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
-        >
-          <div class="flex flex-col items-start justify-start gap-3">
-            <img
-              src="/blogimg/Certificacio-ENS-Blog-1024x996.png"
-              alt="AVANNET"
-              class="h-[37vh] w-full rounded-[5px] object-cover"
-            />
-            <h3 class="text-2xl leading-[1.15]">
-              Avannubo alcanza la Certificación en el Esquema Nacional de
-              Seguridad (ENS)
-            </h3>
-          </div>
-          <div class="flex w-full items-center justify-between mt-4">
-            <p class="py-1 px-3 rounded-full border text-lg">Avannubo</p>
-            <a
-              href="/contacto"
-              class="inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px]"
-              >LEER MÁS <Icon
-                name="tabler:arrow-right"
-                class="h-5 w-5"
-              /></a
-            >
-          </div>
-        </div>
-        <!-- POST 2 -->
-        <div
-          class=` w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
-        >
-          <div class="flex flex-col items-start justify-start gap-3">
-            <img
-              src="/blogimg/El-Ciber-Riesgo-de-su-Web-se-dispara-con-la-IA-1024x760.png"
-              alt="AVANNET"
-              class="h-[37vh] w-full rounded-[5px] object-cover"
-            />
-            <h3 class="text-2xl leading-[1.15]">
-              El Ciber-Riesgo de su Web se dispara con la llegadad de la IA
-              Generativa
-            </h3>
-          </div>
-          <div class="flex w-full items-center justify-between mt-4">
-            <p class="py-1 px-3 rounded-full border text-lg">Web</p>
-            <a
-              href="/contacto"
-              class="inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px]"
-              >LEER MÁS <Icon
-                name="tabler:arrow-right"
-                class="h-5 w-5"
-              /></a
-            >
-          </div>
-        </div>
-        <!-- POST 3 -->
-        <div
-          class=` w-[30%] rounded-[5px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
-        >
-          <div class="flex flex-col items-start justify-start gap-3">
-            <img
-              src="/blogimg/CESA-blanes.jpeg"
-              alt="AVANNET"
-              class="h-[37vh] w-full rounded-[5px] object-cover"
-            />
-            <h3 class="text-2xl leading-[1.15]">
-              Avannubo, partner tecnológico del CESA 2026 en Blanes
-            </h3>
-          </div>
-          <div class="flex w-full items-center justify-between mt-4">
-            <p class="py-1 px-3 rounded-full border text-lg">Avannubo</p>
-            <a
-              href="/contacto"
-              class="inline-flex items-center gap-2 px-3 py-2 rounded-[5px] text-lg text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px]"
-              >LEER MÁS <Icon
-                name="tabler:arrow-right"
-                class="h-5 w-5"
-              /></a
-            >
-          </div>
-        </div>
-      </div>
-      <a
-        href="/blog"
-        class={`${contactButton} mt-12`}
-        >VER TODOS LOS POSTS</a
-      >
-    </section>
-    <section
       class="relative flex w-full flex-col items-center justify-start p-8 mt-40 mb-40"
       aria-label="AVANNET"
     >
       <h3
-        class="scroll-title relative z-[1] mb-10 mt-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
+        class="scroll-title relative z-[1] mb-10 font-bold mt-0 w-[min(1200px,100%)] text-center text-4xl leading-[1.2]"
       >
         Opiniones de clientes:
       </h3>
@@ -638,7 +529,7 @@ const clientReviews = [
             {
               clientReviews.map((review) => (
                 <article
-                  class={`client-review-slide shrink-0 rounded-[5px] p-8 ${glassbox} flex flex-col items-start justify-start gap-4 max-md:p-6`}
+                  class={`client-review-slide shrink-0 rounded-[20px] p-8 ${glassbox} flex flex-col items-start justify-start gap-4 max-md:p-6`}
                 >
                   <h3 class="text-[2.8vh] leading-[1.15]">{review.company}</h3>
                   <p class="text-lg leading-[1.45] max-md:text-[16px]">
@@ -656,7 +547,7 @@ const clientReviews = [
           aria-label="Ver opiniones anteriores"
         >
           <Icon
-            name="tabler:chevron-compact-left"
+            name="ph:caret-left-light"
             class="h-11 w-11"
           />
         </button>
@@ -666,12 +557,121 @@ const clientReviews = [
           aria-label="Ver opiniones siguientes"
         >
           <Icon
-            name="tabler:chevron-compact-right"
+            name="ph:caret-right-light"
             class="h-11 w-11"
           />
         </button>
       </div>
     </section>
+    <section
+      class="relative mb-20 flex min-h-screen w-full flex-col items-center justify-start"
+      aria-label="AVANBLOG"
+    >
+      <h2
+        class="scroll-title mb-10 mt-0 text-center text-[68px] font-bold leading-[1.1]"
+      >
+        AVANBLOG
+      </h2>
+      <h3
+        class="relative z-[1] mb-10 mt-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
+      >
+        Mantente al día con las novedades, tendencias y tips IT que te ofrecemos
+        desde nuestro <b>blog de Avannubo</b>
+      </h3>
+      <div class="flex w-full flex-row items-center justify-center gap-10">
+        <!-- POST 1-->
+        <div
+          class=` w-[30%] rounded-[20px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
+        >
+          <div class="flex flex-col items-start justify-start gap-3">
+            <img
+              src="/blogimg/Certificacio-ENS-Blog-1024x996.png"
+              alt="AVANNET"
+              class="h-[37vh] w-full rounded-[20px] object-cover"
+            />
+            <h3 class="text-2xl leading-[1.15]">
+              Avannubo alcanza la Certificación en el Esquema Nacional de
+              Seguridad (ENS)
+            </h3>
+          </div>
+          <div class="flex w-full items-center justify-between mt-4">
+            <p class="py-1 px-3 rounded-full border text-lg">Avannubo</p>
+            <a
+              href="/contacto"
+              class="inline-flex items-center gap-2 px-3 py-2 rounded-[10px] text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px] hover:bg-black font-medium"
+              >LEER MÁS <Icon
+                name="ph:arrow-right-light"
+                class="h-5 w-5"
+              /></a
+            >
+          </div>
+        </div>
+        <!-- POST 2 -->
+        <div
+          class=` w-[30%] rounded-[20px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
+        >
+          <div class="flex flex-col items-start justify-start gap-3">
+            <img
+              src="/blogimg/El-Ciber-Riesgo-de-su-Web-se-dispara-con-la-IA-1024x760.png"
+              alt="AVANNET"
+              class="h-[37vh] w-full rounded-[20px] object-cover"
+            />
+            <h3 class="text-2xl leading-[1.15]">
+              El Ciber-Riesgo de su Web se dispara con la llegadad de la IA
+              Generativa
+            </h3>
+          </div>
+          <div class="flex w-full items-center justify-between mt-4">
+            <p class="py-1 px-3 rounded-full border text-lg">Web</p>
+            <a
+              href="/contacto"
+              class="inline-flex items-center gap-2 px-3 py-2 rounded-[10px] text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px] hover:bg-black font-medium"
+              >LEER MÁS <Icon
+                name="ph:arrow-right-light"
+                class="h-5 w-5"
+              /></a
+            >
+          </div>
+        </div>
+        <!-- POST 3 -->
+        <div
+          class=` w-[30%] rounded-[20px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
+        >
+          <div class="flex flex-col items-start justify-start gap-3">
+            <img
+              src="/blogimg/CESA-blanes.jpeg"
+              alt="AVANNET"
+              class="h-[37vh] w-full rounded-[20px] object-cover"
+            />
+            <h3 class="text-2xl leading-[1.15]">
+              Avannubo, partner tecnológico del CESA 2026 en Blanes
+            </h3>
+          </div>
+          <div class="flex w-full items-center justify-between mt-4">
+            <p class="py-1 px-3 rounded-full border text-lg">Avannubo</p>
+            <a
+              href="/contacto"
+              class="inline-flex items-center gap-2 px-3 py-2 rounded-[10px] text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px] hover:bg-black font-medium"
+              >LEER MÁS <Icon
+                name="ph:arrow-right-light"
+                class="h-5 w-5"
+              /></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <a
+        href="/blog"
+        aria-label="blog"
+        class={contactButton}
+        >VISITA NUESTRO BLOG <Icon
+          name="ph:arrow-right-light"
+          class="h-5 w-5 ml-1.25"
+        /></a
+      >
+    </section>
+
     <section
       class="relative flex w-full flex-col items-center justify-center px-10 py-20 mb-40"
       aria-label="Contacto"
@@ -691,7 +691,7 @@ const clientReviews = [
         aria-label="Contacto"
         class={contactButton}
         >PONTE EN CONTACTO <Icon
-          name="tabler:arrow-right"
+          name="ph:arrow-right-light"
           class="h-5 w-5 ml-1.25"
         /></a
       >

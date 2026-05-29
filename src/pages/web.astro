@@ -1,49 +1,43 @@
-﻿---
+---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Icon } from 'astro-icon/components';
 
 const glassbox =
-  'overflow-hidden rounded-[5px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
+  'overflow-hidden rounded-[20px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
 
 const buttons =
-  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] font-medium px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-[#3d3d3c]';
+  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] font-medium px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-[#3d3d3c]';
 const buttons2 =
-  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-md bg-transparent font-medium px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out border-2 border-white hover:-translate-y-0.5 hover:bg-[#3d3d3c] hover:border-transparent';
+  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-[10px] bg-transparent font-medium px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out border-2 border-white hover:-translate-y-0.5 hover:bg-[#3d3d3c] hover:border-transparent';
 ---
 
 <BaseLayout
   title="Soluciones Web"
-  mainClass="relative z-10 w-full p-0"
+  mainClass="relative z-10 w-full px-20"
 >
   <div class="relative z-10 w-full">
     <section
-      class="flex min-h-screen w-full flex-col items-center justify-center"
+      class="flex h-screen w-full flex-col items-center justify-center"
       aria-label="Portada"
     >
-      <h1 class="scroll-title m-0 text-[130px] font-bold leading-[1.05]">
-        Soluciones Web
+      <h1 class="scroll-title m-0 text-[110px] font-bold leading-[1.05]">
+        Desarrollo Web
       </h1>
       <h2 class="mb-4 mt-6 text-4xl font-normal leading-[1.2]">
         Impulsa tu imagen online: diseño, desarrollo y rendimiento
       </h2>
       <h3
-        class="text-center w-[1200px] mb-4 mt-6 text-2xl font-normal leading-[1.2]"
+        class="text-center w-[1200px] mb-4 mt-6 text-[22px] font-normal leading-[1.2]"
       >
-        Programación y diseño web a medida en Barcelona. Combinamos diseño,
-        usabilidad, rendimiento y escalabilidad para crear soluciones web
-        totalmente personalizadas, desde el diseño inicial hasta cualquier tipo
-        de programación a medida.
+        Desarrollo y diseño web a medida en Barcelona. Combinamos
+        personalización, usabilidad, rendimiento y escalabilidad para crear
+        soluciones web totalmente adaptado a tu negocio.
       </h3>
       <div class="flex flex-row items-center justify-center gap-6">
         <a
           href="#servicios"
           class={buttons2}
           >SERVICIOS WEB
-        </a>
-        <a
-          href="#porque"
-          class={buttons2}
-          >¿PORQUÉ AVANNUBO?
         </a>
         <a
           href="#como"
@@ -57,34 +51,38 @@ const buttons2 =
         </a>
         <a
           href="/contacto"
+          aria-label="Contacto"
           class={buttons}
-          >PONTE EN CONTACTO
-        </a>
+          >EMPIEZA AHORA <Icon
+            name="ph:arrow-right-light"
+            class="h-5 w-5 ml-1.25"
+          /></a
+        >
       </div>
     </section>
 
     <!-- SERVICIOS-->
     <section
       id="servicios"
-      class="relative flex w-full flex-col items-center justify-center px-10 py-20 mb-20"
+      class="relative flex w-full flex-col items-center justify-center px-10 py-15 mb-20"
       aria-label="Contacto"
     >
       <h3
-        class="scroll-title relative m-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2] sticky top-5"
+        class="scroll-title m-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2] sticky top-5"
       >
         <b>Servicios Web Avannubo</b>
       </h3>
       <!-- PROGRAMACIÓN A MEDIDA -->
       <div
         data-base-z="10"
-        class=`js-web-service-card w-full h-[75vh] flex flex-row gap-10 mt-30 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-10`
+        class=`js-web-service-card w-full h-[73vh] flex flex-row gap-10 mt-30 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-10`
       >
         <div
           class=`w-[25%] absolute -top-17 left-0 h-20 flex flex-col items-center justify-start gap-10 px-2`
         >
           <button
             type="button"
-            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
+            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[10px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
           >
             PROGRAMACIÓN A MEDIDA
           </button>
@@ -95,14 +93,14 @@ const buttons2 =
           <img
             src="/web/desarrollo.png"
             alt="AVANNET"
-            class="h-full w-full rounded-[5px] object-cover"
+            class="h-full w-full rounded-[20px] object-cover"
           />
         </div>
       </div>
-      <!-- E-COMMERCE A MEDIDA -->
+      <!-- WORDPRESS WEB -->
       <div
         data-base-z="11"
-        class=`js-web-service-card w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-11`
+        class=`js-web-service-card w-full h-[73vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-11`
       >
         <div class=`w-[50%] flex flex-col items-center justify-start gap-10`>
         </div>
@@ -111,56 +109,30 @@ const buttons2 =
         >
           <button
             type="button"
-            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
+            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[10px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
           >
-            E-COMMERCE A MEDIDA
-          </button>
-        </div>
-        <div class=`w-[50%] flex flex-col items-center justify-start gap-2`>
-          <img
-            src="/web/ecommerce.png"
-            alt="AVANNET"
-            class="h-full w-full rounded-[5px] object-cover"
-          />
-        </div>
-      </div>
-      <!-- WORDPRESS WEBSITES -->
-      <div
-        data-base-z="12"
-        class=`js-web-service-card w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-12`
-      >
-        <div
-          class=`w-[25%] absolute -top-17 left-[50%] h-20 flex flex-col items-center justify-start gap-10 px-2`
-        >
-          <button
-            type="button"
-            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
-          >
-            WORDPRESS WEBSITES
+            WORDPRESS A MEDIDA
           </button>
         </div>
         <div class=`w-[50%] flex flex-col items-center justify-start gap-2`>
           <img
             src="/web/wordpress.jpg"
             alt="AVANNET"
-            class="h-full w-full rounded-[5px] object-cover"
+            class="h-full w-full rounded-[20px] object-cover"
           />
-        </div>
-        <div class=`w-[50%] flex flex-col items-center justify-start gap-10`>
         </div>
       </div>
       <!-- DISEÑO WEB (UX/UI) -->
       <div
-        data-base-z="13"
-        data-web-service-last
-        class=`js-web-service-card w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-13`
+        data-base-z="12"
+        class=`js-web-service-card w-full h-[73vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-12`
       >
         <div
-          class=`w-[25%] absolute -top-17 right-0 h-20 flex flex-col items-center justify-start gap-10 px-2`
+          class=`w-[25%] absolute -top-17 left-[50%] h-20 flex flex-col items-center justify-start gap-10 px-2`
         >
           <button
             type="button"
-            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[5px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
+            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[10px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
           >
             DISEÑO WEB (UX/UI)
           </button>
@@ -169,7 +141,33 @@ const buttons2 =
           <img
             src="/web/uxui.png"
             alt="AVANNET"
-            class="h-full w-full rounded-[5px] object-cover"
+            class="h-full w-full rounded-[20px] object-cover"
+          />
+        </div>
+        <div class=`w-[50%] flex flex-col items-center justify-start gap-10`>
+        </div>
+      </div>
+      <!-- MANTENIMIENTO Y MEJORA -->
+      <div
+        data-base-z="13"
+        data-web-service-last
+        class=`js-web-service-card w-full h-[73vh] flex flex-row gap-10 mt-70 p-10 z-1 ${glassbox} sticky top-41 overflow-visible z-13`
+      >
+        <div
+          class=`w-[25%] absolute -top-17 right-0 h-20 flex flex-col items-center justify-start gap-10 px-2`
+        >
+          <button
+            type="button"
+            class="js-web-service-tab cursor-default bg-[#B60000] rounded-[10px] w-full h-full flex items-center justify-center text-[1.4vw] font-bold text-center"
+          >
+            MANTENIMIENTO Y MEJORA
+          </button>
+        </div>
+        <div class=`w-[50%] flex flex-col items-center justify-start gap-2`>
+          <img
+            src="/web/ecommerce.png"
+            alt="AVANNET"
+            class="h-full w-full rounded-[20px] object-cover"
           />
         </div>
         <div class=`w-[50%] flex flex-col items-center justify-start gap-10`>
@@ -177,7 +175,7 @@ const buttons2 =
       </div>
       <!-- SEPARDOR -->
       <div
-        class=`w-full h-[75vh] flex flex-row gap-10 mt-70 p-10 z-1  sticky top-41 overflow-visible`
+        class=`w-full h-[73vh] flex flex-row gap-10 mt-70 p-10 z-1  sticky top-41 overflow-visible`
       >
       </div>
     </section>
@@ -190,14 +188,14 @@ const buttons2 =
       <h3
         class="scroll-title relative m-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
       >
-        <b>¿Porqué elegir AVANNBO Web?</b>
+        <b>¿Por qué elegir AVANNUBO Web?</b>
       </h3>
       <div class="w-full flex flex-row gap-10 mt-16 mb-10 z-1">
         <div
           class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-2`
         >
           <Icon
-            name="tabler:edit"
+            name="ph:pencil-simple-line-light"
             class="h-18 w-18"
           />
           <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
@@ -212,7 +210,7 @@ const buttons2 =
           class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
         >
           <Icon
-            name="tabler:arrow-guide"
+            name="ph:strategy-light"
             class="h-18 w-18"
           />
           <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-2 text-center">
@@ -227,7 +225,7 @@ const buttons2 =
           class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
         >
           <Icon
-            name="tabler:brand-speedtest"
+            name="ph:speedometer-light"
             class="h-18 w-18"
           />
           <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
@@ -243,7 +241,7 @@ const buttons2 =
           class=`w-[25%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
         >
           <Icon
-            name="tabler:chart-dots-2"
+            name="ph:chart-line-up-light"
             class="h-18 w-18"
           />
           <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-4 text-center">
@@ -260,7 +258,7 @@ const buttons2 =
         aria-label="Contacto"
         class={buttons}
         >PONTE EN CONTACTO <Icon
-          name="tabler:arrow-right"
+          name="ph:arrow-right-light"
           class="h-5 w-5 ml-1.25"
         /></a
       >
@@ -293,7 +291,7 @@ const buttons2 =
             <img
               src="/web/desarrollo.png"
               alt=""
-              class="h-[20vh] w-full rounded-[5px] object-cover"
+              class="h-[20vh] w-full rounded-[20px] object-cover"
               aria-hidden="true"
             />
             <p class="mb-4 text-[2.5vh] leading-[1.25]">
@@ -301,7 +299,7 @@ const buttons2 =
               tu marca y se adapte a las necesidades de tu negocio.
             </p>
             <div
-              class="w-[7vh] h-[7vh] rounded-[5px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
+              class="w-[7vh] h-[7vh] rounded-[10px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
             >
               1
             </div>
@@ -315,7 +313,7 @@ const buttons2 =
             <img
               src="/web/desarrollo.png"
               alt=""
-              class="h-[20vh] w-full rounded-[5px] object-cover"
+              class="h-[20vh] w-full rounded-[20px] object-cover"
               aria-hidden="true"
             />
             <p class="mb-4 text-[2.5vh] leading-[1.25]">
@@ -323,7 +321,7 @@ const buttons2 =
               garantizando una experiencia de usuario excepcional.
             </p>
             <div
-              class="w-[7vh] h-[7vh] rounded-[5px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
+              class="w-[7vh] h-[7vh] rounded-[10px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
             >
               2
             </div>
@@ -337,7 +335,7 @@ const buttons2 =
             <img
               src="/web/desarrollo.png"
               alt=""
-              class="h-[20vh] w-full rounded-[5px] object-cover"
+              class="h-[20vh] w-full rounded-[20px] object-cover"
               aria-hidden="true"
             />
             <p class="mb-4 text-[2.5vh] leading-[1.25]">
@@ -346,7 +344,7 @@ const buttons2 =
               totalmente segura.
             </p>
             <div
-              class="w-[7vh] h-[7vh] rounded-[5px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
+              class="w-[7vh] h-[7vh] rounded-[10px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
             >
               3
             </div>
@@ -360,7 +358,7 @@ const buttons2 =
             <img
               src="/web/desarrollo.png"
               alt=""
-              class="h-[20vh] w-full rounded-[5px] object-cover"
+              class="h-[20vh] w-full rounded-[20px] object-cover"
               aria-hidden="true"
             />
             <p class="mb-4 text-[2.5vh] leading-[1.25]">
@@ -368,7 +366,7 @@ const buttons2 =
               de mantener, adaptándonos a la evolución de tu negocio.
             </p>
             <div
-              class="w-[7vh] h-[7vh] rounded-[5px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
+              class="w-[7vh] h-[7vh] rounded-[10px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
             >
               4
             </div>
@@ -382,7 +380,7 @@ const buttons2 =
             <img
               src="/web/desarrollo.png"
               alt=""
-              class="h-[20vh] w-full rounded-[5px] object-cover"
+              class="h-[20vh] w-full rounded-[20px] object-cover"
               aria-hidden="true"
             />
             <p class="mb-4 text-[2.5vh] leading-[1.25]">
@@ -390,7 +388,7 @@ const buttons2 =
               de mantener, adaptándonos a la evolución de tu negocio.
             </p>
             <div
-              class="w-[7vh] h-[7vh] rounded-[5px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
+              class="w-[7vh] h-[7vh] rounded-[10px] bg-[#b60000] absolute -top-2 -left-2 flex items-center justify-center text-white font-bold text-[4vh]"
             >
               5
             </div>
@@ -406,7 +404,7 @@ const buttons2 =
         aria-label="Contacto"
         class={buttons}
         >PONTE EN CONTACTO <Icon
-          name="tabler:arrow-right"
+          name="ph:arrow-right-light"
           class="h-5 w-5 ml-1.25"
         /></a
       >
@@ -414,7 +412,7 @@ const buttons2 =
     <!-- CASOS DE ÉXITO -->
     <section
       id="exito"
-      class="js-success-horizontal-section relative h-[320vh] w-full px-20"
+      class="js-success-horizontal-section relative h-[320vh] w-full px-10"
       aria-label="Contacto"
     >
       <div
@@ -423,16 +421,16 @@ const buttons2 =
         <h3
           class="scroll-title mb-5 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
         >
-          <b>Casos de Éxito en AVANNUBO</b>
+          <b>Casos de éxito en AVANNUBO</b>
         </h3>
         <div
-          class="js-success-horizontal-viewport h-[80vh] w-full overflow-hidden"
+          class="js-success-horizontal-viewport h-[80vh] w-full rounded-[20px] overflow-hidden"
         >
           <div
             class="js-success-horizontal-track flex h-full w-max flex-row gap-10"
           >
             <div
-              class=`flex h-full w-[calc(100vw-160px)] shrink-0 flex-col items-center justify-start ${glassbox} p-10 gap-6`
+              class=`flex h-full w-[calc(100vw-240px)] shrink-0 flex-col items-center justify-start ${glassbox} p-10 gap-6`
             >
               <div class="w-full flex flex-row items-end justify-between">
                 <h3 class="text-[7vh] font-bold leading-[0.95]">QUANTRUE</h3>
@@ -449,12 +447,12 @@ const buttons2 =
                 <img
                   src="/web/quantrue1.png"
                   alt=""
-                  class="min-w-0 w-[70%] h-full rounded-[5px] object-cover"
+                  class="min-w-0 w-[70%] h-full rounded-[20px] object-cover"
                 />
                 <img
                   src="/web/quantrue2.png"
                   alt=""
-                  class="min-w-0 w-[30%] h-full rounded-[5px] object-cover"
+                  class="min-w-0 w-[30%] h-full rounded-[20px] object-cover"
                 />
               </div>
             </div>
@@ -476,12 +474,12 @@ const buttons2 =
                 <img
                   src="/web/quantrue1.png"
                   alt=""
-                  class="min-w-0 w-[70%] h-full rounded-[5px] object-cover"
+                  class="min-w-0 w-[70%] h-full rounded-[20px] object-cover"
                 />
                 <img
                   src="/web/quantrue2.png"
                   alt=""
-                  class="min-w-0 w-[30%] h-full rounded-[5px] object-cover"
+                  class="min-w-0 w-[30%] h-full rounded-[20px] object-cover"
                 />
               </div>
             </div>
@@ -503,12 +501,12 @@ const buttons2 =
                 <img
                   src="/web/quantrue1.png"
                   alt=""
-                  class="min-w-0 w-[70%] h-full rounded-[5px] object-cover"
+                  class="min-w-0 w-[70%] h-full rounded-[20px] object-cover"
                 />
                 <img
                   src="/web/quantrue2.png"
                   alt=""
-                  class="min-w-0 w-[30%] h-full rounded-[5px] object-cover"
+                  class="min-w-0 w-[30%] h-full rounded-[20px] object-cover"
                 />
               </div>
             </div>
@@ -530,12 +528,12 @@ const buttons2 =
                 <img
                   src="/web/quantrue1.png"
                   alt=""
-                  class="min-w-0 w-[70%] h-full rounded-[5px] object-cover"
+                  class="min-w-0 w-[70%] h-full rounded-[20px] object-cover"
                 />
                 <img
                   src="/web/quantrue2.png"
                   alt=""
-                  class="min-w-0 w-[30%] h-full rounded-[5px] object-cover"
+                  class="min-w-0 w-[30%] h-full rounded-[20px] object-cover"
                 />
               </div>
             </div>
@@ -557,12 +555,12 @@ const buttons2 =
                 <img
                   src="/web/quantrue1.png"
                   alt=""
-                  class="min-w-0 w-[70%] h-full rounded-[5px] object-cover"
+                  class="min-w-0 w-[70%] h-full rounded-[20px] object-cover"
                 />
                 <img
                   src="/web/quantrue2.png"
                   alt=""
-                  class="min-w-0 w-[30%] h-full rounded-[5px] object-cover"
+                  class="min-w-0 w-[30%] h-full rounded-[20px] object-cover"
                 />
               </div>
             </div>
@@ -583,14 +581,14 @@ const buttons2 =
       <h2
         class="scroll-title-reverse relative z-[1] mb-6 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
       >
-        ¡Queremos ser <b> Tu Partner Tecnológico</b>!
+        ¿Queremos ser <b> Tu Partner Tecnológico</b>!
       </h2>
       <a
         href="/contacto"
         aria-label="Contacto"
         class={buttons}
         >PONTE EN CONTACTO <Icon
-          name="tabler:arrow-right"
+          name="ph:arrow-right-light"
           class="h-5 w-5 ml-1.25"
         /></a
       >

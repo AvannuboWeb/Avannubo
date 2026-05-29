@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.104",
+    "@iconify-json/ph": "^1.2.2",
     "@iconify-json/tabler": "^1.2.33",
     "@lottiefiles/dotlottie-wc": "^0.9.14",
     "@tailwindcss/vite": "^4.2.4",

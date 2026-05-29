@@ -21,20 +21,20 @@ const socialItems = [
   {
     href: 'https://www.instagram.com',
     label: 'Instagram',
-    icon: 'tabler:brand-instagram',
+    icon: 'ph:instagram-logo',
   },
   {
     href: 'https://www.linkedin.com',
     label: 'LinkedIn',
-    icon: 'tabler:brand-linkedin',
+    icon: 'ph:linkedin-logo',
   },
-  { href: 'https://maps.google.com', label: 'Mapa', icon: 'tabler:map-pin' },
+  { href: 'https://maps.google.com', label: 'Mapa', icon: 'ph:map-pin' },
   {
     href: 'mailto:comercial@avannubo.com',
     label: 'Correo',
-    icon: 'tabler:mail',
+    icon: 'ph:envelope',
   },
-  { href: 'tel:+34932432510', label: 'Telefono', icon: 'tabler:phone' },
+  { href: 'tel:+34932432510', label: 'Telefono', icon: 'ph:phone' },
 ];
 
 const columnOneItems = [
@@ -82,19 +82,19 @@ const columnOneItems = [
     tag: 'h3',
     className: 'm-0 mt-[3vh] text-base font-normal leading-[1.2]',
     text: '+34 93 243 25 10',
-    icon: 'tabler:arrow-up-right',
+    icon: 'ph:arrow-up-right',
   },
   {
     tag: 'h3',
     className: 'm-0 text-base font-normal leading-[1.2]',
     text: 'comercial@avannubo.com',
-    icon: 'tabler:arrow-up-right',
+    icon: 'ph:arrow-up-right',
   },
   {
     tag: 'h3',
     className: 'm-0 text-base font-normal leading-[1.2]',
     text: 'C/Almogàvers 80, Barcelona',
-    icon: 'tabler:arrow-up-right',
+    icon: 'ph:arrow-up-right',
   },
 ];
 
@@ -149,7 +149,7 @@ const columnThreeItems = [
 <a
   href="/"
   aria-label="Home"
-  class={`fixed left-2.5 top-2.5 z-[999] flex h-[45px] cursor-pointer items-center rounded-md p-3 ${glass} ${hoverRed}`}
+  class={`fixed left-2.5 top-2.5 z-[999] flex h-[45px] cursor-pointer items-center rounded-[10px] p-3 ${glass} ${hoverRed}`}
 >
   <img
     src="/Logo_Avannubo_header_bl.png"
@@ -163,7 +163,7 @@ const columnThreeItems = [
 <a
   href="/contacto"
   aria-label="Contacto"
-  class={`fixed right-[273px] top-2.5 z-[999] flex h-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] px-4 py-3 text-base font-medium leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] ${hoverBlack}`}
+  class={`fixed right-[273px] top-2.5 z-[999] flex h-[45px] cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-4 py-3 text-base font-medium leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] ${hoverBlack}`}
 >
   CONTACTO
 </a>
@@ -171,14 +171,14 @@ const columnThreeItems = [
 <a
   href="/asistencia"
   aria-label="Asistencia Remota"
-  class={`fixed right-[70px] top-2.5 z-[999] flex h-[45px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] px-4 py-3 text-base font-medium leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] ${hoverBlack}`}
+  class={`fixed right-[70px] top-2.5 z-[999] flex h-[45px] cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-4 py-3 text-base font-medium leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] ${hoverBlack}`}
 >
   ASISTENCIA REMOTA
 </a>
 
 <div
   id="menu-toggle"
-  class={`fixed right-2.5 top-2.5 z-[999] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-md ${glass} ${hoverRed}`}
+  class={`fixed right-2.5 top-2.5 z-[999] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-[10px] ${glass} ${hoverRed}`}
   role="button"
   tabindex="0"
   aria-label="Abrir menu"
@@ -207,26 +207,26 @@ const columnThreeItems = [
 
 <div
   id="go-top"
-  class="pointer-events-none fixed bottom-[60px] right-2.5 z-[980] flex h-10 w-10 translate-x-[calc(100%+10px)] cursor-pointer items-center justify-center rounded-md opacity-0 transition-[transform,opacity] duration-300 ease-in-out"
+  class="pointer-events-none fixed bottom-[60px] right-2.5 z-[980] flex h-10 w-10 translate-x-[calc(100%+10px)] cursor-pointer items-center justify-center rounded-[10px] opacity-0 transition-[transform,opacity] duration-300 ease-in-out"
   role="button"
   tabindex="0"
   aria-label="Go top"
   aria-hidden="true"
 >
   <Icon
-    name="tabler:arrow-up"
-    class="h-7 w-7"
+    name="ph:arrow-up-bold"
+    class="h-8 w-8"
   />
 </div>
 
 <a
   href="tel:+000000000"
   aria-label="Llamar"
-  class="fixed bottom-2.5 right-2.5 z-[980] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-md bg-[#b60000] shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
+  class="fixed bottom-2.5 right-2.5 z-[980] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
 >
   <Icon
-    name="tabler:phone"
-    class="h-6 w-6 text-white"
+    name="ph:phone"
+    class="h-7 w-7 text-white"
   />
 </a>
 
@@ -236,11 +236,11 @@ const columnThreeItems = [
   aria-label="Enviar correo"
   aria-haspopup="dialog"
   aria-expanded="false"
-  class="fixed bottom-2.5 right-[70px] z-[980] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-md border-0 bg-[#b60000] p-0 shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
+  class="fixed bottom-2.5 right-[70px] z-[980] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-[10px] border-0 bg-[#b60000] p-0 shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
 >
   <Icon
-    name="tabler:mail"
-    class="h-6 w-6 text-white"
+    name="ph:envelope"
+    class="h-7 w-7 text-white"
   />
 </button>
 <button
@@ -249,11 +249,11 @@ const columnThreeItems = [
   aria-label="Abrir chat"
   aria-haspopup="dialog"
   aria-expanded="false"
-  class="fixed bottom-2.5 right-[130px] z-[980] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-md border-0 bg-[#b60000] p-0 shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
+  class="fixed bottom-2.5 right-[130px] z-[980] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-[10px] border-0 bg-[#b60000] p-0 shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-transform duration-[220ms] ease-in-out hover:-translate-y-0.5"
 >
   <Icon
-    name="tabler:brand-line"
-    class="h-6 w-6 text-white"
+    name="ph:chat-circle-text"
+    class="h-7 w-7 text-white"
   />
 </button>
 
@@ -273,17 +273,17 @@ const columnThreeItems = [
       type="button"
       id="contact-popup-close"
       aria-label="Cerrar formulario"
-      class="absolute right-2 top-2 flex h-9 w-9 cursor-pointer items-center justify-center rounded-[5px] border-0 bg-[#b60000] p-0 text-white transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black"
+      class="absolute right-2 top-2 flex h-9 w-9 cursor-pointer items-center justify-center rounded-[10px] border-0 bg-[#b60000] p-0 text-white transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black"
     >
       <Icon
-        name="tabler:x"
+        name="ph:x"
         class="h-5 w-5"
       />
     </button>
 
     <form class="mt-8 flex w-full flex-col gap-4">
       <select
-        class="h-11 w-full rounded-[5px] bg-white p-2 text-black placeholder-gray-600 outline-none"
+        class="h-11 w-full rounded-[10px] bg-white p-2 text-black placeholder-gray-600 outline-none"
         required
       >
         <option
@@ -348,9 +348,9 @@ const columnThreeItems = [
 
       <button
         type="submit"
-        class="mt-2 inline-flex min-h-[45px] cursor-pointer items-center justify-center gap-2 rounded-md bg-[#b60000] px-4 py-3 leading-none text-white transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black"
+        class="mt-2 inline-flex min-h-[45px] cursor-pointer items-center justify-center gap-2 rounded-[10px] bg-[#b60000] px-4 py-3 leading-none text-white transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black"
         >ENVIAR <Icon
-          name="tabler:arrow-right"
+          name="ph:arrow-right"
           class="h-5 w-5"
         /></button
       >
@@ -377,7 +377,7 @@ const columnThreeItems = [
       class="absolute right-2 top-2 flex h-9 w-9 cursor-pointer items-center justify-center rounded-[5px] border-0 bg-[#b60000] p-0 text-white transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-black"
     >
       <Icon
-        name="tabler:x"
+        name="ph:x"
         class="h-5 w-5"
       />
     </button>
@@ -434,7 +434,7 @@ const columnThreeItems = [
           disabled
         >
           <Icon
-            name="tabler:send"
+            name="ph:paper-plane-tilt"
             class="h-5 w-5"
           />
         </button>
@@ -460,7 +460,7 @@ const columnThreeItems = [
 >
   <div class="grid w-full grid-cols-[28fr_28fr_44fr] gap-2.5 pt-[55px]">
     <div
-      class={`flex h-[81vh] flex-col items-start justify-start gap-[2vh] rounded-md pb-10 pl-[10%] pr-10 pt-[70px] ${glass}`}
+      class={`flex h-[81vh] flex-col items-start justify-start gap-[2vh] rounded-[20px] pb-10 pl-[10%] pr-10 pt-[70px] ${glass}`}
     >
       {
         columnOneItems.map((item) =>
@@ -484,7 +484,7 @@ const columnThreeItems = [
     </div>
 
     <div
-      class={`flex h-[81vh] flex-col items-start justify-start gap-[2vh] rounded-md pb-10 pl-[10%] pr-10 pt-[70px] ${glass}`}
+      class={`flex h-[81vh] flex-col items-start justify-start gap-[2vh] rounded-[20px] pb-10 pl-[10%] pr-10 pt-[70px] ${glass}`}
     >
       {
         columnTwoItems.map((item) =>
@@ -500,7 +500,7 @@ const columnThreeItems = [
     </div>
 
     <div
-      class={`flex h-[81vh] flex-col items-start justify-start gap-[1.2vh] rounded-md pb-10 pl-[10%] pr-10 pt-[70px] ${glass}`}
+      class={`flex h-[81vh] flex-col items-start justify-start gap-[1.2vh] rounded-[20px] pb-10 pl-[10%] pr-10 pt-[70px] ${glass}`}
     >
       <h3 class="m-0 text-base font-normal leading-[1.2]">SERVICIOS IT</h3>
       {
@@ -517,12 +517,12 @@ const columnThreeItems = [
     <a
       href="/contacto"
       aria-label="Contacto"
-      class={`mt-2.5 flex h-[9vh] items-center justify-start rounded-md pl-[5%] ${glass} ${hoverRed}`}
+      class={`mt-2.5 flex h-[9vh] items-center justify-start rounded-[20px] pl-[5%] ${glass} ${hoverRed}`}
     >
       <span
         class="inline-flex items-center gap-3 text-[4.6vh] font-semibold leading-none"
         >PONTE EN CONTACTO <Icon
-          name="tabler:arrow-right"
+          name="ph:arrow-right"
           class="h-[4.6vh] w-[4.6vh]"
         /></span
       >
@@ -535,11 +535,11 @@ const columnThreeItems = [
           target="_blank"
           rel="noopener noreferrer"
           aria-label={item.label}
-          class={`mt-2.5 flex h-[9vh] items-center justify-center rounded-md ${glass} ${hoverRed}`}
+          class={`mt-2.5 flex h-[9vh] items-center justify-center rounded-[20px] ${glass} ${hoverRed}`}
         >
           <Icon
             name={item.icon}
-            class="h-[30px] w-[30px] text-white"
+            class="h-[40px] w-[40px] text-white"
           />
         </a>
       ))
