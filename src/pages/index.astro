@@ -4,13 +4,13 @@ import { Icon } from 'astro-icon/components';
 
 const glassbox =
   'overflow-hidden rounded-[20px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
-const serviceCard = `sticky flex h-[55vh] w-full flex-col items-start justify-between p-5 ${glassbox}`;
+const serviceCard = `sticky flex h-[55vh] w-full flex-col items-start justify-between p-5 transition-[width] duration-400 ease-out ${glassbox}`;
 const serviceTitle =
   'm-0 text-[7vh] font-bold leading-[0.95] text-white transition-all duration-200 ease-in-out hover:translate-x-0.5 hover:text-[#b60000]';
 const serviceArrow =
   'flex h-[6vh] w-[6vh] items-center justify-center rounded-[10px] bg-[#b60000] text-[5vh] leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-all duration-200 ease-in-out hover:translate-x-0.5 hover:-translate-y-0.5 hover:bg-black';
 const contactButton =
-  'relative z-[1] mt-8 inline-flex min-h-[45px] font-medium cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-[#3d3d3c]';
+  'relative z-[1] mt-8 inline-flex min-h-[45px] font-medium cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 ';
 
 const certifications = [
   { src: '/9001.png', alt: '9001', className: 'h-auto w-[70px]' },
@@ -138,18 +138,18 @@ const developmentServices = [
     ],
   },
   {
-    title: 'WEB',
+    title: 'DESARROLLO WEB',
     href: '/web',
     image: '/homeimg/web.webp',
     alt: 'Web',
     topClass: 'top-[25vh]',
     description:
-      'Webs y comercios electrónicos rápidos, seguros y adaptados a tus necesidades y objetivos, combinando diseño, desarrollo y rendimiento.',
+      'Webs y comercios electrónicos rápidos, seguros y adaptados a tus necesidades y objetivos. Diseño personalizado, desarrollo y rendimiento.',
     items: [
-      'Desarrollo de Web a medida',
-      'E-commerce a Medida',
-      'Wordpress y Woocommerce',
-      'Diseño Web y Apps (UX/UI)',
+      'Webs Corporativas a medida',
+      'Tiendas Online a medida',
+      'Mantenimeiento y Mejora',
+      'Diseño de Web personalizado (UX/UI)',
       'Hosting propio y Certificados SSL',
     ],
   },
@@ -185,19 +185,27 @@ const avannetFeatures = [
 
 const clientReviews = [
   {
-    company: 'Leyre Malet (ICMR)',
+    empresa: 'ICMR',
+    nombre: 'Leyre Malet',
+    logo: '/homeimg/Recepcion-logo.webp',
     text: 'Mi experiencia con Avannubo está siendo muy satisfactoria. Tienen una orientación a cliente muy cómoda para el usuario puesto que saben adaptarse y entender las necesidades perfectamente. Combinan un trato personalizado con unas capacidades integrales que lo hacen el perfecto colaborador. Todo el equipo es excepcional pero destaco la atención de Daniel Torrado por su trato exquisito.',
   },
   {
-    company: 'Mayte Sánchez (Métodos Tiempos y Servicios S.L.)',
+    empresa: 'Métodos Tiempos y Servicios S.L.',
+    nombre: 'Mayte Sánchez',
+    logo: '/Logo_Avannubo_header_bl.png',
     text: '«He migrado dominio y he tenido la gran suerte de que me hayan asignado a Daniel Torrado, un profesional y experto excepcional. No se si el resto del equipo es igual, pero me ha sorprendido gratamente y a mi es muy difícil sorprenderme. Recomiendo el servicio por mi propia experiencia.»',
   },
   {
-    company: 'Jordi Caballol (Grupo Aquacenter)',
+    empresa: 'Grupo Aquacenter',
+    nombre: 'Jordi Caballol',
+    logo: '/Logo_Avannubo_header_bl.png',
     text: '«Como IT Manager del Grupo Aquacenter, estoy muy satisfecho del soporte que nos han aportado el equipo de redes de AVANCEM GRUP. Nunca había me había encontrado con un proveedor tan próximo que realmente te haga las cosas tan sencillas. Realmente sientes que puedes contar con ellos y que realmente, aún sin ponerles cara, sientes que forman parte de tu equipo.»',
   },
   {
-    company: 'Recepción y Control de Alarmas S.L.',
+    empresa: 'Recepción y Control de Alarmas S.L.',
+    nombre: '',
+    logo: '/Logo_Avannubo_header_bl.png',
     text: '«Experiencia muy positiva, tanto en relación al servicio técnico como con el departamento comercial, bien a distancia por el servicio de tickets como en la atención presencial. Resulta muy sencillo contactar con ellos, y dan respuestas de forma muy rápida y eficaz. En general, un servicio excelente.»',
   },
 ];
@@ -233,6 +241,7 @@ const clientReviews = [
       <h3 class="mb-4 mt-0 text-3xl font-normal leading-[1.2]">
         Avannubo, your technology partner
       </h3>
+
       <a
         href="/calidad"
         aria-label="Certificaciones de calidad"
@@ -249,11 +258,33 @@ const clientReviews = [
           }
         </div>
       </a>
+      <div class="flex flex-row gap-6 mt-4">
+        <a
+          href="#mas"
+          aria-label="descubre más"
+          class={contactButton}
+          >DESCUBRE MÁS
+          <Icon
+            name="ph:arrow-down-bold"
+            class="h-5 w-5 ml-1.25"
+          /></a
+        >
+        <a
+          href="/contacto"
+          aria-label="Contacto"
+          class={contactButton}
+          >EMPIEZA TU PROYECTO <Icon
+            name="ph:arrow-right-bold"
+            class="h-5 w-5 ml-1.25"
+          /></a
+        >
+      </div>
     </section>
 
     <section
       class="relative flex w-full flex-col items-center justify-center px-10 py-40"
       aria-label="Partner tecnológico"
+      id="mas"
     >
       <h3
         class="relative z-[1] m-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
@@ -421,9 +452,9 @@ const clientReviews = [
         >
           <Icon
             name="ph:seal-check-light"
-            class="h-18 w-18"
+            class="h-20 w-20"
           />
-          <h3 class="m-0 text-[30px] font-bold leading-[1.2] p-2 text-center">
+          <h3 class="m-0 text-[35px] font-bold leading-[1.2] p-2 text-center">
             TRATO PERSONAL Y DIRECTO
           </h3>
           <p class="mb-4 text-[2.5vh] leading-[1.25] text-center">
@@ -453,8 +484,8 @@ const clientReviews = [
         href="/contacto"
         aria-label="Contacto"
         class={contactButton}
-        >PONTE EN CONTACTO <Icon
-          name="ph:arrow-right-light"
+        >CONÓCENOS AHORA <Icon
+          name="ph:arrow-right-bold"
           class="h-5 w-5 ml-1.25"
         /></a
       >
@@ -522,16 +553,51 @@ const clientReviews = [
         class="client-reviews-carousel relative w-full px-16 max-md:px-12"
         aria-label="Carrusel de opiniones de clientes"
       >
-        <div class="client-reviews-viewport overflow-hidden">
+        <div class="client-reviews-viewport overflow-hidden px-6 py-20">
           <div
             class="client-reviews-track flex cursor-grab touch-pan-y select-none gap-10 active:cursor-grabbing max-md:gap-6"
           >
             {
               clientReviews.map((review) => (
                 <article
-                  class={`client-review-slide shrink-0 rounded-[20px] p-8 ${glassbox} flex flex-col items-start justify-start gap-4 max-md:p-6`}
+                  class={`overflow-visible client-review-slide shrink-0 rounded-[20px] p-8 ${glassbox} flex flex-col items-start justify-start gap-4 max-md:p-6`}
                 >
-                  <h3 class="text-[2.8vh] leading-[1.15]">{review.company}</h3>
+                  <div class="absolute -top-12 left-8 p-3 flex items-center justify-center w-[140px] h-[140px] bg-white  rounded-full">
+                    <img
+                      src={review.logo}
+                      alt={`${review.empresa} logo`}
+                      class="h-[100px] w-auto object-contain"
+                    />
+                  </div>
+                  <div class="flex items-center justify-center gap-2 mt-20">
+                    <Icon
+                      name="ph:star-fill"
+                      class="h-6 w-6 text-[#ffd000]"
+                    />
+                    <Icon
+                      name="ph:star-fill"
+                      class="h-6 w-6 text-[#ffd000]"
+                    />
+                    <Icon
+                      name="ph:star-fill"
+                      class="h-6 w-6 text-[#ffd000]"
+                    />
+                    <Icon
+                      name="ph:star-fill"
+                      class="h-6 w-6 text-[#ffd000]"
+                    />
+                    <Icon
+                      name="ph:star-fill"
+                      class="h-6 w-6 text-[#ffd000]"
+                    />
+                  </div>
+
+                  <h3 class="text-[3.5vh] font-bold leading-[1.15] mt-2">
+                    {review.empresa}
+                  </h3>
+                  <p class="text-lg leading-[1.45] text-[22px]">
+                    {review.nombre}
+                  </p>
                   <p class="text-lg leading-[1.45] max-md:text-[16px]">
                     {review.text}
                   </p>
@@ -563,7 +629,7 @@ const clientReviews = [
         </button>
       </div>
     </section>
-    <section
+    <!-- <section
       class="relative mb-20 flex min-h-screen w-full flex-col items-center justify-start"
       aria-label="AVANBLOG"
     >
@@ -578,9 +644,9 @@ const clientReviews = [
         Mantente al día con las novedades, tendencias y tips IT que te ofrecemos
         desde nuestro <b>blog de Avannubo</b>
       </h3>
-      <div class="flex w-full flex-row items-center justify-center gap-10">
-        <!-- POST 1-->
-        <div
+      <div class="flex w-full flex-row items-center justify-center gap-10"> -->
+    <!-- POST 1-->
+    <!-- <div
           class=` w-[30%] rounded-[20px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
         >
           <div class="flex flex-col items-start justify-start gap-3">
@@ -605,9 +671,9 @@ const clientReviews = [
               /></a
             >
           </div>
-        </div>
-        <!-- POST 2 -->
-        <div
+        </div> -->
+    <!-- POST 2 -->
+    <!-- <div
           class=` w-[30%] rounded-[20px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
         >
           <div class="flex flex-col items-start justify-start gap-3">
@@ -632,9 +698,9 @@ const clientReviews = [
               /></a
             >
           </div>
-        </div>
-        <!-- POST 3 -->
-        <div
+        </div> -->
+    <!-- POST 3 -->
+    <!-- <div
           class=` w-[30%] rounded-[20px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
         >
           <div class="flex flex-col items-start justify-start gap-3">
@@ -670,7 +736,7 @@ const clientReviews = [
           class="h-5 w-5 ml-1.25"
         /></a
       >
-    </section>
+    </section> -->
 
     <section
       class="relative flex w-full flex-col items-center justify-center px-10 py-20 mb-40"
@@ -868,8 +934,16 @@ const clientReviews = [
     function setupCarousel() {
       slidesPerView = getSlidesPerView();
       gap = Number.parseFloat(gsap.getProperty(track, 'columnGap')) || 0;
+      const vpPaddingLeft =
+        Number.parseFloat(getComputedStyle(viewport).paddingLeft) || 0;
+      const vpPaddingRight =
+        Number.parseFloat(getComputedStyle(viewport).paddingRight) || 0;
       slideWidth =
-        (viewport.clientWidth - gap * (slidesPerView - 1)) / slidesPerView;
+        (viewport.clientWidth -
+          vpPaddingLeft -
+          vpPaddingRight -
+          gap * (slidesPerView - 1)) /
+        slidesPerView;
       maxIndex = Math.max(0, slides.length - slidesPerView);
 
       slides.forEach((slide) => {
@@ -911,5 +985,59 @@ const clientReviews = [
     window.addEventListener('resize', setupCarousel);
 
     setupCarousel();
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const serviceSection = document.querySelector('[aria-label="Servicios"]');
+    if (!serviceSection) return;
+
+    const containers = serviceSection.querySelectorAll(':scope > div');
+    const targetWidths = [96, 97, 98, 99];
+
+    containers.forEach((container) => {
+      const cards = container.querySelectorAll('article.sticky');
+      if (!cards.length) return;
+
+      function update() {
+        cards.forEach((card, index) => {
+          if (index >= targetWidths.length) return;
+
+          const topClass = Array.from(card.classList).find((c) =>
+            c.startsWith('top-')
+          );
+          if (!topClass) return;
+
+          const vhMatch = topClass.match(/\[(\d+(?:\.\d+)?)vh\]/);
+          if (!vhMatch) return;
+
+          const topVh = parseFloat(vhMatch[1]);
+          const topPx = (topVh * window.innerHeight) / 100;
+          const rect = card.getBoundingClientRect();
+          const isStuck = rect.top >= 0 && Math.abs(rect.top - topPx) < 5;
+          const wasReduced = card.dataset.reduced === 'true';
+
+          if (isStuck) {
+            card.style.width = `${targetWidths[index]}%`;
+            card.dataset.reduced = 'true';
+          } else if (rect.top > topPx && wasReduced) {
+            card.style.width = '';
+            delete card.dataset.reduced;
+          }
+        });
+      }
+
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            update();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      update();
+    });
   });
 </script>

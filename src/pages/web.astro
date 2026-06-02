@@ -6,9 +6,9 @@ const glassbox =
   'overflow-hidden rounded-[20px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
 
 const buttons =
-  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] font-medium px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-[#3d3d3c]';
+  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] font-medium px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5';
 const buttons2 =
-  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-[10px] bg-transparent font-medium px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out border-2 border-white hover:-translate-y-0.5 hover:bg-[#3d3d3c] hover:border-transparent';
+  'relative z-[1] mt-8 inline-flex min-h-[45px] cursor-pointer items-center justify-center rounded-[20px] font-medium leading-none transition-all duration-[220ms] ease-in-out bg-[#3d3d3c] border-2 border-transparent hover:-translate-y-0.5 hover:bg-transparent hover:border-white';
 ---
 
 <BaseLayout
@@ -24,7 +24,7 @@ const buttons2 =
         Desarrollo Web
       </h1>
       <h2 class="mb-4 mt-6 text-4xl font-normal leading-[1.2]">
-        Impulsa tu imagen online: diseño, desarrollo y rendimiento
+        Diseño - Desarrollo - Rendimiento - Mantenimiento
       </h2>
       <h3
         class="text-center w-[1200px] mb-4 mt-6 text-[22px] font-normal leading-[1.2]"
@@ -36,28 +36,64 @@ const buttons2 =
       <div class="flex flex-row items-center justify-center gap-6">
         <a
           href="#servicios"
-          class={buttons2}
-          >SERVICIOS WEB
+          class=`${buttons2} w-[320px] p-10 flex flex-col items-center justify-center gap-6`
+        >
+          <h3 class="text-center text-[3.2vh] font-bold leading-[1.2]">
+            WEBS <br /> CORPORATIVAS
+          </h3>
+          <Icon
+            name="ph:code-block-light"
+            class="h-16 w-16"
+          />
         </a>
         <a
-          href="#como"
-          class={buttons2}
-          >¿CÓMO LO HACEMOS?
+          href="#servicios"
+          class=`${buttons2} w-[320px] p-10 flex flex-col items-center justify-center gap-6`
+        >
+          <h3 class="text-center text-[3.2vh] font-bold leading-[1.2]">
+            TIENDAS <br /> ONLINE
+          </h3>
+          <Icon
+            name="ph:storefront-light"
+            class="h-16 w-16"
+          />
         </a>
         <a
-          href="#exito"
-          class={buttons2}
-          >CASOS DE ÉXITO
+          href="#servicios"
+          class=`${buttons2} w-[320px] p-10 flex flex-col items-center justify-center gap-6`
+        >
+          <h3 class="text-center text-[3.2vh] font-bold leading-[1.2]">
+            MANTENIMIENTO Y MEJORA
+          </h3>
+          <Icon
+            name="ph:toolbox-light"
+            class="h-16 w-16"
+          />
         </a>
         <a
-          href="/contacto"
-          aria-label="Contacto"
-          class={buttons}
-          >EMPIEZA AHORA <Icon
+          href="#servicios"
+          class=`${buttons2} w-[320px] p-10 flex flex-col items-center justify-center gap-6`
+        >
+          <h3 class="text-center text-[3.2vh] font-bold leading-[1.2]">
+            PACKS Y COMPLEMENTOS
+          </h3>
+          <Icon
+            name="ph:stack-plus-light"
+            class="h-16 w-16"
+          />
+        </a>
+      </div>
+      <div class="flex flex-row items-center justify-center gap-6 mt-6">
+        <button
+          type="button"
+          aria-label="Solicitar presupuesto"
+          class={`${buttons} border-0 web-contact-popup-trigger`}
+        >
+          SOLICITA PRESUPUESTO <Icon
             name="ph:arrow-right-light"
             class="h-5 w-5 ml-1.25"
-          /></a
-        >
+          />
+        </button>
       </div>
     </section>
 
@@ -253,15 +289,16 @@ const buttons2 =
           </p>
         </div>
       </div>
-      <a
-        href="/contacto"
-        aria-label="Contacto"
-        class={buttons}
-        >PONTE EN CONTACTO <Icon
+      <button
+        type="button"
+        aria-label="Solicitar presupuesto"
+        class={`${buttons} border-0 web-contact-popup-trigger`}
+      >
+        SOLICITA PRESUPUESTO <Icon
           name="ph:arrow-right-light"
           class="h-5 w-5 ml-1.25"
-        /></a
-      >
+        />
+      </button>
       <img
         src="/avannubo_icon.png"
         alt=""
@@ -701,4 +738,18 @@ const buttons2 =
   });
   window.addEventListener('resize', updateSuccessHorizontalScroll);
   updateSuccessHorizontalScroll();
+
+  const contactPopupTriggers = document.querySelectorAll<HTMLButtonElement>(
+    '.web-contact-popup-trigger'
+  );
+  const contactPopupToggle = document.querySelector<HTMLButtonElement>(
+    '#contact-popup-toggle'
+  );
+
+  contactPopupTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', (event) => {
+      event.stopPropagation();
+      contactPopupToggle?.click();
+    });
+  });
 </script>

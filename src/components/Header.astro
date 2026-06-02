@@ -47,6 +47,59 @@ const columnOneItems = [
   {
     tag: 'h3',
     className: 'm-0 mt-[2vh] text-base font-normal leading-[1.2]',
+    text: 'AVANNUBO',
+  },
+  { tag: 'h2', className: menuTitleSmall, text: 'HOME', href: '/' },
+  { tag: 'h2', className: menuTitleSmall, text: 'AVANBLOG', href: '/blog' },
+  { tag: 'h2', className: menuTitleSmall, text: 'CALIDAD', href: '/calidad' },
+  {
+    tag: 'h2',
+    className: menuTitleSmall,
+    text: 'SOLIDARIDAD',
+    href: '/solidaridad',
+  },
+  {
+    tag: 'h3',
+    className: 'm-0 mt-[4vh] text-[2vh] font-normal leading-[1.2]',
+    text: '+34 93 243 25 10',
+    icon: 'ph:arrow-up-right',
+  },
+  {
+    tag: 'h3',
+    className: 'm-0 text-[2vh] font-normal leading-[1.2]',
+    text: 'comercial@avannubo.com',
+    icon: 'ph:arrow-up-right',
+  },
+  {
+    tag: 'h3',
+    className: 'm-0 text-[2vh] font-normal leading-[1.2]',
+    text: 'C/Almogàvers 80, Barcelona',
+    icon: 'ph:arrow-up-right',
+  },
+];
+
+const columnTwoItems = [
+  {
+    tag: 'h3',
+    className: 'm-0 text-base font-normal leading-[1.2]',
+    text: 'TARIFAS Y PRODUCTOS',
+  },
+  {
+    tag: 'h2',
+    className: menuTitleSmall,
+    text: 'AVANMÓVIL',
+    href: '/avanmovil',
+  },
+  {
+    tag: 'h2',
+    className: menuTitleSmall,
+    text: 'AVANFIBRA',
+    href: '/avanfibra',
+  },
+  { tag: 'h2', className: menuTitleSmall, text: 'CATÁLOGO', href: '/catalogo' },
+  {
+    tag: 'h3',
+    className: 'm-0 mt-[2vh] text-base font-normal leading-[1.2]',
     text: 'HERRAMIENTAS',
   },
   {
@@ -78,59 +131,6 @@ const columnOneItems = [
     text: 'AVANVOIP STATS',
     href: '/telefonia',
   },
-  {
-    tag: 'h3',
-    className: 'm-0 mt-[3vh] text-base font-normal leading-[1.2]',
-    text: '+34 93 243 25 10',
-    icon: 'ph:arrow-up-right',
-  },
-  {
-    tag: 'h3',
-    className: 'm-0 text-base font-normal leading-[1.2]',
-    text: 'comercial@avannubo.com',
-    icon: 'ph:arrow-up-right',
-  },
-  {
-    tag: 'h3',
-    className: 'm-0 text-base font-normal leading-[1.2]',
-    text: 'C/Almogàvers 80, Barcelona',
-    icon: 'ph:arrow-up-right',
-  },
-];
-
-const columnTwoItems = [
-  {
-    tag: 'h3',
-    className: 'm-0 text-base font-normal leading-[1.2]',
-    text: 'TARIFAS Y PRODUCTOS',
-  },
-  {
-    tag: 'h2',
-    className: menuTitleSmall,
-    text: 'AVANMÓVIL',
-    href: '/avanmovil',
-  },
-  {
-    tag: 'h2',
-    className: menuTitleSmall,
-    text: 'AVANFIBRA',
-    href: '/avanfibra',
-  },
-  { tag: 'h2', className: menuTitleSmall, text: 'CATÁLOGO', href: '/catalogo' },
-  {
-    tag: 'h3',
-    className: 'm-0 mt-[2vh] text-base font-normal leading-[1.2]',
-    text: 'AVANNUBO',
-  },
-  { tag: 'h2', className: menuTitleSmall, text: 'HOME', href: '/' },
-  { tag: 'h2', className: menuTitleSmall, text: 'AVANBLOG', href: '/blog' },
-  { tag: 'h2', className: menuTitleSmall, text: 'CALIDAD', href: '/calidad' },
-  {
-    tag: 'h2',
-    className: menuTitleSmall,
-    text: 'SOLIDARIDAD',
-    href: '/solidaridad',
-  },
 ];
 
 const columnThreeItems = [
@@ -149,7 +149,7 @@ const columnThreeItems = [
 <a
   href="/"
   aria-label="Home"
-  class={`fixed left-2.5 top-2.5 z-[999] flex h-[45px] cursor-pointer items-center rounded-[10px] p-3 ${glass} ${hoverRed}`}
+  class={`fixed left-2.5 top-2.5 z-[999] flex h-[45px] cursor-pointer items-center rounded-[10px] py-3 px-4 bg-[#b60000] ${hoverRed}`}
 >
   <img
     src="/Logo_Avannubo_header_bl.png"
@@ -163,7 +163,7 @@ const columnThreeItems = [
 <a
   href="/contacto"
   aria-label="Contacto"
-  class={`fixed right-[273px] top-2.5 z-[999] flex h-[45px] cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-4 py-3 text-base font-medium leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] ${hoverBlack}`}
+  class={`fixed right-[273px] top-2.5 z-[999] flex h-[45px] cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-4 py-3 text-base font-medium leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] ${hoverRed}`}
 >
   CONTACTO
 </a>
@@ -171,14 +171,14 @@ const columnThreeItems = [
 <a
   href="/asistencia"
   aria-label="Asistencia Remota"
-  class={`fixed right-[70px] top-2.5 z-[999] flex h-[45px] cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-4 py-3 text-base font-medium leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] ${hoverBlack}`}
+  class={`fixed right-[70px] top-2.5 z-[999] flex h-[45px] cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-4 py-3 text-base font-medium leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] ${hoverRed}`}
 >
   ASISTENCIA REMOTA
 </a>
 
 <div
   id="menu-toggle"
-  class={`fixed right-2.5 top-2.5 z-[999] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-[10px] ${glass} ${hoverRed}`}
+  class={`fixed right-2.5 top-2.5 z-[999] flex h-[45px] w-[50px] cursor-pointer items-center justify-center rounded-[10px] ${glass} ${hoverBlack}`}
   role="button"
   tabindex="0"
   aria-label="Abrir menu"
@@ -993,6 +993,8 @@ const columnThreeItems = [
 
     if (isOpen) {
       contactPopupClose?.focus();
+    } else if (contactPopup.contains(document.activeElement)) {
+      contactPopupToggle.focus();
     }
   };
 
@@ -1016,6 +1018,8 @@ const columnThreeItems = [
           : chatPopupClose;
       focusTarget?.focus();
       setContactPopupState(false);
+    } else if (chatPopup.contains(document.activeElement)) {
+      chatPopupToggle.focus();
     }
   };
 
