@@ -8,9 +8,9 @@ const serviceCard = `sticky flex h-[55vh] w-full flex-col items-start justify-be
 const serviceTitle =
   'm-0 text-[7vh] font-bold leading-[0.95] text-white transition-all duration-200 ease-in-out hover:translate-x-0.5 hover:text-[#b60000]';
 const serviceArrow =
-  'flex h-[6vh] w-[6vh] items-center justify-center rounded-[10px] bg-[#b60000] text-[5vh] leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-all duration-200 ease-in-out hover:translate-x-0.5 hover:-translate-y-0.5 hover:bg-black';
+  'flex h-[8vh] w-[8vh] items-center justify-center rounded-[10px] bg-[#b60000] text-[5vh] leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-all duration-200 ease-in-out hover:translate-x-1 hover:-translate-y-1 ';
 const contactButton =
-  'relative z-[1] mt-8 inline-flex min-h-[45px] font-medium cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-4 py-3 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 ';
+  'relative z-[1] mt-8 inline-flex text-[18px] min-h-[45px] font-medium cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-5 py-4 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 ';
 
 const certifications = [
   { src: '/9001.png', alt: '9001', className: 'h-auto w-[70px]' },
@@ -172,6 +172,172 @@ const developmentServices = [
   },
 ];
 
+const avanServices = [
+  {
+    title: 'DATA-CENTER',
+    href: '/data-center',
+    image: '/homeimg/data-center.webp',
+    alt: 'Data Center',
+    topClass: 'top-[7vh]',
+    description:
+      'Soluciones de cloud empresarial, virtualización, almacenamiento seguro y continuidad de negocio, todo ello con máxima seguridad y alto rendimiento.',
+    items: [
+      'CloudAVAN y AVANvault',
+      'Suministros Hardware y Software',
+      'Migraciones y Planes Backup y DRS',
+      'Citrix (Entorno de Virtualización)',
+      'Infraestructura y Housing',
+      'AVANréplica (replicación en tiempo real)',
+    ],
+  },
+  {
+    title: 'SISTEMAS',
+    href: '/sistemas',
+    image: '/homeimg/sistemas.webp',
+    alt: 'Sistemas',
+    topClass: 'top-[16vh]',
+    description:
+      'Somos expertos en sistemas y administración IT, por lo que garantizamos continuidad, productividad y protección con las mejores herramientas.',
+    items: [
+      'Mantenimiento y Monitorización',
+      'Helpdesk y soporte',
+      'Ciberseguridad',
+      'Gestión de proyectos IT',
+      'Microsoft 365',
+      'AVANdns (Dominios y DNS)',
+    ],
+  },
+  {
+    title: 'REDES',
+    href: '/redes',
+    image: '/homeimg/redes.webp',
+    alt: 'REDES',
+    topClass: 'top-[25vh]',
+    description:
+      'Potenciamos tu infraestructura: analizamos, optimizamos e implementamos redes desde cero, garantizando la máxima seguridad y rendimiento.',
+    items: [
+      'Soporte y Asistencia Técnica',
+      'Diseño y Planificación de Redes',
+      'Seguridad y Protección de Redes',
+      'Optimización y Rendimiento',
+      'Mantenimiento y Monitorización',
+    ],
+  },
+  {
+    title: 'CIBERSEGURIDAD',
+    href: '/ciberseguridad',
+    image: '/homeimg/ciberseguridad.webp',
+    alt: 'CIBERSEGURIDAD',
+    topClass: 'top-[25vh]',
+    description:
+      'Potenciamos tu infraestructura: analizamos, optimizamos e implementamos redes desde cero, garantizando la máxima seguridad y rendimiento.',
+    items: [
+      'Soporte y Asistencia Técnica',
+      'Diseño y Planificación de Redes',
+      'Seguridad y Protección de Redes',
+      'Optimización y Rendimiento',
+      'Mantenimiento y Monitorización',
+    ],
+  },
+  {
+    title: 'TELEFONÍA IP',
+    href: '/telefonia',
+    image: '/homeimg/telefonia.webp',
+    alt: 'Telefonía IP',
+    topClass: 'top-[34vh]',
+    description:
+      'Sistema de telefonía IP profesional para empresas que buscan control, escalabilidad y, además, eficiencia en sus comunicaciones.',
+    items: [
+      'Servicios de Telefonía IP - AVANvoip',
+      'Telefonía IP integrada - AVANmóvil',
+      'Softphone y Extensiones - IPAVANsip',
+      'AVANwave + CRM',
+    ],
+  },
+  {
+    title: 'INSTALACIONES',
+    href: '/instalaciones',
+    image: '/homeimg/instalaciones.webp',
+    alt: 'Instalaciones',
+    topClass: 'top-[43vh]',
+    description:
+      'Tu infraestructura en buenas manos gracias a instalaciones IT, seguridad y mantenimiento integral, garantizando así un funcionamiento continuo.',
+    items: [
+      'Consultoría y Asesoramiento Preventa',
+      'Instalaciones y Cableados IT',
+      'Sistemas de Red Wifi',
+      'Saneado de Armarios Rack',
+      'Controles de Accesos y CCTV',
+      'Mantenimiento y Servicios postventa',
+    ],
+  },
+  {
+    title: 'ODOO',
+    href: '/odoo',
+    image: '/homeimg/odoo.webp',
+    alt: 'ODOO',
+    topClass: 'top-[7vh]',
+    description:
+      'Adaptamos las herramientas de Odoo a las necesidades específicas de tu empresa. Optimiza procesos y mejora tu eficiencia.',
+    items: [
+      'Facturación electrónica - Verifactu y SII',
+      'Automatización de Procesos',
+      'Unificación de programas',
+      'Reducción de costes',
+      'Rendimiento y productividad',
+    ],
+  },
+  {
+    title: 'APLICACIONES',
+    href: '/aplicaciones',
+    image: '/homeimg/apps.webp',
+    alt: 'Aplicaciones',
+    topClass: 'top-[16vh]',
+    description:
+      'Impulsa tu negocio con aplicaciones web a medida, seguras y escalables. De la idea a producción, con calidad, rendimiento y soporte continuo.',
+    items: [
+      'Consultoría Técnica de Desarrollo',
+      'Análisis funcional de procesos',
+      'Arquitectura y diseño de software',
+      'Desarrollo a medida y Despliegue',
+      'Evolución y mantenimiento del software',
+    ],
+  },
+  {
+    title: 'DESARROLLO WEB',
+    href: '/web',
+    image: '/homeimg/web.webp',
+    alt: 'Web',
+    topClass: 'top-[25vh]',
+    description:
+      'Webs y comercios electrónicos rápidos, seguros y adaptados a tus necesidades y objetivos. Diseño personalizado, desarrollo y rendimiento.',
+    items: [
+      'Webs Corporativas a medida',
+      'Tiendas Online a medida',
+      'Mantenimeiento y Mejora',
+      'Diseño de Web personalizado (UX/UI)',
+      'Hosting propio y Certificados SSL',
+    ],
+  },
+  {
+    title: 'SEO & MARKETING',
+    href: '/seo-marketing',
+    image: '/homeimg/seo-marketing.webp',
+    alt: 'SEO & Marketing',
+    topClass: 'top-[34vh]',
+    description:
+      'Mejoramos tu presencia online con estrategias de SEO y Marketing efectivas, orientadas a optimizar resultados y aumentar la visibilidad.',
+    items: [
+      'Posicionamento SEO y GEO',
+      'Analítica Web avanzada',
+      'Estrategias SEM (Google Ads)',
+      'Email Marketing',
+      'Gestión de Redes Sociales',
+      'Branding y Diseño Grafico',
+    ],
+  },
+];
+
 const avannetFeatures = [
   { icon: 'ph:headset-light', text: 'Ticketing y Asistencia' },
   { icon: 'ph:key-light', text: 'Contraseñas y Seguridad' },
@@ -234,7 +400,7 @@ const clientReviews = [
         Soluciones y servicios IT
       </h1>
       <h2
-        class="scroll-title-reverse mb-7 mt-0 text-[68px] font-normal leading-[1.1]"
+        class="scroll-title-reverse mb-7 mt-0 text-[68px] font-normal leading-[1.2]"
       >
         que impulsan y transforman tu negocio
       </h2>
@@ -257,32 +423,22 @@ const clientReviews = [
             ))
           }
         </div>
+        <div class="flex flex-row gap-6 mt-4">
+          <a
+            href="/contacto"
+            aria-label="Contacto"
+            class={contactButton}
+            >EMPIEZA AHORA<Icon
+              name="ph:arrow-right-bold"
+              class="h-5 w-5 ml-1.25"
+            /></a
+          >
+        </div>
       </a>
-      <div class="flex flex-row gap-6 mt-4">
-        <a
-          href="#mas"
-          aria-label="descubre más"
-          class={contactButton}
-          >DESCUBRE MÁS
-          <Icon
-            name="ph:arrow-down-bold"
-            class="h-5 w-5 ml-1.25"
-          /></a
-        >
-        <a
-          href="/contacto"
-          aria-label="Contacto"
-          class={contactButton}
-          >EMPIEZA TU PROYECTO <Icon
-            name="ph:arrow-right-bold"
-            class="h-5 w-5 ml-1.25"
-          /></a
-        >
-      </div>
     </section>
 
     <section
-      class="relative flex w-full flex-col items-center justify-center px-10 py-40"
+      class="relative flex w-full flex-col items-center justify-center px-10 py-30"
       aria-label="Partner tecnológico"
       id="mas"
     >
@@ -295,12 +451,12 @@ const clientReviews = [
       <img
         src="/avannubo_icon.png"
         alt=""
-        class="absolute z-0 h-auto w-[440px] opacity-15"
+        class="absolute z-0 h-auto w-[350px] opacity-15"
         aria-hidden="true"
       />
     </section>
 
-    <section
+    <!-- <section
       class="relative flex w-full flex-col items-center justify-start px-20 py-[120px]"
       aria-label="Servicios"
     >
@@ -419,10 +575,420 @@ const clientReviews = [
         }
         <div class="h-[55vh] w-full"></div>
       </div>
+    </section> -->
+    <section
+      class="relative flex w-full flex-col items-center justify-center p-20 mb-20"
+      aria-label="Contacto"
+    >
+      <h2
+        class="scroll-title mb-20 mt-0 text-center text-[68px] font-bold leading-[1.1]"
+      >
+        SERVICIOS AVANNUBO
+      </h2>
+      <div
+        class="flex w-full flex-row flex-wrap items-center justify-center gap-10"
+      >
+        <a
+          href=""
+          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+        >
+          <div class="flex w-full items-center justify-between mb-4 gap-8">
+            <Icon
+              name="ph:hard-drives-light"
+              class="h-[8vh] w-[8vh]"
+            />
+
+            <div
+              class=`${serviceArrow} absolute -top-3 right-12`
+              aria-label=""
+            >
+              <Icon
+                name="ph:arrow-up-right"
+                class="h-[5.5vh] w-[5.5vh]"
+              />
+            </div>
+          </div>
+          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+            INFRAESTRUCTURA
+          </h3>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            CloudAVAN y AVANvault
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Suministros Hardware y Software
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Migraciones y Planes Backup
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Entornos de Virtualización
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            AVANréplica y DRS
+          </h4>
+        </a>
+        <a
+          href=""
+          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+        >
+          <div class="flex w-full items-start justify-between mb-4">
+            <Icon
+              name="ph:desktop-tower-light"
+              class="h-[8vh] w-[8vh]"
+            />
+            <div
+              class=`${serviceArrow} absolute -top-3 right-12`
+              aria-label=""
+            >
+              <Icon
+                name="ph:arrow-up-right"
+                class="h-[5.5vh] w-[5.5vh]"
+              />
+            </div>
+          </div>
+          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+            SISTEMAS
+          </h3>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Mantenimiento y Monitorización
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Helpdesk y soporte
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Gestión de proyectos IT
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Microsoft 365
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            AVANdns (Dominios y DNS)
+          </h4>
+        </a>
+        <a
+          href=""
+          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+        >
+          <div class="flex w-full items-start justify-between mb-4">
+            <Icon
+              name="ph:network-light"
+              class="h-[8vh] w-[8vh]"
+            />
+            <div
+              class=`${serviceArrow} absolute -top-3 right-12`
+              aria-label=""
+            >
+              <Icon
+                name="ph:arrow-up-right"
+                class="h-[5.5vh] w-[5.5vh]"
+              />
+            </div>
+          </div>
+          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+            REDES
+          </h3>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            CloudAVAN y AVANvault
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Análisis y Auditorías
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Diseño y Planificación
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Optimización y Rendimiento
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Mantenimiento y Asistencia
+          </h4>
+        </a>
+        <a
+          href=""
+          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+        >
+          <div class="flex w-full items-start justify-between mb-4">
+            <Icon
+              name="ph:shield-check-light"
+              class="h-[8vh] w-[8vh]"
+            />
+            <div
+              class=`${serviceArrow} absolute -top-3 right-12`
+              aria-label=""
+            >
+              <Icon
+                name="ph:arrow-up-right"
+                class="h-[5.5vh] w-[5.5vh]"
+              />
+            </div>
+          </div>
+          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+            CIBERSEGURIDAD
+          </h3>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Auditoría y Análisis Periódicos
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Protección de Infraestructura
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Seguridad Integral
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Servicio MDR (respuesta inmediata)
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Monitorización y asistencia
+          </h4>
+        </a>
+        <a
+          href=""
+          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+        >
+          <div class="flex w-full items-start justify-between mb-4">
+            <Icon
+              name="ph:cell-tower-light"
+              class="h-[8vh] w-[8vh]"
+            />
+            <div
+              class=`${serviceArrow} absolute -top-3 right-12`
+              aria-label=""
+            >
+              <Icon
+                name="ph:arrow-up-right"
+                class="h-[5.5vh] w-[5.5vh]"
+              />
+            </div>
+          </div>
+          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+            TELEFONÍA IP
+          </h3>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            AVANvoip - Telefonía IP
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            AVANmóvil - Telefonía IP integrada
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            AVANsip - Softphone y Extensiones
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            AVANwave - conexión con CRM
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Soporte y asistencia técnica
+          </h4>
+        </a>
+        <a
+          href=""
+          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+        >
+          <div class="flex w-full items-start justify-between mb-4">
+            <Icon
+              name="ph:squares-four-light"
+              class="h-[8vh] w-[8vh]"
+            />
+            <div
+              class=`${serviceArrow} absolute -top-3 right-12`
+              aria-label=""
+            >
+              <Icon
+                name="ph:arrow-up-right"
+                class="h-[5.5vh] w-[5.5vh]"
+              />
+            </div>
+          </div>
+          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+            ODOO
+          </h3>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Verifactu y SII personalizado
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            SImplantación integral Odoo
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Migración de Versiones
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Integración con Terceros
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Incidéncias y Soporte Técnico
+          </h4>
+        </a>
+        <a
+          href=""
+          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+        >
+          <div class="flex w-full items-start justify-between mb-4">
+            <Icon
+              name="ph:toolbox-light"
+              class="h-[8vh] w-[8vh]"
+            />
+            <div
+              class=`${serviceArrow} absolute -top-3 right-12`
+              aria-label=""
+            >
+              <Icon
+                name="ph:arrow-up-right"
+                class="h-[5.5vh] w-[5.5vh]"
+              />
+            </div>
+          </div>
+          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+            INSTALACIONES
+          </h3>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            CloudAVAN y AVANvault
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Suministros Hardware y Software
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Migraciones y Planes Backup
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Entornos de Virtualización
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            AVANréplica y DRS
+          </h4>
+        </a>
+        <a
+          href=""
+          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+        >
+          <div class="flex w-full items-start justify-between mb-4">
+            <Icon
+              name="ph:devices-light"
+              class="h-[8vh] w-[8vh]"
+            />
+            <div
+              class=`${serviceArrow} absolute -top-3 right-12`
+              aria-label=""
+            >
+              <Icon
+                name="ph:arrow-up-right"
+                class="h-[5.5vh] w-[5.5vh]"
+              />
+            </div>
+          </div>
+          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+            APLICACIONES
+          </h3>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            CloudAVAN y AVANvault
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Suministros Hardware y Software
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Migraciones y Planes Backup
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Entornos de Virtualización
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            AVANréplica y DRS
+          </h4>
+        </a>
+        <a
+          href=""
+          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+        >
+          <div class="flex w-full items-start justify-between mb-4">
+            <Icon
+              name="ph:code-light"
+              class="h-[8vh] w-[8vh]"
+            />
+            <div
+              class=`${serviceArrow} absolute -top-3 right-12`
+              aria-label=""
+            >
+              <Icon
+                name="ph:arrow-up-right"
+                class="h-[5.5vh] w-[5.5vh]"
+              />
+            </div>
+          </div>
+          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+            DESARROLLO WEB
+          </h3>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            CloudAVAN y AVANvault
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Suministros Hardware y Software
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Migraciones y Planes Backup
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Entornos de Virtualización
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            AVANréplica y DRS
+          </h4>
+        </a>
+        <a
+          href=""
+          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+        >
+          <div class="flex w-full items-start justify-between mb-4">
+            <Icon
+              name="ph:megaphone-light"
+              class="h-[8vh] w-[8vh]"
+            />
+            <div
+              class=`${serviceArrow} absolute -top-3 right-12`
+              aria-label=""
+            >
+              <Icon
+                name="ph:arrow-up-right"
+                class="h-[5.5vh] w-[5.5vh]"
+              />
+            </div>
+          </div>
+          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+            MARKETING & SEO
+          </h3>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            CloudAVAN y AVANvault
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Suministros Hardware y Software
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Migraciones y Planes Backup
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            Entornos de Virtualización
+          </h4>
+          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+            AVANréplica y DRS
+          </h4>
+        </a>
+        <div class=`service-card ${glassbox} w-[calc(60%+40px)] h-[45vh]`>
+          <div
+            class="flex flex-row gap-6 w-full items-end justify-end mt-4 p-10"
+          >
+            <a
+              href="/contacto"
+              aria-label="Contacto"
+              class="inline-flex text-[20px] font-medium cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-5 py-4 leading-none transition-all duration-[220ms] ease-in-out hover:translate-x-1"
+              >PONTE EN CONTACTO<Icon
+                name="ph:arrow-right-bold"
+                class="h-5 w-5 ml-1.25"
+              /></a
+            >
+          </div>
+        </div>
+      </div>
     </section>
 
     <section
-      class="relative flex w-full flex-col items-center justify-center p-20 mb-40"
+      class="relative flex w-full flex-col items-center justify-center p-20 mb-30"
       aria-label="Contacto"
     >
       <h3
@@ -541,7 +1107,7 @@ const clientReviews = [
       >
     </section>
     <section
-      class="relative flex w-full flex-col items-center justify-start p-8 mt-40 mb-40"
+      class="relative flex w-full flex-col items-center justify-start p-8 mt-30 mb-30"
       aria-label="AVANNET"
     >
       <h3
@@ -739,7 +1305,7 @@ const clientReviews = [
     </section> -->
 
     <section
-      class="relative flex w-full flex-col items-center justify-center px-10 py-20 mb-40"
+      class="relative flex w-full flex-col items-center justify-center px-10 mb-40"
       aria-label="Contacto"
     >
       <h3
@@ -764,7 +1330,7 @@ const clientReviews = [
       <img
         src="/avannubo_icon.png"
         alt=""
-        class="absolute z-0 h-auto w-[700px] opacity-15"
+        class="absolute z-0 h-auto w-[550px] opacity-15"
         aria-hidden="true"
       />
     </section>
@@ -874,6 +1440,32 @@ const clientReviews = [
           });
         },
       });
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const serviceCards = gsap.utils.toArray('.service-card');
+
+    gsap.set(serviceCards, { y: 60, autoAlpha: 0 });
+
+    ScrollTrigger.create({
+      trigger: serviceCards[0]?.parentElement,
+      start: 'top 80%',
+      once: true,
+      onEnter: () => {
+        gsap.to(serviceCards, {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          stagger: 0.08,
+          onComplete: () => {
+            serviceCards.forEach((card) =>
+              gsap.set(card, { clearProps: 'transform' })
+            );
+          },
+        });
+      },
     });
   });
 
