@@ -150,7 +150,7 @@ const Opiniones = [
       >
         <a
           href=""
-          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
+          class=`service-card service-card-hover ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-center justify-between mb-4 gap-8">
             <Icon
@@ -189,7 +189,7 @@ const Opiniones = [
         </a>
         <a
           href=""
-          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
+          class=`service-card service-card-hover ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -227,7 +227,7 @@ const Opiniones = [
         </a>
         <a
           href=""
-          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
+          class=`service-card service-card-hover ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -265,7 +265,7 @@ const Opiniones = [
         </a>
         <a
           href=""
-          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
+          class=`service-card service-card-hover ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -303,7 +303,7 @@ const Opiniones = [
         </a>
         <a
           href=""
-          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
+          class=`service-card service-card-hover ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -341,7 +341,7 @@ const Opiniones = [
         </a>
         <a
           href=""
-          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
+          class=`service-card service-card-hover ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -379,7 +379,7 @@ const Opiniones = [
         </a>
         <a
           href=""
-          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
+          class=`service-card service-card-hover ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -417,7 +417,7 @@ const Opiniones = [
         </a>
         <a
           href=""
-          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
+          class=`service-card service-card-hover ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -455,7 +455,7 @@ const Opiniones = [
         </a>
         <a
           href=""
-          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
+          class=`service-card service-card-hover ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -493,7 +493,7 @@ const Opiniones = [
         </a>
         <a
           href=""
-          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
+          class=`service-card service-card-hover ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -940,7 +940,9 @@ const Opiniones = [
           onComplete: () => {
             batch.forEach((card) => {
               gsap.set(card, { clearProps: 'transform' });
-              setupHover(card);
+              if (card.classList.contains('service-card-hover')) {
+                setupHover(card);
+              }
             });
           },
         });
