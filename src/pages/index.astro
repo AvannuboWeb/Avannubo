@@ -2,343 +2,21 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Icon } from 'astro-icon/components';
 
-const glassbox =
+const glassBox =
   'overflow-hidden rounded-[20px] bg-[rgba(160,160,160,0.3)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[25px]';
-const serviceCard = `sticky flex h-[55vh] w-full flex-col items-start justify-between p-5 transition-[width] duration-400 ease-out ${glassbox}`;
-const serviceTitle =
-  'm-0 text-[7vh] font-bold leading-[0.95] text-white transition-all duration-200 ease-in-out hover:translate-x-0.5 hover:text-[#b60000]';
 const serviceArrow =
-  'flex h-[8vh] w-[8vh] items-center justify-center rounded-[10px] bg-[#b60000] text-[5vh] leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-all duration-200 ease-in-out hover:translate-x-1 hover:-translate-y-1 ';
+  'flex h-[7.5vh] w-[7.5vh] items-center justify-center rounded-[10px] bg-[#b60000] text-[5vh] leading-none shadow-[0_0_10px_rgba(0,0,0,0.4)] transition-all duration-200 ease-in-out hover:translate-x-1 hover:-translate-y-1 ';
 const contactButton =
   'relative z-[1] mt-8 inline-flex text-[18px] min-h-[45px] font-medium cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-5 py-4 leading-none transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 ';
 
-const certifications = [
+const certificaciones = [
   { src: '/9001.png', alt: '9001', className: 'h-auto w-[70px]' },
   { src: '/27001.png', alt: '27001', className: 'h-auto w-[70px]' },
   { src: '/ENS.png', alt: 'ENS', className: 'h-auto w-[70px]' },
   { src: '/CNMC_logo.webp', alt: 'CNMC', className: 'h-auto w-[220px]' },
 ];
 
-const infrastructureServices = [
-  {
-    title: 'DATA-CENTER',
-    href: '/data-center',
-    image: '/homeimg/data-center.webp',
-    alt: 'Data Center',
-    topClass: 'top-[7vh]',
-    description:
-      'Soluciones de cloud empresarial, virtualización, almacenamiento seguro y continuidad de negocio, todo ello con máxima seguridad y alto rendimiento.',
-    items: [
-      'CloudAVAN y AVANvault',
-      'Suministros Hardware y Software',
-      'Migraciones y Planes Backup y DRS',
-      'Citrix (Entorno de Virtualización)',
-      'Infraestructura y Housing',
-      'AVANréplica (replicación en tiempo real)',
-    ],
-  },
-  {
-    title: 'SISTEMAS',
-    href: '/sistemas',
-    image: '/homeimg/sistemas.webp',
-    alt: 'Sistemas',
-    topClass: 'top-[16vh]',
-    description:
-      'Somos expertos en sistemas y administración IT, por lo que garantizamos continuidad, productividad y protección con las mejores herramientas.',
-    items: [
-      'Mantenimiento y Monitorización',
-      'Helpdesk y soporte',
-      'Ciberseguridad',
-      'Gestión de proyectos IT',
-      'Microsoft 365',
-      'AVANdns (Dominios y DNS)',
-    ],
-  },
-  {
-    title: 'REDES',
-    href: '/redes',
-    image: '/homeimg/redes.webp',
-    alt: 'REDES',
-    topClass: 'top-[25vh]',
-    description:
-      'Potenciamos tu infraestructura: analizamos, optimizamos e implementamos redes desde cero, garantizando la máxima seguridad y rendimiento.',
-    items: [
-      'Soporte y Asistencia Técnica',
-      'Diseño y Planificación de Redes',
-      'Seguridad y Protección de Redes',
-      'Optimización y Rendimiento',
-      'Mantenimiento y Monitorización',
-    ],
-  },
-  {
-    title: 'TELEFONÍA IP',
-    href: '/telefonia',
-    image: '/homeimg/telefonia.webp',
-    alt: 'Telefonía IP',
-    topClass: 'top-[34vh]',
-    description:
-      'Sistema de telefonía IP profesional para empresas que buscan control, escalabilidad y, además, eficiencia en sus comunicaciones.',
-    items: [
-      'Servicios de Telefonía IP - AVANvoip',
-      'Telefonía IP integrada - AVANmóvil',
-      'Softphone y Extensiones - IPAVANsip',
-      'AVANwave + CRM',
-    ],
-  },
-  {
-    title: 'INSTALACIONES',
-    href: '/instalaciones',
-    image: '/homeimg/instalaciones.webp',
-    alt: 'Instalaciones',
-    topClass: 'top-[43vh]',
-    description:
-      'Tu infraestructura en buenas manos gracias a instalaciones IT, seguridad y mantenimiento integral, garantizando así un funcionamiento continuo.',
-    items: [
-      'Consultoría y Asesoramiento Preventa',
-      'Instalaciones y Cableados IT',
-      'Sistemas de Red Wifi',
-      'Saneado de Armarios Rack',
-      'Controles de Accesos y CCTV',
-      'Mantenimiento y Servicios postventa',
-    ],
-  },
-];
-
-const developmentServices = [
-  {
-    title: 'ODOO',
-    href: '/odoo',
-    image: '/homeimg/odoo.webp',
-    alt: 'ODOO',
-    topClass: 'top-[7vh]',
-    description:
-      'Adaptamos las herramientas de Odoo a las necesidades específicas de tu empresa. Optimiza procesos y mejora tu eficiencia.',
-    items: [
-      'Facturación electrónica - Verifactu y SII',
-      'Automatización de Procesos',
-      'Unificación de programas',
-      'Reducción de costes',
-      'Rendimiento y productividad',
-    ],
-  },
-  {
-    title: 'APLICACIONES',
-    href: '/aplicaciones',
-    image: '/homeimg/apps.webp',
-    alt: 'Aplicaciones',
-    topClass: 'top-[16vh]',
-    description:
-      'Impulsa tu negocio con aplicaciones web a medida, seguras y escalables. De la idea a producción, con calidad, rendimiento y soporte continuo.',
-    items: [
-      'Consultoría Técnica de Desarrollo',
-      'Análisis funcional de procesos',
-      'Arquitectura y diseño de software',
-      'Desarrollo a medida y Despliegue',
-      'Evolución y mantenimiento del software',
-    ],
-  },
-  {
-    title: 'DESARROLLO WEB',
-    href: '/web',
-    image: '/homeimg/web.webp',
-    alt: 'Web',
-    topClass: 'top-[25vh]',
-    description:
-      'Webs y comercios electrónicos rápidos, seguros y adaptados a tus necesidades y objetivos. Diseño personalizado, desarrollo y rendimiento.',
-    items: [
-      'Webs Corporativas a medida',
-      'Tiendas Online a medida',
-      'Mantenimeiento y Mejora',
-      'Diseño de Web personalizado (UX/UI)',
-      'Hosting propio y Certificados SSL',
-    ],
-  },
-  {
-    title: 'SEO & MARKETING',
-    href: '/seo-marketing',
-    image: '/homeimg/seo-marketing.webp',
-    alt: 'SEO & Marketing',
-    topClass: 'top-[34vh]',
-    description:
-      'Mejoramos tu presencia online con estrategias de SEO y Marketing efectivas, orientadas a optimizar resultados y aumentar la visibilidad.',
-    items: [
-      'Posicionamento SEO y GEO',
-      'Analítica Web avanzada',
-      'Estrategias SEM (Google Ads)',
-      'Email Marketing',
-      'Gestión de Redes Sociales',
-      'Branding y Diseño Grafico',
-    ],
-  },
-];
-
-const avanServices = [
-  {
-    title: 'DATA-CENTER',
-    href: '/data-center',
-    image: '/homeimg/data-center.webp',
-    alt: 'Data Center',
-    topClass: 'top-[7vh]',
-    description:
-      'Soluciones de cloud empresarial, virtualización, almacenamiento seguro y continuidad de negocio, todo ello con máxima seguridad y alto rendimiento.',
-    items: [
-      'CloudAVAN y AVANvault',
-      'Suministros Hardware y Software',
-      'Migraciones y Planes Backup y DRS',
-      'Citrix (Entorno de Virtualización)',
-      'Infraestructura y Housing',
-      'AVANréplica (replicación en tiempo real)',
-    ],
-  },
-  {
-    title: 'SISTEMAS',
-    href: '/sistemas',
-    image: '/homeimg/sistemas.webp',
-    alt: 'Sistemas',
-    topClass: 'top-[16vh]',
-    description:
-      'Somos expertos en sistemas y administración IT, por lo que garantizamos continuidad, productividad y protección con las mejores herramientas.',
-    items: [
-      'Mantenimiento y Monitorización',
-      'Helpdesk y soporte',
-      'Ciberseguridad',
-      'Gestión de proyectos IT',
-      'Microsoft 365',
-      'AVANdns (Dominios y DNS)',
-    ],
-  },
-  {
-    title: 'REDES',
-    href: '/redes',
-    image: '/homeimg/redes.webp',
-    alt: 'REDES',
-    topClass: 'top-[25vh]',
-    description:
-      'Potenciamos tu infraestructura: analizamos, optimizamos e implementamos redes desde cero, garantizando la máxima seguridad y rendimiento.',
-    items: [
-      'Soporte y Asistencia Técnica',
-      'Diseño y Planificación de Redes',
-      'Seguridad y Protección de Redes',
-      'Optimización y Rendimiento',
-      'Mantenimiento y Monitorización',
-    ],
-  },
-  {
-    title: 'CIBERSEGURIDAD',
-    href: '/ciberseguridad',
-    image: '/homeimg/ciberseguridad.webp',
-    alt: 'CIBERSEGURIDAD',
-    topClass: 'top-[25vh]',
-    description:
-      'Potenciamos tu infraestructura: analizamos, optimizamos e implementamos redes desde cero, garantizando la máxima seguridad y rendimiento.',
-    items: [
-      'Soporte y Asistencia Técnica',
-      'Diseño y Planificación de Redes',
-      'Seguridad y Protección de Redes',
-      'Optimización y Rendimiento',
-      'Mantenimiento y Monitorización',
-    ],
-  },
-  {
-    title: 'TELEFONÍA IP',
-    href: '/telefonia',
-    image: '/homeimg/telefonia.webp',
-    alt: 'Telefonía IP',
-    topClass: 'top-[34vh]',
-    description:
-      'Sistema de telefonía IP profesional para empresas que buscan control, escalabilidad y, además, eficiencia en sus comunicaciones.',
-    items: [
-      'Servicios de Telefonía IP - AVANvoip',
-      'Telefonía IP integrada - AVANmóvil',
-      'Softphone y Extensiones - IPAVANsip',
-      'AVANwave + CRM',
-    ],
-  },
-  {
-    title: 'INSTALACIONES',
-    href: '/instalaciones',
-    image: '/homeimg/instalaciones.webp',
-    alt: 'Instalaciones',
-    topClass: 'top-[43vh]',
-    description:
-      'Tu infraestructura en buenas manos gracias a instalaciones IT, seguridad y mantenimiento integral, garantizando así un funcionamiento continuo.',
-    items: [
-      'Consultoría y Asesoramiento Preventa',
-      'Instalaciones y Cableados IT',
-      'Sistemas de Red Wifi',
-      'Saneado de Armarios Rack',
-      'Controles de Accesos y CCTV',
-      'Mantenimiento y Servicios postventa',
-    ],
-  },
-  {
-    title: 'ODOO',
-    href: '/odoo',
-    image: '/homeimg/odoo.webp',
-    alt: 'ODOO',
-    topClass: 'top-[7vh]',
-    description:
-      'Adaptamos las herramientas de Odoo a las necesidades específicas de tu empresa. Optimiza procesos y mejora tu eficiencia.',
-    items: [
-      'Facturación electrónica - Verifactu y SII',
-      'Automatización de Procesos',
-      'Unificación de programas',
-      'Reducción de costes',
-      'Rendimiento y productividad',
-    ],
-  },
-  {
-    title: 'APLICACIONES',
-    href: '/aplicaciones',
-    image: '/homeimg/apps.webp',
-    alt: 'Aplicaciones',
-    topClass: 'top-[16vh]',
-    description:
-      'Impulsa tu negocio con aplicaciones web a medida, seguras y escalables. De la idea a producción, con calidad, rendimiento y soporte continuo.',
-    items: [
-      'Consultoría Técnica de Desarrollo',
-      'Análisis funcional de procesos',
-      'Arquitectura y diseño de software',
-      'Desarrollo a medida y Despliegue',
-      'Evolución y mantenimiento del software',
-    ],
-  },
-  {
-    title: 'DESARROLLO WEB',
-    href: '/web',
-    image: '/homeimg/web.webp',
-    alt: 'Web',
-    topClass: 'top-[25vh]',
-    description:
-      'Webs y comercios electrónicos rápidos, seguros y adaptados a tus necesidades y objetivos. Diseño personalizado, desarrollo y rendimiento.',
-    items: [
-      'Webs Corporativas a medida',
-      'Tiendas Online a medida',
-      'Mantenimeiento y Mejora',
-      'Diseño de Web personalizado (UX/UI)',
-      'Hosting propio y Certificados SSL',
-    ],
-  },
-  {
-    title: 'SEO & MARKETING',
-    href: '/seo-marketing',
-    image: '/homeimg/seo-marketing.webp',
-    alt: 'SEO & Marketing',
-    topClass: 'top-[34vh]',
-    description:
-      'Mejoramos tu presencia online con estrategias de SEO y Marketing efectivas, orientadas a optimizar resultados y aumentar la visibilidad.',
-    items: [
-      'Posicionamento SEO y GEO',
-      'Analítica Web avanzada',
-      'Estrategias SEM (Google Ads)',
-      'Email Marketing',
-      'Gestión de Redes Sociales',
-      'Branding y Diseño Grafico',
-    ],
-  },
-];
-
-const avannetFeatures = [
+const avannetServicios = [
   { icon: 'ph:headset-light', text: 'Ticketing y Asistencia' },
   { icon: 'ph:key-light', text: 'Contraseñas y Seguridad' },
   { icon: 'ph:file-text-light', text: 'Gestor de Documentos' },
@@ -349,7 +27,7 @@ const avannetFeatures = [
   { icon: 'ph:credit-card-light', text: 'Gestor de Clientes y Usuarios' },
 ];
 
-const clientReviews = [
+const Opiniones = [
   {
     empresa: 'ICMR',
     nombre: 'Leyre Malet',
@@ -383,6 +61,7 @@ const clientReviews = [
   mainClass="relative z-10 w-full p-0"
 >
   <div class="relative z-10 w-full">
+    <!-- PORTADA -->
     <section
       class="flex min-h-screen w-full flex-col items-center justify-center"
       aria-label="Portada"
@@ -414,7 +93,7 @@ const clientReviews = [
       >
         <div class="mt-8 flex flex-row items-center justify-center gap-2.5">
           {
-            certifications.map((cert) => (
+            certificaciones.map((cert) => (
               <img
                 src={cert.src}
                 alt={cert.alt}
@@ -437,6 +116,7 @@ const clientReviews = [
       </a>
     </section>
 
+    <!-- INTRODUCCION -->
     <section
       class="relative flex w-full flex-col items-center justify-center px-20 py-30"
       aria-label="Partner tecnológico"
@@ -451,133 +131,13 @@ const clientReviews = [
       <img
         src="/avannubo_icon.png"
         alt=""
-        class="absolute z-0 h-auto w-[350px] opacity-15"
+        class="absolute z-0 h-auto w-[400px] opacity-15"
         aria-hidden="true"
       />
     </section>
 
-    <!-- <section
-      class="relative flex w-full flex-col items-center justify-start px-20 py-[120px]"
-      aria-label="Servicios"
-    >
-      <h2
-        class="scroll-title mb-20 mt-0 text-center text-[68px] font-bold leading-[1.1]"
-      >
-        SERVICIOS AVANNUBO
-      </h2>
-
-      <div class="mb-[120px] flex w-full flex-col items-center justify-start">
-        <h3
-          class="sticky top-5 z-0 mb-10 mt-0 text-3xl font-bold leading-[1.2]"
-        >
-          Infraestructura y Conectividad
-        </h3>
-        {
-          infrastructureServices.map((service, index) => (
-            <article
-              class={`${serviceCard} ${service.topClass} ${index === 0 ? 'mt-0' : 'mt-[120px]'}`}
-            >
-              <div class="flex w-full items-start justify-between">
-                <a href={service.href}>
-                  <h3 class={serviceTitle}>{service.title}</h3>
-                </a>
-                <a
-                  href={service.href}
-                  class={serviceArrow}
-                  aria-label={service.title}
-                >
-                  <Icon
-                    name="ph:arrow-up-right-light"
-                    class="h-[4.2vh] w-[4.2vh]"
-                  />
-                </a>
-              </div>
-              <div class="flex min-h-0 w-full flex-row items-start justify-start gap-10">
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  class="h-[43vh] w-1/2 rounded-[20px] object-cover"
-                />
-                <div class="relative flex min-h-0 w-1/2 flex-col items-start justify-start gap-[1.6vh]">
-                  <p class="mb-2 text-[2.5vh] leading-[1.25]">
-                    {service.description}
-                  </p>
-                  {service.items.map((item) => (
-                    <p class="m-0 text-[2.8vh] font-bold leading-[1.15]">
-                      {item}
-                    </p>
-                  ))}
-                </div>
-                <img
-                  src="/avannubo_icon.png"
-                  alt=""
-                  class="pointer-events-none absolute bottom-0 -right-[50px] h-auto w-[360px] opacity-10"
-                  aria-hidden="true"
-                />
-              </div>
-            </article>
-          ))
-        }
-        <div class="h-[55vh] w-full"></div>
-      </div>
-
-      <div class="mb-[120px] flex w-full flex-col items-center justify-start">
-        <h3
-          class="sticky top-5 z-0 mb-10 mt-0 text-3xl font-bold leading-[1.2]"
-        >
-          Desarrollo, Optimización y Estrategia
-        </h3>
-        {
-          developmentServices.map((service, index) => (
-            <article
-              class={`${serviceCard} ${service.topClass} ${index === 0 ? 'mt-0' : 'mt-[120px]'}`}
-            >
-              <div class="flex w-full items-start justify-between">
-                <a href={service.href}>
-                  <h3 class={serviceTitle}>{service.title}</h3>
-                </a>
-                <a
-                  href={service.href}
-                  class={serviceArrow}
-                  aria-label={service.title}
-                >
-                  <Icon
-                    name="ph:arrow-up-right-light"
-                    class="h-[4.2vh] w-[4.2vh]"
-                  />
-                </a>
-              </div>
-              <div class="flex min-h-0 w-full flex-row items-start justify-start gap-10">
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  class="h-[43vh] w-1/2 rounded-[20px] object-cover"
-                />
-                <div class="relative flex min-h-0 w-1/2 flex-col items-start justify-start gap-[1.6vh]">
-                  <p class="mb-2 text-[2.5vh] leading-[1.25]">
-                    {service.description}
-                  </p>
-                  {service.items.map((item) => (
-                    <p class="m-0 text-[2.8vh] font-bold leading-[1.15]">
-                      {item}
-                    </p>
-                  ))}
-                </div>
-                <img
-                  src="/avannubo_icon.png"
-                  alt=""
-                  class="pointer-events-none absolute bottom-0 -right-[50px] h-auto w-[360px] opacity-10"
-                  aria-hidden="true"
-                />
-              </div>
-            </article>
-          ))
-        }
-        <div class="h-[55vh] w-full"></div>
-      </div>
-    </section> -->
     <section
-      class="relative flex w-full flex-col items-center justify-center p-30 mb-20"
+      class="relative flex w-full flex-col items-center justify-center p-20 mb-20"
       aria-label="Contacto"
     >
       <h2
@@ -590,7 +150,7 @@ const clientReviews = [
       >
         <a
           href=""
-          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-center justify-between mb-4 gap-8">
             <Icon
@@ -629,7 +189,7 @@ const clientReviews = [
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -667,7 +227,7 @@ const clientReviews = [
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -705,7 +265,7 @@ const clientReviews = [
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -743,7 +303,7 @@ const clientReviews = [
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -781,7 +341,7 @@ const clientReviews = [
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -819,7 +379,7 @@ const clientReviews = [
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -840,24 +400,24 @@ const clientReviews = [
             INSTALACIONES
           </h3>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            CloudAVAN y AVANvault
+            Consultoría Preventa
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Suministros Hardware y Software
+            Instalaciones y Cableados IT
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Migraciones y Planes Backup
+            Sistemas de Red Wifi
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Entornos de Virtualización
+            Saneado y Distribución de Racks
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            AVANréplica y DRS
+            Control de Accesos y CCTV
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -878,24 +438,24 @@ const clientReviews = [
             APLICACIONES
           </h3>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            CloudAVAN y AVANvault
+            Consultoría Técnica
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Suministros Hardware y Software
+            Análisis Funcional
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Migraciones y Planes Backup
+            Arquitectura y diseño de Software
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Entornos de Virtualización
+            Desarrollo y Despliegue
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            AVANréplica y DRS
+            Mantenimiento y Mejoras
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -916,24 +476,24 @@ const clientReviews = [
             DESARROLLO WEB
           </h3>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            CloudAVAN y AVANvault
+            Diseño Web (UX/UI)
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Suministros Hardware y Software
+            Webs Corporativas a medida
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Migraciones y Planes Backup
+            Tiendas Onlines a medida
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Entornos de Virtualización
+            Mantenimiento y mejora
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            AVANréplica y DRS
+            Hosting y Certificados SSL
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassBox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -954,23 +514,23 @@ const clientReviews = [
             MARKETING & SEO
           </h3>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            CloudAVAN y AVANvault
+            POsicionamiento SEO y GEO
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Suministros Hardware y Software
+            Consultoría y Analítica Web
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Migraciones y Planes Backup
+            Estrategias SEM (Google Ads)
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            Entornos de Virtualización
+            Email Marketing y Redes Sociales
           </h4>
           <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
-            AVANréplica y DRS
+            Branding y Diseño Gráfico
           </h4>
         </a>
         <div
-          class=`service-card ${glassbox} w-[calc(66%-40px)] h-[45vh] pt-16 px-10`
+          class=`service-card ${glassBox} w-[calc(66%-40px)] h-[45vh] pt-16 px-10`
         >
           <h3 class="mb-4 text-[1.9vw] font-bold leading-[1.2] text-white">
             ¿Interesado en nuestros servicios IT?
@@ -987,6 +547,12 @@ const clientReviews = [
             servicio de asistencia cercano y especializado en entender las
             necesidades de tu negocio.
           </h4>
+          <img
+            src="/avannubo_icon.png"
+            alt=""
+            class="absolute z-0 h-auto w-[600px] top-10 opacity-5"
+            aria-hidden="true"
+          />
 
           <div
             class="absolute bottom-10 right-10 flex flex-row gap-6 w-full items-end justify-end mt-4"
@@ -1005,8 +571,9 @@ const clientReviews = [
       </div>
     </section>
 
+    <!-- PARTNER AVANNUBO -->
     <section
-      class="relative flex w-full flex-col items-center justify-center p-30 mb-30"
+      class="relative flex w-full flex-col items-center justify-center p-20 mb-30"
       aria-label="Contacto"
     >
       <h3
@@ -1016,7 +583,7 @@ const clientReviews = [
       </h3>
       <div class="w-full flex flex-row gap-10 mt-16 mb-10 z-1">
         <div
-          class=`w-[30%] ${glassbox} flex flex-col p-6 items-center justify-start gap-2`
+          class=`service-card w-[30%] ${glassBox} flex flex-col p-6 items-center justify-start gap-2`
         >
           <Icon
             name="ph:users-three-light"
@@ -1032,7 +599,7 @@ const clientReviews = [
           </p>
         </div>
         <div
-          class=`w-[40%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
+          class=`service-card w-[40%] ${glassBox} flex flex-col p-6 items-center justify-start gap-4`
         >
           <Icon
             name="ph:seal-check-light"
@@ -1048,7 +615,7 @@ const clientReviews = [
           </p>
         </div>
         <div
-          class=`w-[30%] ${glassbox} flex flex-col p-6 items-center justify-start gap-4`
+          class=`service-card w-[30%] ${glassBox} flex flex-col p-6 items-center justify-start gap-4`
         >
           <Icon
             name="ph:trophy-light"
@@ -1081,6 +648,7 @@ const clientReviews = [
       />
     </section>
 
+    <!-- AVANNET -->
     <section
       class="relative mb-20 flex min-h-screen w-full flex-col items-center justify-start p-10"
       aria-label="AVANNET"
@@ -1102,9 +670,9 @@ const clientReviews = [
           class="flex w-full flex-row flex-wrap items-start justify-start gap-6"
         >
           {
-            avannetFeatures.map((feature) => (
+            avannetServicios.map((feature) => (
               <div
-                class={`flex h-[25vh] w-[calc(25%-18px)] flex-col items-center justify-start gap-4 p-8 ${glassbox}`}
+                class={`service-card flex h-[25vh] w-[calc(25%-18px)] flex-col items-center justify-start gap-4 p-8 ${glassBox}`}
               >
                 <Icon
                   name={feature.icon}
@@ -1124,6 +692,8 @@ const clientReviews = [
         >CONTACTA PARA + INFO</a
       >
     </section>
+
+    <!-- OPINIONES -->
     <section
       class="relative flex w-full flex-col items-center justify-start p-8 mt-30 mb-30"
       aria-label="AVANNET"
@@ -1142,9 +712,9 @@ const clientReviews = [
             class="client-reviews-track flex cursor-grab touch-pan-y select-none gap-10 active:cursor-grabbing max-md:gap-6"
           >
             {
-              clientReviews.map((review) => (
+              Opiniones.map((review) => (
                 <article
-                  class={`overflow-visible client-review-slide shrink-0 rounded-[20px] p-8 ${glassbox} flex flex-col items-start justify-start gap-4 max-md:p-6`}
+                  class={`service-card overflow-visible client-review-slide shrink-0 rounded-[20px] p-8 ${glassBox} flex flex-col items-start justify-start gap-4 max-md:p-6`}
                 >
                   <div class="absolute -top-12 left-8 p-3 flex items-center justify-center w-[140px] h-[140px] bg-white  rounded-full">
                     <img
@@ -1213,115 +783,8 @@ const clientReviews = [
         </button>
       </div>
     </section>
-    <!-- <section
-      class="relative mb-20 flex min-h-screen w-full flex-col items-center justify-start"
-      aria-label="AVANBLOG"
-    >
-      <h2
-        class="scroll-title mb-10 mt-0 text-center text-[68px] font-bold leading-[1.1]"
-      >
-        AVANBLOG
-      </h2>
-      <h3
-        class="relative z-[1] mb-10 mt-0 w-[min(1200px,100%)] text-center text-4xl font-normal leading-[1.2]"
-      >
-        Mantente al día con las novedades, tendencias y tips IT que te ofrecemos
-        desde nuestro <b>blog de Avannubo</b>
-      </h3>
-      <div class="flex w-full flex-row items-center justify-center gap-10"> -->
-    <!-- POST 1-->
-    <!-- <div
-          class=` w-[30%] rounded-[20px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
-        >
-          <div class="flex flex-col items-start justify-start gap-3">
-            <img
-              src="/blogimg/Certificacio-ENS-Blog-1024x996.png"
-              alt="AVANNET"
-              class="h-[37vh] w-full rounded-[20px] object-cover"
-            />
-            <h3 class="text-2xl leading-[1.15]">
-              Avannubo alcanza la Certificación en el Esquema Nacional de
-              Seguridad (ENS)
-            </h3>
-          </div>
-          <div class="flex w-full items-center justify-between mt-4">
-            <p class="py-1 px-3 rounded-full border text-lg">Avannubo</p>
-            <a
-              href="/contacto"
-              class="inline-flex items-center gap-2 px-3 py-2 rounded-[10px] text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px] hover:bg-black font-medium"
-              >LEER MÁS <Icon
-                name="ph:arrow-right-light"
-                class="h-5 w-5"
-              /></a
-            >
-          </div>
-        </div> -->
-    <!-- POST 2 -->
-    <!-- <div
-          class=` w-[30%] rounded-[20px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
-        >
-          <div class="flex flex-col items-start justify-start gap-3">
-            <img
-              src="/blogimg/El-Ciber-Riesgo-de-su-Web-se-dispara-con-la-IA-1024x760.png"
-              alt="AVANNET"
-              class="h-[37vh] w-full rounded-[20px] object-cover"
-            />
-            <h3 class="text-2xl leading-[1.15]">
-              El Ciber-Riesgo de su Web se dispara con la llegadad de la IA
-              Generativa
-            </h3>
-          </div>
-          <div class="flex w-full items-center justify-between mt-4">
-            <p class="py-1 px-3 rounded-full border text-lg">Web</p>
-            <a
-              href="/contacto"
-              class="inline-flex items-center gap-2 px-3 py-2 rounded-[10px] text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px] hover:bg-black font-medium"
-              >LEER MÁS <Icon
-                name="ph:arrow-right-light"
-                class="h-5 w-5"
-              /></a
-            >
-          </div>
-        </div> -->
-    <!-- POST 3 -->
-    <!-- <div
-          class=` w-[30%] rounded-[20px] p-5 ${glassbox} flex flex-col items-end justify-between gap-4`
-        >
-          <div class="flex flex-col items-start justify-start gap-3">
-            <img
-              src="/blogimg/CESA-blanes.jpeg"
-              alt="AVANNET"
-              class="h-[37vh] w-full rounded-[20px] object-cover"
-            />
-            <h3 class="text-2xl leading-[1.15]">
-              Avannubo, partner tecnológico del CESA 2026 en Blanes
-            </h3>
-          </div>
-          <div class="flex w-full items-center justify-between mt-4">
-            <p class="py-1 px-3 rounded-full border text-lg">Avannubo</p>
-            <a
-              href="/contacto"
-              class="inline-flex items-center gap-2 px-3 py-2 rounded-[10px] text-white transition-all duration-300 ease-in-out bg-[#b60000] hover:translate-x-[2px] hover:bg-black font-medium"
-              >LEER MÁS <Icon
-                name="ph:arrow-right-light"
-                class="h-5 w-5"
-              /></a
-            >
-          </div>
-        </div>
-      </div>
 
-      <a
-        href="/blog"
-        aria-label="blog"
-        class={contactButton}
-        >VISITA NUESTRO BLOG <Icon
-          name="ph:arrow-right-light"
-          class="h-5 w-5 ml-1.25"
-        /></a
-      >
-    </section> -->
-
+    <!-- CONTACTO -->
     <section
       class="relative flex w-full flex-col items-center justify-center px-10 mb-40"
       aria-label="Contacto"
@@ -1462,29 +925,53 @@ const clientReviews = [
   });
 
   document.addEventListener('DOMContentLoaded', function () {
-    const serviceCards = gsap.utils.toArray('.service-card');
+    gsap.set('.service-card', { y: 60, autoAlpha: 0 });
 
-    gsap.set(serviceCards, { y: 60, autoAlpha: 0 });
-
-    ScrollTrigger.create({
-      trigger: serviceCards[0]?.parentElement,
-      start: 'top 80%',
+    ScrollTrigger.batch('.service-card', {
+      start: 'top 85%',
       once: true,
-      onEnter: () => {
-        gsap.to(serviceCards, {
+      onEnter: (batch) => {
+        gsap.to(batch, {
           y: 0,
           autoAlpha: 1,
           duration: 0.8,
           ease: 'power3.out',
           stagger: 0.08,
           onComplete: () => {
-            serviceCards.forEach((card) =>
-              gsap.set(card, { clearProps: 'transform' })
-            );
+            batch.forEach((card) => {
+              gsap.set(card, { clearProps: 'transform' });
+              setupHover(card);
+            });
           },
         });
       },
     });
+
+    function setupHover(card) {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+          y: -4,
+          backgroundColor: 'transparent',
+          borderColor: '#ffffff',
+          duration: 0.3,
+          ease: 'power2.out',
+          overwrite: 'auto',
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          y: 0,
+          backgroundColor: '',
+          borderColor: 'transparent',
+          duration: 0.3,
+          ease: 'power2.out',
+          overwrite: 'auto',
+          onComplete: () => {
+            gsap.set(card, { clearProps: 'transform' });
+          },
+        });
+      });
+    }
   });
 
   document.addEventListener('DOMContentLoaded', function () {
