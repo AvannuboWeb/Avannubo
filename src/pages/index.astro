@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { Icon } from 'astro-icon/components';
 
 const glassbox =
-  'overflow-hidden rounded-[20px] bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
+  'overflow-hidden rounded-[20px] bg-[rgba(160,160,160,0.3)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[25px]';
 const serviceCard = `sticky flex h-[55vh] w-full flex-col items-start justify-between p-5 transition-[width] duration-400 ease-out ${glassbox}`;
 const serviceTitle =
   'm-0 text-[7vh] font-bold leading-[0.95] text-white transition-all duration-200 ease-in-out hover:translate-x-0.5 hover:text-[#b60000]';
@@ -438,7 +438,7 @@ const clientReviews = [
     </section>
 
     <section
-      class="relative flex w-full flex-col items-center justify-center px-10 py-30"
+      class="relative flex w-full flex-col items-center justify-center px-20 py-30"
       aria-label="Partner tecnológico"
       id="mas"
     >
@@ -577,7 +577,7 @@ const clientReviews = [
       </div>
     </section> -->
     <section
-      class="relative flex w-full flex-col items-center justify-center p-20 mb-20"
+      class="relative flex w-full flex-col items-center justify-center p-30 mb-20"
       aria-label="Contacto"
     >
       <h2
@@ -590,7 +590,7 @@ const clientReviews = [
       >
         <a
           href=""
-          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
         >
           <div class="flex w-full items-center justify-between mb-4 gap-8">
             <Icon
@@ -599,7 +599,7 @@ const clientReviews = [
             />
 
             <div
-              class=`${serviceArrow} absolute -top-3 right-12`
+              class=`${serviceArrow} absolute -top-3 right-10`
               aria-label=""
             >
               <Icon
@@ -608,28 +608,28 @@ const clientReviews = [
               />
             </div>
           </div>
-          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
-            INFRAESTRUCTURA
+          <h3 class="mb-6 text-[1.9vw] font-bold leading-[0.95] text-white">
+            INFRAESTRUCTURA IT
           </h3>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             CloudAVAN y AVANvault
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Suministros Hardware y Software
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Migraciones y Planes Backup
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Entornos de Virtualización
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             AVANréplica y DRS
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -637,7 +637,7 @@ const clientReviews = [
               class="h-[8vh] w-[8vh]"
             />
             <div
-              class=`${serviceArrow} absolute -top-3 right-12`
+              class=`${serviceArrow} absolute -top-3 right-10`
               aria-label=""
             >
               <Icon
@@ -646,28 +646,28 @@ const clientReviews = [
               />
             </div>
           </div>
-          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+          <h3 class="mb-6 text-[1.9vw] font-bold leading-[0.95] text-white">
             SISTEMAS
           </h3>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Mantenimiento y Monitorización
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Helpdesk y soporte
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Gestión de proyectos IT
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Microsoft 365
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             AVANdns (Dominios y DNS)
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -675,7 +675,7 @@ const clientReviews = [
               class="h-[8vh] w-[8vh]"
             />
             <div
-              class=`${serviceArrow} absolute -top-3 right-12`
+              class=`${serviceArrow} absolute -top-3 right-10`
               aria-label=""
             >
               <Icon
@@ -684,28 +684,28 @@ const clientReviews = [
               />
             </div>
           </div>
-          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+          <h3 class="mb-6 text-[1.9vw] font-bold leading-[0.95] text-white">
             REDES
           </h3>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             CloudAVAN y AVANvault
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Análisis y Auditorías
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Diseño y Planificación
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Optimización y Rendimiento
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Mantenimiento y Asistencia
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -713,7 +713,7 @@ const clientReviews = [
               class="h-[8vh] w-[8vh]"
             />
             <div
-              class=`${serviceArrow} absolute -top-3 right-12`
+              class=`${serviceArrow} absolute -top-3 right-10`
               aria-label=""
             >
               <Icon
@@ -722,28 +722,28 @@ const clientReviews = [
               />
             </div>
           </div>
-          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+          <h3 class="mb-6 text-[1.9vw] font-bold leading-[0.95] text-white">
             CIBERSEGURIDAD
           </h3>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Auditoría y Análisis Periódicos
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Protección de Infraestructura
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Seguridad Integral
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Servicio MDR (respuesta inmediata)
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Monitorización y asistencia
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -751,7 +751,7 @@ const clientReviews = [
               class="h-[8vh] w-[8vh]"
             />
             <div
-              class=`${serviceArrow} absolute -top-3 right-12`
+              class=`${serviceArrow} absolute -top-3 right-10`
               aria-label=""
             >
               <Icon
@@ -760,28 +760,28 @@ const clientReviews = [
               />
             </div>
           </div>
-          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+          <h3 class="mb-6 text-[1.9vw] font-bold leading-[0.95] text-white">
             TELEFONÍA IP
           </h3>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             AVANvoip - Telefonía IP
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             AVANmóvil - Telefonía IP integrada
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             AVANsip - Softphone y Extensiones
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             AVANwave - conexión con CRM
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Soporte y asistencia técnica
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -789,7 +789,7 @@ const clientReviews = [
               class="h-[8vh] w-[8vh]"
             />
             <div
-              class=`${serviceArrow} absolute -top-3 right-12`
+              class=`${serviceArrow} absolute -top-3 right-10`
               aria-label=""
             >
               <Icon
@@ -798,28 +798,28 @@ const clientReviews = [
               />
             </div>
           </div>
-          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+          <h3 class="mb-6 text-[1.9vw] font-bold leading-[0.95] text-white">
             ODOO
           </h3>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Verifactu y SII personalizado
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             SImplantación integral Odoo
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Migración de Versiones
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Integración con Terceros
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Incidéncias y Soporte Técnico
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -827,7 +827,7 @@ const clientReviews = [
               class="h-[8vh] w-[8vh]"
             />
             <div
-              class=`${serviceArrow} absolute -top-3 right-12`
+              class=`${serviceArrow} absolute -top-3 right-10`
               aria-label=""
             >
               <Icon
@@ -836,28 +836,28 @@ const clientReviews = [
               />
             </div>
           </div>
-          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+          <h3 class="mb-6 text-[1.9vw] font-bold leading-[0.95] text-white">
             INSTALACIONES
           </h3>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             CloudAVAN y AVANvault
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Suministros Hardware y Software
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Migraciones y Planes Backup
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Entornos de Virtualización
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             AVANréplica y DRS
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -865,7 +865,7 @@ const clientReviews = [
               class="h-[8vh] w-[8vh]"
             />
             <div
-              class=`${serviceArrow} absolute -top-3 right-12`
+              class=`${serviceArrow} absolute -top-3 right-10`
               aria-label=""
             >
               <Icon
@@ -874,28 +874,28 @@ const clientReviews = [
               />
             </div>
           </div>
-          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+          <h3 class="mb-6 text-[1.9vw] font-bold leading-[0.95] text-white">
             APLICACIONES
           </h3>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             CloudAVAN y AVANvault
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Suministros Hardware y Software
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Migraciones y Planes Backup
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Entornos de Virtualización
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             AVANréplica y DRS
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -903,7 +903,7 @@ const clientReviews = [
               class="h-[8vh] w-[8vh]"
             />
             <div
-              class=`${serviceArrow} absolute -top-3 right-12`
+              class=`${serviceArrow} absolute -top-3 right-10`
               aria-label=""
             >
               <Icon
@@ -912,28 +912,28 @@ const clientReviews = [
               />
             </div>
           </div>
-          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+          <h3 class="mb-6 text-[1.9vw] font-bold leading-[0.95] text-white">
             DESARROLLO WEB
           </h3>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             CloudAVAN y AVANvault
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Suministros Hardware y Software
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Migraciones y Planes Backup
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Entornos de Virtualización
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             AVANréplica y DRS
           </h4>
         </a>
         <a
           href=""
-          class=`service-card ${glassbox} w-[30%] h-[45vh] p-8 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
+          class=`service-card ${glassbox} w-[calc(33%-40px)] h-[45vh] p-10 overflow-visible border-2 border-transparent transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-transparent hover:border-white`
         >
           <div class="flex w-full items-start justify-between mb-4">
             <Icon
@@ -941,7 +941,7 @@ const clientReviews = [
               class="h-[8vh] w-[8vh]"
             />
             <div
-              class=`${serviceArrow} absolute -top-3 right-12`
+              class=`${serviceArrow} absolute -top-3 right-10`
               aria-label=""
             >
               <Icon
@@ -950,34 +950,52 @@ const clientReviews = [
               />
             </div>
           </div>
-          <h3 class="mb-6 text-[2.5vw] font-bold leading-[0.95] text-white">
+          <h3 class="mb-6 text-[1.9vw] font-bold leading-[0.95] text-white">
             MARKETING & SEO
           </h3>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             CloudAVAN y AVANvault
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Suministros Hardware y Software
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Migraciones y Planes Backup
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             Entornos de Virtualización
           </h4>
-          <h4 class="mb-5 text-[24px] leading-[0.95] text-white">
+          <h4 class="mb-5 text-[1vw] leading-[0.95] text-white">
             AVANréplica y DRS
           </h4>
         </a>
-        <div class=`service-card ${glassbox} w-[calc(60%+40px)] h-[45vh]`>
+        <div
+          class=`service-card ${glassbox} w-[calc(66%-40px)] h-[45vh] pt-16 px-10`
+        >
+          <h3 class="mb-4 text-[1.9vw] font-bold leading-[1.2] text-white">
+            ¿Interesado en nuestros servicios IT?
+          </h3>
+          <h3 class="mb-6 text-[1.3vw] font-bold leading-[1.2] text-white">
+            En Avannubo no sólo ofrecemos soluciones y servicios IT, somos tu
+            partner tecnológico de confianza.
+          </h3>
+          <h4 class="text-[1vw]">
+            COntamos con más de 20 años de experiencia en el sector IT.
+            Disponemos de un departamento de especialistas en cada área para
+            ofrecer cualquier tipo de soluciones y servicios IT personalizados y
+            de alta calidad. Destacamos por nuestro trato personal y nuestro
+            servicio de asistencia cercano y especializado en entender las
+            necesidades de tu negocio.
+          </h4>
+
           <div
-            class="flex flex-row gap-6 w-full items-end justify-end mt-4 p-10"
+            class="absolute bottom-10 right-10 flex flex-row gap-6 w-full items-end justify-end mt-4"
           >
             <a
               href="/contacto"
               aria-label="Contacto"
-              class="inline-flex text-[20px] font-medium cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-5 py-4 leading-none transition-all duration-[220ms] ease-in-out hover:translate-x-1"
-              >PONTE EN CONTACTO<Icon
+              class="inline-flex text-[20px] font-medium cursor-pointer items-center justify-center rounded-[10px] bg-[#b60000] px-5 py-4 leading-none transition-all duration-[220ms] ease-in-out hover:translate-x-1 hover:bg-black"
+              >SOLICITA INFORMACIÓN<Icon
                 name="ph:arrow-right-bold"
                 class="h-5 w-5 ml-1.25"
               /></a
@@ -988,7 +1006,7 @@ const clientReviews = [
     </section>
 
     <section
-      class="relative flex w-full flex-col items-center justify-center p-20 mb-30"
+      class="relative flex w-full flex-col items-center justify-center p-30 mb-30"
       aria-label="Contacto"
     >
       <h3

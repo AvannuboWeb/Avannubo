@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components';
 
 const glass =
-  'bg-[rgba(120,120,120,0.5)] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[30px]';
+  'bg-[rgba(160,160,160,0.3)] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[25px]';
 const glassback =
   'bg-[rgba(10,10,10,0.4)] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[30px]';
 const hoverRed =
@@ -10,9 +10,9 @@ const hoverRed =
 const hoverBlack =
   'transition-all duration-[220ms] ease-in-out hover:-translate-y-0.5 hover:bg-[#3d3d3c]';
 const menuTitle =
-  'm-0 rounded-[10px] px-2.5 py-1 text-[4.6vh] font-semibold leading-none transition-all duration-300 ease-in-out hover:translate-x-1 hover:bg-[#b60000]';
+  'm-0 rounded-[10px] px-2.5 py-1 text-[4.6vh] font-bold leading-none transition-all duration-300 ease-in-out hover:translate-x-1 hover:bg-[#b60000]';
 const menuTitleSmall =
-  'm-0 rounded-[10px] px-2.5 py-1 text-[3vh] font-semibold leading-none transition-all duration-300 ease-in-out hover:translate-x-1 hover:bg-[#b60000]';
+  'm-0 rounded-[10px] px-2.5 py-1  text-[3vh] font-bold leading-none transition-all duration-300 ease-in-out hover:translate-x-1 hover:bg-[#b60000]';
 
 const glassocial =
   'bg-[rgba(120,120,120,0.5)] shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-[30px]';
@@ -134,15 +134,24 @@ const columnTwoItems = [
 ];
 
 const columnThreeItems = [
-  { text: 'DATA-CENTER', href: '/data-center' },
-  { text: 'SISTEMAS', href: '/sistemas' },
-  { text: 'REDES', href: '/redes' },
-  { text: 'TELEFONÍA IP', href: '/telefonia' },
-  { text: 'INSTALACIONES', href: '/instalaciones' },
-  { text: 'ODOO', href: '/odoo' },
-  { text: 'APLICACIONES', href: '/aplicaciones' },
-  { text: 'WEB', href: '/web' },
-  { text: 'SEO & MARKETING', href: '/seo-marketing' },
+  { text: 'INFRAESTRUCTURA', href: '/data-center', icon: 'ph:hard-drives' },
+  { text: 'SISTEMAS', href: '/sistemas', icon: 'ph:desktop-tower' },
+  { text: 'REDES', href: '/redes', icon: 'ph:network' },
+  {
+    text: 'CIBERSEGURIDAD',
+    href: '/ciberseguridad',
+    icon: 'ph:shield-check',
+  },
+  { text: 'TELEFONÍA IP', href: '/telefonia', icon: 'ph:cell-tower' },
+  { text: 'INSTALACIONES', href: '/instalaciones', icon: 'ph:toolbox' },
+  { text: 'ODOO', href: '/odoo', icon: 'ph:squares-four' },
+  { text: 'APLICACIONES', href: '/aplicaciones', icon: 'ph:devices' },
+  { text: 'DESARROLLO WEB', href: '/web', icon: 'ph:code' },
+  {
+    text: 'SEO & MARKETING',
+    href: '/seo-marketing',
+    icon: 'ph:megaphone',
+  },
 ];
 ---
 
@@ -500,13 +509,20 @@ const columnThreeItems = [
     </div>
 
     <div
-      class={`flex h-[81vh] flex-col items-start justify-start gap-[1.2vh] rounded-[20px] pb-10 pl-[10%] pr-10 pt-[70px] ${glass}`}
+      class={`flex h-[81vh] flex-col items-start justify-start gap-[1vh] rounded-[20px] pb-10 pl-[10%] pr-10 pt-[70px] ${glass}`}
     >
-      <h3 class="m-0 text-base font-normal leading-[1.2]">SERVICIOS IT</h3>
+      <h3 class="mb-[1.2vh] text-base font-normal leading-[1.2]">
+        SERVICIOS IT
+      </h3>
       {
         columnThreeItems.map((item) => (
           <h2 class={menuTitle}>
-            <a href={item.href}>{item.text}</a>
+            <a
+              href={item.href}
+              class="inline-flex items-center gap-3"
+            >
+              {item.text}
+            </a>
           </h2>
         ))
       }
@@ -520,7 +536,7 @@ const columnThreeItems = [
       class={`mt-2.5 flex h-[9vh] items-center justify-start rounded-[20px] pl-[5%] ${glass} ${hoverRed}`}
     >
       <span
-        class="inline-flex items-center gap-3 text-[4.6vh] font-semibold leading-none"
+        class="inline-flex items-center gap-3 text-[4.6vh] font-bold leading-none"
         >PONTE EN CONTACTO <Icon
           name="ph:arrow-right"
           class="h-[4.6vh] w-[4.6vh]"
@@ -591,7 +607,7 @@ const columnThreeItems = [
         'Instalaciones',
         'Odoo',
         'Aplicaciones',
-        'Soluciones Web',
+        'Desarrollo Web',
         'SEO & Marketing',
         'Otro',
       ],
